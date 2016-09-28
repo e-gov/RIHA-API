@@ -5,16 +5,26 @@ Versioon 2.0, 29.04.2016
 Tellija: Riigi Infosüsteemi Amet; Täitja: Girf OÜ, Degeetia OÜ, Mindstone OÜ
 
 ## Sisukord
-- [Muutelugu](#muutelugu)
-- [Ülevaade](#ulevaade)
-- [Seotud dokumendid](#seotud dokumendid)
-- [Mõisted](#moisted)
-- [Andmete automaatesitamine RIHA jaoks](#andmete-automaatesitamine-riha-jaoks)
-- [Andmete tehnilise esituse saamine RIHA-st](#andmete-tehnilise-esituse-saamine-riha-st)
-- [Põhi-JSON-veebileht](#pohi-json-veebileht)
-- [Objektide identifitseerimine URI-de abil](#objektide-identifitseerimine-uri-de-abil)
-- [Seotud dokumendid: inimloetavad failid](#seotud-dokumendid-inimloetavad-failid)
-- [Andmevormingu spetsifikatsioonid](#andmevormingu spetsifikatsioonid)
+- [Ülevaade](SPETSIFIKATSIOON.md#ulevaade)
+- [Seotud dokumendid](SPETSIFIKATSIOON.md#seotud dokumendid)
+- [Mõisted](SPETSIFIKATSIOON.md#moisted)
+- [Andmete automaatesitamine RIHA jaoks](SPETSIFIKATSIOON.md#andmete-automaatesitamine-riha-jaoks)
+- [Andmete tehnilise esituse saamine RIHA-st](SPETSIFIKATSIOON.md#andmete-tehnilise-esituse-saamine-riha-st)
+- [Põhi-JSON-veebileht](SPETSIFIKATSIOON.md#pohi-json-veebileht)
+- [Objektide identifitseerimine URI-de abil](SPETSIFIKATSIOON.md#objektide-identifitseerimine-uri-de-abil)
+- [Seotud dokumendid: inimloetavad failid](SPETSIFIKATSIOON.md#seotud-dokumendid-inimloetavad-failid)
+- [Andmevormingu spetsifikatsioonid](SPETSIFIKATSIOON.md#andmevormingu-spetsifikatsioonid)
+- [Infosüsteemi detailkirjeldus](SPETSIFIKATSIOON.md#infosüsteemi-detailkirjeldus)
+- [Andmekogu detailkirjeldus](SPETSIFIKATSIOON.md#andmekogu-detailkirjeldus)
+- [Tähenduste kodeerimine andmebaasi ja teenuste kommentaarides](SPETSIFIKATSIOON.md#tahenduste-kodeerimine-andmebaasi-ja-teenuste-kommentaarides)
+- [Andmebaasi kirjeldamine JSON-struktuurina](SPETSIFIKATSIOON.md#andmebaasi-kirjeldamine-json-struktuurina)
+- [Teenuste kirjeldamine JSON-struktuuriga](SPETSIFIKATSIOON.md#teenuste-kirjeldamine-json-struktuuriga)
+- [Valdkonnasõnastike kirjeldamine JSON-struktuuriga](SPETSIFIKATSIOON.md#valdkonnasonastike-kirjeldamine-json-struktuuriga)
+- [Klassifikaatorite kirjeldamine JSON-struktuuriga](SPETSIFIKATSIOON.md#klassifikaatorite-kirjeldamine-json-struktuuriga)
+- [XML varade kirjeldamine JSON-struktuuriga](SPETSIFIKATSIOON.md#xml-varade-kirjeldamine-json-struktuuriga)
+- [Veateated](SPETSIFIKATSIOON.md#veateated)
+- [Muutelugu](SPETSIFIKATSIOON.md#muutelugu)
+
 
 ## Ülevaade
 Selles dokumendis kirjeldame, kuidas esitada RIHA-sse automaatselt loetaval ja masintöödeldaval kujul informatsiooni infosüsteemide, teenuste jms kohta ning kuidas RIHA sama informatsiooni välja annab.
@@ -27,54 +37,56 @@ Samuti on dokumenti mõeldud RIA arhitektidele, RIHA töögrupi liikmetele ja uu
 
 ## Seotud dokumendid
 RIHA välimist ja sisemist infovahetust kirjeldab üldisem dokument, mis ei ole käesoleva dokumendi mõistmiseks aga otseselt vajalik:
-•	"RIHA andmete masinloetavate vormingute põhimõtted.docx"
+- [RIHA andmete masinloetavate vormingute põhimõtted](POHIMOTTED.md)
 
 Tehnilised lisad masinloetavate andmete kirjeldamise konkreetsele spetsifikatsioonile:
-•	infosystem.js – infosüsteemi kirjelduse import-ekspordifaili näide,
-•	service.js – teenuse kirjelduse import-ekspordifaili näide,
-•	document.js – dokumendi ekspordifaili näide,
-•	comment.js – kommentaari ekspordifaili näide.
+- infosystem.js – infosüsteemi kirjelduse import-ekspordifaili näide,
+- service.js – teenuse kirjelduse import-ekspordifaili näide,
+- document.js – dokumendi ekspordifaili näide,
+- comment.js – kommentaari ekspordifaili näide.
 
 Dokumendi teise poole mõistmiseks on vaja omada arusaamist SQL süntaksist ja JSON formaadist: konkreetseid dokumente nende standardtehnoloogiate jaoks siinkohal ei esitata.
-•	Kasutatav JSON standard: JSON Data Interchange Format (ECMA-404, http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+- Kasutatav JSON standard: JSON Data Interchange Format (ECMA-404, http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 
 ## Mõisted
-•	RIHA: vaata https://riha.eesti.ee/
-•	JSON: vaata https://en.wikipedia.org/wiki/JSON ja lisaks eelmist peatükki
-•	SQL: vaata https://en.wikipedia.org/wiki/SQL
-•	WSDL: vaata https://en.wikipedia.org/wiki/Web\_Services\_Description\_Language
-•	URI: vaata https://en.wikipedia.org/wiki/SQL
-•	URN: vaata https://en.wikipedia.org/wiki/URN
+- RIHA: vaata https://riha.eesti.ee/
+- JSON: vaata https://en.wikipedia.org/wiki/JSON ja lisaks eelmist peatükki
+- SQL: vaata https://en.wikipedia.org/wiki/SQL
+- WSDL: vaata https://en.wikipedia.org/wiki/Web\_Services\_Description\_Language
+- URI: vaata https://en.wikipedia.org/wiki/SQL
+- URN: vaata https://en.wikipedia.org/wiki/URN
 
 ## Andmete automaatesitamine RIHA jaoks
 RIHA-sse saab hetkel esitada nelja sorti infot, millest olulisem on esimene:
-•	Infosüsteem koos tema andmebaaside ja teenuste detailkirjeldusega,
-•	Valdkonnad
-•	Valdkonnasõnastikud,
-•	Klassifikaatorid,
-•	XML varad.
+- Infosüsteem koos tema andmebaaside ja teenuste detailkirjeldusega,
+- Valdkonnad
+- Valdkonnasõnastikud,
+- Klassifikaatorid,
+- XML varad.
 
 Iga sellise objekti jaoks (kui asutus vastavat sorti objekti haldab) luuakse asutuse poolt eraldi JSON-veebileht. Kui asutuse poolt mõnda neist tüüpidest (näiteks valdkonnasõnastikke või XML varasid) ei hallata, siis vastavat JSON-lehte ka ei looda.
 RIHA andmed esitatakse üldjuhul JSON objektidena, kuid täiendavalt kasutatakse ka muid formaate:
-•	SQL lihtsama alternatiivina JSON-ile andmebaasi tabelite struktuuri esitamisel,
-•	WSDL SOAP-teenuste struktuuri esitamisel.
+- SQL lihtsama alternatiivina JSON-ile andmebaasi tabelite struktuuri esitamisel,
+- WSDL SOAP-teenuste struktuuri esitamisel.
 
 Andmete esitamiseks tuleb:
-•	luua asutuse vastavat tüüpi objekti põhi-JSON-veebileht, mille sisuks on tehniline JSON esitus, mis sisaldab kogu vajalikku põhi-informatsiooni,
-•	luua võimalikud täiendavad veebilehed / dokumendid, millele põhi-veebilehest viidatakse,
-•	paigaldada kõik need lehed / failid veebiserverisse kättesaadavaks
-•	kui osadele lehtedele / failidele on ligipääs piiratud, siis - vajadusel - luua RIHA jaoks veebilehtedele/failidele ligipääsuõigused kasutajatunnuse ja parooli abil,
-•	sisestada põhi-veebilehe URL (ja vajadusel kasutajatunnus ja parool) RIHAs andmekogu/sõnastike/klassifikaatorite/XML varade kirjelduse vastavatele väljadele.
+- luua asutuse vastavat tüüpi objekti põhi-JSON-veebileht, mille sisuks on tehniline JSON esitus, mis sisaldab kogu vajalikku põhi-informatsiooni,
+- luua võimalikud täiendavad veebilehed / dokumendid, millele põhi-veebilehest viidatakse,
+- paigaldada kõik need lehed / failid veebiserverisse kättesaadavaks
+- kui osadele lehtedele / failidele on ligipääs piiratud, siis - vajadusel - luua RIHA jaoks veebilehtedele/failidele ligipääsuõigused kasutajatunnuse ja parooli abil,
+- sisestada põhi-veebilehe URL (ja vajadusel kasutajatunnus ja parool) RIHAs andmekogu/sõnastike/klassifikaatorite/XML varade kirjelduse vastavatele väljadele.
 
 Seepeale hakkab RIHA rakendus regulaarselt automaatselt lugema veebilehte, temast viidatavaid veebilehti / faile ja nende abil automaatselt uuendama RIHAs andmestiku kirjeldust.
 
 Asutus ise omal initsiatiivil RIHA-sse andmeid ei postita. Küll aga näeme ette, et
-•	RIHAs realiseeritakse testsüsteem, mille kaudu andmekogu arendaja saab ise saata JSON-kirjeldusi nende õigsuse automaatkontrolliks.
-•	JSON-veebilehe lugemise ja töötlemise järel salvestab RIHA tulemi korrektsuse kinnituse või veateate vastava infosüsteemi või muu andmestiku juurde kõigile osapooltele RIHA kasutajaliidesest leitaval kujul.
+- RIHAs realiseeritakse testsüsteem, mille kaudu andmekogu arendaja saab ise saata JSON-kirjeldusi nende õigsuse automaatkontrolliks.
+- JSON-veebilehe lugemise ja töötlemise järel salvestab RIHA tulemi korrektsuse kinnituse või veateate vastava infosüsteemi või muu andmestiku juurde kõigile osapooltele RIHA kasutajaliidesest leitaval kujul.
 
 ## Andmete tehnilise esituse saamine RIHA-st
 Kõiki eelmainitud sorti andmeid saab RIHA-st vabalt tõmmata, kui neile ei ole seatud piirangut, mis nõuab eelnevalt autentimist.
+
 Andmete tõmbamiseks on RIHAS üks konkreetne URL (ei ole hetkel veel määratud), millele antakse objekti URI parameetrina ette ja mis väljastab sisestamiseks sobivale kujule analoogilise JSON-struktuuri.
+
 Lisaks objekti URI-le saab nimetatud URL-le anda ette parameetreid soovitud formaadi valikuks, näiteks SQL või JSON, hierarhia sügavus jms. Nimetatud parameetrid ei ole hetkel veel määratud.
 
 ## Põhi-JSON-veebileht
@@ -86,34 +98,34 @@ Põhi-JSON-veebilehe muutmiseks on lihtne realiseerida ka eraldi väike rakendus
 Põhi-JSON-veebilehe struktuur esitakse lihtsalt JSON objektina kujul, kus kasutatakse samu väljanimesid, mis on kasutusel RIHA baasis ja kus väärtused on omakorda JSON objektid: lihtsamatel juhtudel tekstid, keerukamatel sisemise struktuuriga objektid. Väljanimedest arusaamiseks ja nende täitmise võimaldamiseks luuakse eraldi juhend ja annoteeritud JSON-template ja näited.
 
 Väljad jaotuvad kolme gruppi:
-•	Otsese väärtusega väljad, mis kirjeldavad infosüsteemi/teenust/jne ja mis võivad olla lihtsalt tekstilised väärtused või väiksemad loendid/objektid.
-•	Erinevad seotud dokumendid, mis reeglina esitatakse URLi või URLe sisaldavate objektide kujul, mis viitavad veebist kättesaadavatele dokumentidele.
-•	Erinevad seotud detailkirjelduste loetelud, mida võib esitada nii* ◦◦konkreetse sügava struktuurina kui
-•	* ◦◦URLide loeteluna, mis viitavad objekti (näiteks andmebaas või teenus) tehnilisele kirjeldusele.
+- Otsese väärtusega väljad, mis kirjeldavad infosüsteemi/teenust/jne ja mis võivad olla lihtsalt tekstilised väärtused või väiksemad loendid/objektid.
+- Erinevad seotud dokumendid, mis reeglina esitatakse URLi või URLe sisaldavate objektide kujul, mis viitavad veebist kättesaadavatele dokumentidele.
+- Erinevad seotud detailkirjelduste loetelud, mida võib esitada nii* ◦◦konkreetse sügava struktuurina kui
+- * ◦◦URLide loeteluna, mis viitavad objekti (näiteks andmebaas või teenus) tehnilisele kirjeldusele.
 
 Andmebaaside ja teenuste loetelus võib kasutada ka otseseid väärtusi JSON kujul (vaata allpool detailkirjeldust), kuid see on suure mahu tõttu üldjuhul ebapraktiline.
 
 ### Objektide identifitseerimine URI-de abil
 
 Infosüsteemidel, teenustel, sõnastikel ja klassifikaatoritel on RIHA-s unikaalne, versioonist sõltumatu identifikaatori tekstilise URI kujul. URI on info haldaja valikul kas:
-•	Harilik URL (näiteks http://amet.ee/systeemX/) mis kirjeldab antud süsteemi või klassifikaatorit vms, mitte ei ole näiteks asutuse enda URL
-•	Või URN kujul "urn:fdc:riha.eesti.ee:2016:infosystem:lyhikood" infosüsteemide jaoks (klassifikaatorite, sõnastike jms jaoks kasuta "classifier", "dictionary" jms) kus alguses on alati "urn:fdc:riha.eesti.ee:aastanr" kus aastanr on selle konkreetse URN-i esimese kasutuselevõtu aasta.
+- Harilik URL (näiteks http://amet.ee/systeemX/) mis kirjeldab antud süsteemi või klassifikaatorit vms, mitte ei ole näiteks asutuse enda URL
+- Või URN kujul "urn:fdc:riha.eesti.ee:2016:infosystem:lyhikood" infosüsteemide jaoks (klassifikaatorite, sõnastike jms jaoks kasuta "classifier", "dictionary" jms) kus alguses on alati "urn:fdc:riha.eesti.ee:aastanr" kus aastanr on selle konkreetse URN-i esimese kasutuselevõtu aasta.
 
 ### Seotud dokumendid: inimloetavad failid
 Põhi-veebileht võib viidata ametlikele ja seletavatele dokumentidele, mis on lihtsalt näiteks PDF või wordi formaadis, ning mida RIHA süsteem automaatselt ei töötle. Need tuleb lihtsalt veebiserverisse paigutada ja lisada põhi-JSON-lehel URL-d.
 
 ## Andmevormingu spetsifikatsioonid
 Infosüsteemi objekti andmevormingu näited on lisatud eraldi dokumentidena, mis on järjest toodud ka siinse dokumendi lõpus:
-•	js – infosüsteemi kirjelduse näide
-•	js - valdkonna kirjelduse näide
-•	js - valdkonnasõnastiku kirjelduse näide
-•	js - klassifikaatori kirjelduse näide
-•	js - XML vara kirjelduse näide
+- js – infosüsteemi kirjelduse näide
+- js - valdkonna kirjelduse näide
+- js - valdkonnasõnastiku kirjelduse näide
+- js - klassifikaatori kirjelduse näide
+- js - XML vara kirjelduse näide
 
 ### Infosüsteemi detailkirjeldus
 Esitame infosüsteemi objekti formaadi spetsifikatsiooni näitena, kuhu on lisatud spetsifitseerivad kommentaarid (viimased ei ole JSON struktuuri osad):
 
-```json
+```
 /* object(infosystem): Selles struktuuris hoitakse infosüsteemi põhiinfot.
 Infosüsteemid hoitakse tabelis versioonidena, iga infosüsteemi versioon on eraldi kirje. Sealjuures lähtutakse põhimõttest, et kõige esimene tekitatud infosüsteemi kirje kajastab alati infosüsteemi jooksvat hetkeseisu ning hiljem tekitatud kirjed on infosüsteemi kirjelduse vanemad versioonid. */
 "infosystem": {
@@ -1759,21 +1771,21 @@ ISKE audit viidi läbi 13. märts 2015  3. juuni 2015.ISKE on rakendatud, audi
 
 ### Andmekogu detailkirjeldus
 Andmekogu detailkirjeldus on eeltoodud infosüsteemi kirjelduse osa (infosüsteemis võib olla ka mitu andmekogu) mida võib esitada kas:
-•	eraldi JSON-lehtedena, millele infosüsteemi kirjeldus viitab,
-•	või sügava hierarhilise struktuurina infosüsteemi kirjelduse JSON-struktuuri sees.
+- eraldi JSON-lehtedena, millele infosüsteemi kirjeldus viitab,
+- või sügava hierarhilise struktuurina infosüsteemi kirjelduse JSON-struktuuri sees.
 
 Andmekogu detailkirjeldamiseks on ette nähtud mitu alternatiivset viisi, mille vahel andmekogu arendaja võib valida endale sobivama:
-•	Detailkirjeldus andmebaasi skeemi koostamise SQL-lausetena, mille kommentaaridesse on kodeeritud täiendav vajalik informatsioon RIHA jaoks.
-•	Detailkirjeldus etteantud formaadis JSON-struktuurina.
-•	Perspektiivis näeme ette ka muude formaatide lisamise.
+- Detailkirjeldus andmebaasi skeemi koostamise SQL-lausetena, mille kommentaaridesse on kodeeritud täiendav vajalik informatsioon RIHA jaoks.
+- Detailkirjeldus etteantud formaadis JSON-struktuurina.
+- Perspektiivis näeme ette ka muude formaatide lisamise.
 
 Hakatuseks võib detailkirjelduse realiseerida staatilise SQL-failina, mis pannakse serverisse.
 
 Hea mõte on seejärel realiseerida detailkirjeldust selliselt, et arendaja koostab väikese veebirakenduse, mis teeb andmebaasi päringu ja küsib sealt automaatselt baasi skeemi SQL lausetena. Selle tulemusena on igal hetkel kättesaadav värske, reaalne andmebaasi struktuur, mida ei ole vaja käsitsi täiendada.
 
 Oluline osa detailkirjelduse loomisel on kommentaaride sisestamine andmebaasi kirjeldusele. Seda saab teha kahel moel:
-•	Kirjutada kommentaarid otse skeemi loomise lausetesse. Miinus on see, et enamus andmebaase ei suuda neid kommentaare päringu peale väljastada.
-•	Sisestada kommentaarid SQL-s comment on …. lausetena. Sel juhul saab neid automaatselt päringuga küsida.
+- Kirjutada kommentaarid otse skeemi loomise lausetesse. Miinus on see, et enamus andmebaase ei suuda neid kommentaare päringu peale väljastada.
+- Sisestada kommentaarid SQL-s comment on …. lausetena. Sel juhul saab neid automaatselt päringuga küsida.
 
 ### Tähenduste kodeerimine andmebaasi ja teenuste kommentaarides
 Andmekogu või teenuse struktuurist ja kasutusest arusaamiseks on äärmiselt kasulik täiendada välju inimloetavate kommentaaridega. Neid kommentaare aga ei suuda RIHA otsirakendused adekvaatselt kasutada. Seepärast on vaja lisada olulisematele tabelitele ja väljadele täiendavat infot, mida RIHA rakendus sealt automaatselt leiab ja suudab automaatselt töödelda ja otsitavaks muuta. Sama täiendav info on oluliseks abiks ka arendajatele, kes saavad sealt näiteks välja lugeda võimalikke väärtus-kodeeringuid ja nende tähendusi.
@@ -1789,21 +1801,20 @@ Tagisõnades ei eristata väike- ja suurtähti. Võib kasutada mõlemaid segilä
 Tagisõnades ei ole vaja kasutada jutumärke, kui tegu on ühe sõnaga, mitmesõnalisel objektil peavad olema ümber jutumärgid " või apostroofid '
 
 Neli eraldi liiki tähendusi on järgmised:
-•	põhiobjektid infosüsteemi määruse mõttes lisatakse kommentaari tagidena, mille alguses on hüüumärk, näiteks !klient, !tootja, !"hooned ja ehitised", kus põhiobjektide nimistu leiab arendaja andmekogu põhimäärusest. Arusaadavalt on arendajal vaja koostada endale konkreetne nimistu põhimääruses kirjeldatavare põhiobjektide sõnadest või fraasidest, et vältida sama põhiobjekti kirjeldamist mitme erineva tagiga.
-•	infosüsteemi funktsioonid/eesmärgid lisatakse kommentaari tagidena, mille alguses on sümbol $.
-•	semantika valdkonnasõnastike / hierarhia mõttes lisatakse kommentaari tagidena, mille alguses on # trellid, näiteks #isik, #isikukood, #asutus, kusjuures:
-•	* ◦◦Selleks, et näidata, millise sõnastiku sõnaga on tegemist, tuleb panna # ja sõna vahele prefiksina sõnastiku nimi ja koolon, näiteks #meieasutus:isik, #meieasutus:salajasus kus meieasutus on konkreetse sõnastiku nimi.
-•	* ◦◦Sõnastike loomine, otsimine ja haldamine ei ole käesoleva juhendi skoobis: selleks luuakse eraldi juhend.
-•	* ◦◦Kasutusel on ka üks nö universaalsõnastik schema.org: selle sõnade kasutamisel kasutatakse prefiksit so, näiteks #so:person, #so:thing
-•	* ◦◦Prefiksit ei ole vaja, kui andmetabelile on määratud selle tabeli standardsõnastik: selleks tuleb panna tabeli kommentaari tag #vocabulary:sõnastikunimi
-•	klassifikaatorid näitavad ära, mis on välja võimalikud (kodeeritud) väärtused ja kuidas neist aru saada: tegemist siis võimalike väärtuste/seletuste paaride loeteluga.
-•	* ◦◦Klassifikaatori lisamiseks tuleb klassifikaatori nime ette panna @ at märk, näiteks @sugu, @organisatsiooni_tyyp mis tähistavad konkreetseid võimalikke liste nagu 
-Unknown macro: {"M"} 
-.
-•	* ◦◦Selleks, et näidata, millise klassifikaatorite-komplektiga on tegemist, tuleb panna @ ja sõna vahele prefiksina klassifikaatori-komplekti nimi ja koolon, näiteks @klassif_12:sugu kus kus klassif_12 on konkreetse klassifikaatori-komplekti nimi.
-•	* ◦◦Klassifikaatorite loomine, otsimine ja haldamine ei ole käesoleva juhendi skoobis: selleks luuakse eraldi juhend.
-•	* ◦◦Prefiksit ei ole vaja, kui andmetabelile on määratud selle tabeli standardklassifikaatori-komplekt: selleks tuleb panna tabeli kommentaari tag @classifiers:klassifikaatorikomplekti-nimi
-•	* ◦◦
+- põhiobjektid infosüsteemi määruse mõttes lisatakse kommentaari tagidena, mille alguses on hüüumärk, näiteks !klient, !tootja, !"hooned ja ehitised", kus põhiobjektide nimistu leiab arendaja andmekogu põhimäärusest. Arusaadavalt on arendajal vaja koostada endale konkreetne nimistu põhimääruses kirjeldatavare põhiobjektide sõnadest või fraasidest, et vältida sama põhiobjekti kirjeldamist mitme erineva tagiga.
+- infosüsteemi funktsioonid/eesmärgid lisatakse kommentaari tagidena, mille alguses on sümbol $.
+- semantika valdkonnasõnastike / hierarhia mõttes lisatakse kommentaari tagidena, mille alguses on # trellid, näiteks #isik, #isikukood, #asutus, kusjuures:
+- Selleks, et näidata, millise sõnastiku sõnaga on tegemist, tuleb panna # ja sõna vahele prefiksina sõnastiku nimi ja koolon, näiteks #meieasutus:isik, #meieasutus:salajasus kus meieasutus on konkreetse sõnastiku nimi.
+- Sõnastike loomine, otsimine ja haldamine ei ole käesoleva juhendi skoobis: selleks luuakse eraldi juhend.
+- Kasutusel on ka üks nö universaalsõnastik schema.org: selle sõnade kasutamisel kasutatakse prefiksit so, näiteks #so:person, #so:thing
+- Prefiksit ei ole vaja, kui andmetabelile on määratud selle tabeli standardsõnastik: selleks tuleb panna tabeli kommentaari tag #vocabulary:sõnastikunimi
+- klassifikaatorid näitavad ära, mis on välja võimalikud (kodeeritud) väärtused ja kuidas neist aru saada: tegemist siis võimalike väärtuste/seletuste paaride loeteluga.
+- Klassifikaatori lisamiseks tuleb klassifikaatori nime ette panna @ at märk, näiteks @sugu, @organisatsiooni_tyyp mis tähistavad konkreetseid võimalikke liste nagu 
+
+- Selleks, et näidata, millise klassifikaatorite-komplektiga on tegemist, tuleb panna @ ja sõna vahele prefiksina klassifikaatori-komplekti nimi ja koolon, näiteks @klassif_12:sugu kus kus klassif_12 on konkreetse klassifikaatori-komplekti nimi.
+- Klassifikaatorite loomine, otsimine ja haldamine ei ole käesoleva juhendi skoobis: selleks luuakse eraldi juhend.
+- Prefiksit ei ole vaja, kui andmetabelile on määratud selle tabeli standardklassifikaatori-komplekt: selleks tuleb panna tabeli kommentaari tag @classifiers:klassifikaatorikomplekti-nimi
+
 Järgnevas näitena üks kommenteeritud väljadega tabel, kus kommentaarid sisaldavadki eelnevalt kirjeldatud tage:
 
 ```sql
@@ -1840,6 +1851,7 @@ Järgnevas näites on toodud alternatiiv andmekogu kõigi andmebaaside ja tabeli
 Kui kasutatakse dokument-andmebaase või sisemisi JSON-struktuure, võib selle kirjelduse struktuur olla ka sügavam.
 
 RIHA jaoks masinloetav struktuur ei pea seejuures koosnema ühest universaalsest failist, mis kirjeldab kõiki andmebaase, vaid neid võib esitada ka eraldi veebilehtedes iga andmebaasi ja iga tabeli jaoks, vt allpool näites
+
 ```
 http://meieasutus.ee/datadesc/describe?products"
 …
@@ -1910,13 +1922,18 @@ Alternatiivina saab kommentaari ja tagid lisada JSON struktuuris.
         "users": ["70008747"]
 }]
 ```
+
 "inputs" ja "outputs" loendid võivad olla esitamata, kui sisendite/väljundite tage sisaldavad kommentaarid on olemas WSDL failis väljadel xtee:notes.
-Valdkonnasõnastike kirjeldamine JSON-struktuuriga
+
+## Valdkonnasõnastike kirjeldamine JSON-struktuuriga
+
 Sõnastiku kirjeldus sisaldab
-•	Standardsel kujul üldinfot
-•	Loetelu objektidest, mis sisaldavad mis sisaldavad kas kas otse sõnastiku esitust rdfs kujul või objekte, mis sisaldavad nende URL-e.
+- Standardsel kujul üldinfot
+- Loetelu objektidest, mis sisaldavad mis sisaldavad kas kas otse sõnastiku esitust rdfs kujul või objekte, mis sisaldavad nende URL-e.
+
 RIHA edasises arendamises soovitame tungivalt töötada välja sõnastike uus struktureeritud esitus, mis oleks lihtsam, selgem ja kergemini hallatav, kui praegune.
 
+```
 /* object(vocabulary): Valdkonna sõnastikud */
 "vocabulary": {
     /* Andmetüüp: string, Piirangud: not null, Kirjeldus: Sõnastiku unikaalne URI */
@@ -1950,12 +1967,17 @@ RIHA edasises arendamises soovitame tungivalt töötada välja sõnastike uus st
     /* Andmetüüp: string, Piirangud: -, Kirjeldus: Valdkond, mille alla antud sõnastik kuulub */
     "area_name": "Äriregister"
 }
-Klassifikaatorite kirjeldamine JSON-struktuuriga
+```
+
+## Klassifikaatorite kirjeldamine JSON-struktuuriga
+
 Klassifikaatori kirjeldus sisaldab
-•	Standardsel kujul üldinfot
-•	Loetelu objektidest, mis sisaldavad mis sisaldavad nende URL-e.
+- Standardsel kujul üldinfot
+- Loetelu objektidest, mis sisaldavad mis sisaldavad nende URL-e.
+
 RIHA edasises arendamises soovitame tungivalt töötada välja klassifikaatorite unifitseeritud struktureeritud esitus, kust on võimalik konkreetsed väärtused ja kommentaarid eraldi välja eristada.
 
+```
 /* object(classifier): Infosüsteemi ja/või andmeobjekti puhul kasutatav klassifikaator */
 "classifier": {
     /* Andmetüüp: string, Piirangud: not null, Kirjeldus: Klassifikaatori unikaalne URI */
@@ -2008,12 +2030,15 @@ RIHA edasises arendamises soovitame tungivalt töötada välja klassifikaatorite
     /* Andmetüüp: string, Piirangud: -, Kirjeldus: Objekti viitenumber RIHAs */
     "reference_number": "KL000511"
 }
-XML varade kirjeldamine JSON-struktuuriga
+```
+
+## XML varade kirjeldamine JSON-struktuuriga
 XML vara kirjeldus sisaldab
-•	Standardsel kujul üldinfot
-•	Loetelu objektidest, mis sisaldavad kas otse konkreetseid XML-tekste või objekte, mis sisaldavad nende URL-e.
+- Standardsel kujul üldinfot
+- Loetelu objektidest, mis sisaldavad kas otse konkreetseid XML-tekste või objekte, mis sisaldavad nende URL-e.
 XML varade edasine kirjeldamine on küsitava väärtusega, soovitame teostada selle vajaduse analüüs.
 
+```
 /* object(xmlasset): XML varad */
 "xmlasset": {
     /* Andmetüüp: string, Piirangud: not null, Kirjeldus: XML vara unikaalne URI */
@@ -2053,7 +2078,9 @@ XML varade edasine kirjeldamine on küsitava väärtusega, soovitame teostada se
     /* Andmetüüp: string, Piirangud: -, Kirjeldus: Objekti viitenumber RIHAs */
     "reference_number": "XV000240"
 }
-Veateated
+```
+
+## Veateated
 Veateateid andmevahetuses ei liigu. Küll aga on võimalik RIHA rakenduse kasutajaliidesest saada informatsiooni kirjelduslehtede lugemise ja töötlemise tulemuse staatusest: millal viimati teostati, kas õnnestus või mis veateated salvestati. Samuti on võimalik testida kirjeldusi vastu RIHA test-veebilehte, mis annab võimalikud veateated kohe tagasi.
 
 ## Muutelugu
