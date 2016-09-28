@@ -2,22 +2,25 @@
 
 Versioon 2.0, 29.04.2016
 
-Tellija: Riigi Infosüsteemi Amet
+Tellija: Riigi Infosüsteemi Amet; Täitja: Girf OÜ, Degeetia OÜ, Mindstone OÜ
 
-Täitja: Girf OÜ, Degeetia OÜ, Mindstone OÜ
- 
-## Muutelugu
-| Versioon, kuupäev	| Muudatus | 
-|-------------------|----------|
-| 0.9, 26.09.2016   | Täitja üleantud dokument viidud Markdowni, omistatud versiooninumber 0.9 |
-|-------------------|----------|
+## Sisukord
+- [Muutelugu](#muutelugu)
+- [Ülevaade](#ulevaade)
+- [Seotud dokumendid](#seotud dokumendid)
+- [Mõisted](#moisted)
+- [Andmete automaatesitamine RIHA jaoks](#andmete-automaatesitamine-riha-jaoks)
+- [Andmete tehnilise esituse saamine RIHA-st](#andmete-tehnilise-esituse-saamine-riha-st)
+- [Põhi-JSON-veebileht](#pohi-json-veebileht)
+- [Objektide identifitseerimine URI-de abil](#objektide-identifitseerimine-uri-de-abil)
+- [Seotud dokumendid: inimloetavad failid](#seotud-dokumendid-inimloetavad-failid)
+- [Andmevormingu spetsifikatsioonid](#andmevormingu spetsifikatsioonid)
 
 ## Ülevaade
 Selles dokumendis kirjeldame, kuidas esitada RIHA-sse automaatselt loetaval ja masintöödeldaval kujul informatsiooni infosüsteemide, teenuste jms kohta ning kuidas RIHA sama informatsiooni välja annab.
 
 Dokument selgitab info esitamise struktuuri ja põhimõtteid ning toob seejärel spetsifikatsioonina konkreetsed, detailsete kommentaaridega varustatud näited.
 
-## Sihtgrupp
 Dokument on mõeldud eelkõige välistele osapooltele, kes RIHAsse andmeid sisestavad ja sealt loevad, eeskätt aga nende osapoolte IT-arendajatele.
 
 Samuti on dokumenti mõeldud RIA arhitektidele, RIHA töögrupi liikmetele ja uue RIHA arendajatele.
@@ -43,7 +46,7 @@ Dokumendi teise poole mõistmiseks on vaja omada arusaamist SQL süntaksist ja J
 •	URI: vaata https://en.wikipedia.org/wiki/SQL
 •	URN: vaata https://en.wikipedia.org/wiki/URN
 
-## Andmete automaat-esitamine RIHA jaoks
+## Andmete automaatesitamine RIHA jaoks
 RIHA-sse saab hetkel esitada nelja sorti infot, millest olulisem on esimene:
 •	Infosüsteem koos tema andmebaaside ja teenuste detailkirjeldusega,
 •	Valdkonnad
@@ -2052,3 +2055,8 @@ XML varade edasine kirjeldamine on küsitava väärtusega, soovitame teostada se
 }
 Veateated
 Veateateid andmevahetuses ei liigu. Küll aga on võimalik RIHA rakenduse kasutajaliidesest saada informatsiooni kirjelduslehtede lugemise ja töötlemise tulemuse staatusest: millal viimati teostati, kas õnnestus või mis veateated salvestati. Samuti on võimalik testida kirjeldusi vastu RIHA test-veebilehte, mis annab võimalikud veateated kohe tagasi.
+
+## Muutelugu
+| Versioon, kuupäev	| Muudatus | 
+|-------------------|----------|
+| 0.9, 26.09.2016   | Täitja üleantud dokument viidud Markdowni, omistatud versiooninumber 0.9 |
