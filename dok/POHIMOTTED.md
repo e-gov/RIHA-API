@@ -2,63 +2,54 @@
 
 versioon 0.9
 
-Tellija: Riigi Infosüsteemi Amet
-
-Täitja: OÜ Girf, OÜ Degeetia, OÜ Mindstone
+Tellija: Riigi Infosüsteemi Amet; Täitja: OÜ Girf, OÜ Degeetia, OÜ Mindstone
  
 ##Sisukord
-- Ülevaade	1
-- Sihtgrupp	2
-- Seotud dokumendid	2
-- Mõisted	3
-- Andmekogu/andmete tehniline automaatkirjeldamine välise osapoole poolt	3
-- Tähenduste kodeerimine andmebaasi ja teenuste kommentaarides	4
-- Andmekogu/andmete esitamine välisele osapoolele	5
-- RIHA sisemine andmevahetus põhiobjektide osas: eksport ja import.	5
-- Jooksev andmevahetus RIHA moodulite vahel	5
-
-## Muutelugu
-| Versioon, kuupäev	| Muudatus | 
-|-------------------|----------|
-| 0.9, 26.09.2016   | Täitja üleantud dokument viidud Markdowni, omistatud versiooninumber 0.9 |
-|-------------------|----------|
+- [Ülevaade](#Ülevaade)
+- [Sihtgrupp](#sihtgrupp)
+- [Seotud dokumendid](#seotud-dokumendid)
+- [Mõisted](#mõisted)
+- [Andmekogu/andmete tehniline automaatkirjeldamine välise osapoole poolt](#andmekoguandmete-tehniline-automaatkirjeldamine-välise-osapoole-poolt)
+- [Tähenduste kodeerimine andmebaasi ja teenuste kommentaarides](#tähenduste-kodeerimine-andmebaasi-ja-teenuste-kommentaarides)
+- [Andmekogu/andmete esitamine välisele osapoolele](#andmekoguandmete-esitamine-välisele-osapoolele)
+- [RIHA sisemine andmevahetus põhiobjektide osas: eksport ja import](#riha-sisemine-andmevahetus-põhiobjektide-osas-eksport-ja-import)
+- [Jooksev andmevahetus RIHA moodulite vahel](#jooksev-andmevahetus-riha-moodulite-vahel)
+- [Muutelugu](#muutelugu)
 
 ##Ülevaade
 RIHA andmete masinloetava vormingu abil kirjeldatakse nii RIHAsse masintöödeldaval kujul esitatav info kui RIHA enda poolt välistele süsteemidele esitatav info kui ka RIHA enda sisemine andmevahetus. Info esitamisel on seejuures neli peamist eesmärki, millel kõigil on oma spetsiifika ja erisused:
-•	Andmekogu/klassifikaatori/sõnastiku vms põhiobjekti kirjeldamine RIHA jaoks nii, et RIHA veebilehe kaudu ei ole vaja midagi sisestada, vaid RIHA loeb kirjeldust regulaarselt ise andmekogu jaoks etteantud veebilehelt (import).
-•	Andmekogu/klassifikaatori/sõnastiku vms põhiobjekti jaoks RIHAs olemasoleva informatsiooni eksport, eeskätt võimaldamaks kergemini esitada infot RIHA impordi jaoks sobival kujul.
-•	RIHA sisemine andmevahetus põhiobjektide osas: eksport ja import.
-•	Jooksev andmevahetus RIHA moodulite vahel, eeskätt kasutajaliidese ja andmehoidla vahel: RIHA API.
+- Andmekogu/klassifikaatori/sõnastiku vms põhiobjekti kirjeldamine RIHA jaoks nii, et RIHA veebilehe kaudu ei ole vaja midagi sisestada, vaid RIHA loeb kirjeldust regulaarselt ise andmekogu jaoks etteantud veebilehelt (import).
+- Andmekogu/klassifikaatori/sõnastiku vms põhiobjekti jaoks RIHAs olemasoleva informatsiooni eksport, eeskätt võimaldamaks kergemini esitada infot RIHA impordi jaoks sobival kujul.
+- RIHA sisemine andmevahetus põhiobjektide osas: eksport ja import.
+- Jooksev andmevahetus RIHA moodulite vahel, eeskätt kasutajaliidese ja andmehoidla vahel: RIHA API.
 
 Kuivõrd põhiobjekte kirjeldavate väljade hulk RIHA arenduse ja edasise kasutuse käigus regulaarselt muutub, siis ei fikseeri me siin põhimõtte-dokumendis kogu konkreetset väljahulka – seda tehakse lisatud näidetes ja regulaarselt uuendatavates eraldi dokumentides – vaid andmete esituse põhimõtteid.
 
-## Sihtgrupp
-
 Dokument on mõeldud RIA arhitektidele, RIHA töögrupi liikmetele ja uue RIHA arendajatele. Dokument ei ole mõeldud välistele osapooltele.
 
-Dokument võib harvadel juhtudel olla abiks andmekogu haldajale, kuid neile on käesoleva dokumendi asemel ette nähtud eraldi detaildokument “RIHA andmete masinloetavate vormingute spetsifikatsioon.docx” RIHA arendajatele on oluline veel täiendav dokument „RIHA API spetsifikatsioon.docx”
+Dokument võib harvadel juhtudel olla abiks andmekogu haldajale, kuid neile on käesoleva dokumendi asemel ette nähtud eraldi detaildokument [RIHA andmete masinloetavate vormingute spetsifikatsioon](#SPETSIFIKATSIOON.md). RIHA arendajatele on oluline veel täiendav dokument „RIHA API spetsifikatsioon.docx”
 
 ## Seotud dokumendid
 
 Vajalik käesoleva dokumendi mõistmiseks:
-•	„RIHA andmebaasi kontseptuaalne mudel.docx“ selgitab andmebaasi struktuuri põhimõtteid koos näidetega.
+- „RIHA andmebaasi kontseptuaalne mudel.docx“ selgitab andmebaasi struktuuri põhimõtteid koos näidetega.
 
 Masinloetavate andmete kirjeldamise ja komponentide vahelise andmevahetuse API konkreetsed spetsifikatsioonid kirjeldavad kahte erinevat aspekti ja RIHA andmevahetuses ning on mõeldud erinevatele sihtgruppidele:
-•	“RIHA andmete masinloetavate vormingute spetsifikatsioon.docx” kirjeldab eeskätt andmevahetust väliste süsteemidega.
-•	“RIHA API spetsifikatsioon.docx” kirjeldab eeskätt andmevahetust RIHA komponentide vahel.
-•	“riha_andmedetailid.xlsx” on detailne JSON-struktuuri tasemel põhitabelite kirjeldus eeskätt RIHA arendajatele.
-•	"riha_vorming_spetsifikatsioon.js" on eelmises punktis toodud exceli faili baasilt koostatud JSON-struktuuri täismahulise ülesehitusega näide, kus on kommentaaridena iga välja juures kirjas andmetüüp, nimetus, väärtuse piirangud jms.
-•	"riha_vorming_json-schema.js" on failile "riha_andmedetailid.xlsx" vastav täpne JSON-struktuuri spetsifikatsioon esitatuna JSON-SCHEMA standardi kohaselt (vt http://json-schema.org/)
+- “RIHA andmete masinloetavate vormingute spetsifikatsioon.docx” kirjeldab eeskätt andmevahetust väliste süsteemidega.
+- “RIHA API spetsifikatsioon.docx” kirjeldab eeskätt andmevahetust RIHA komponentide vahel.
+- “riha_andmedetailid.xlsx” on detailne JSON-struktuuri tasemel põhitabelite kirjeldus eeskätt RIHA arendajatele.
+- "riha_vorming_spetsifikatsioon.js" on eelmises punktis toodud exceli faili baasilt koostatud JSON-struktuuri täismahulise ülesehitusega näide, kus on kommentaaridena iga välja juures kirjas andmetüüp, nimetus, väärtuse piirangud jms.
+- "riha_vorming_json-schema.js" on failile "riha_andmedetailid.xlsx" vastav täpne JSON-struktuuri spetsifikatsioon esitatuna JSON-SCHEMA standardi kohaselt (vt http://json-schema.org/)
 
 Tehnilised lisad masinloetavate andmete kirjeldamise konkreetsele spetsifikatsioonile: 
-•	infosystem.js – infosüsteemi kirjelduse näide
-•	area.js - valdkonna kirjelduse näide
-•	vocabulary.js - valdkonna sõnastiku kirjelduse näide
-•	classifier.js - klassifikaatori sõnastiku kirjelduse näide
-•	xmlasset.js - XML vara kirjelduse näide
+- infosystem.js – infosüsteemi kirjelduse näide
+- area.js - valdkonna kirjelduse näide
+- vocabulary.js - valdkonna sõnastiku kirjelduse näide
+- classifier.js - klassifikaatori sõnastiku kirjelduse näide
+- xmlasset.js - XML vara kirjelduse näide
 
 Dokumendi mõistmiseks on vaja omada arusaamist SQL süntaksist ja JSON formaadist: konkreetseid dokumente nende standardtehnoloogiate jaoks siinkohal ei esitata.
-•	Kasutatav JSON standard: JSON Data Interchange Format (ECMA-404, http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). 
+- Kasutatav JSON standard: JSON Data Interchange Format (ECMA-404, http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). 
 
 ## Mõisted
 - RIHA: vaata https://riha.eesti.ee/
@@ -68,19 +59,22 @@ Dokumendi mõistmiseks on vaja omada arusaamist SQL süntaksist ja JSON formaadi
 
 ## Andmekogu/andmete tehniline automaatkirjeldamine välise osapoole poolt
 RIHA põhiandmestikuks on :
-•	infosüsteem koos tema andmebaaside ja teenuste detailkirjeldusega,
-•	Valdkonnad
-•	Valdkonnasõnastikud,
-•	Klassifikaatorid,
-•	XML varad.
+- infosüsteem koos tema andmebaaside ja teenuste detailkirjeldusega,
+- Valdkonnad
+- Valdkonnasõnastikud,
+- Klassifikaatorid,
+- XML varad.
 
 Üldjuhul on tegemist hierarhiliste struktuuridega, mis seovad andmeid mitmetest erinevatest tabelitest. Automaatkirjeldamise juures integreeritakse need erinevatesse tabelitesse jaotuvad andmed üheks hierarhiliseks JSON-failiks, mida võib omakorda jagada erinevateks URL-ga viidatud veebilehtedeks.
 
 Igaühe jaoks neist neljast luuakse asutuse poolt eraldi JSON-veebileht. Kui asutuse poolt mõnda neist tüüpidest (näiteks valdkonnasõnastikke või XML varasid) ei hallata, siis vastavat JSON-lehte ka ei looda.
+
 RIHA andmed esitatakse üldjuhul JSON objektidena, kuid täiendavalt kasutatakse ka muid formaate:
-•	SQL soovitava alternatiivina JSON-ile tabelite struktuuri esitamisel,
-•	WSDL SOAP-teenuste struktuuri esitamisel.
+- SQL soovitava alternatiivina JSON-ile tabelite struktuuri esitamisel,
+- WSDL SOAP-teenuste struktuuri esitamisel.
+
 Seejuures kasutatakse nimelt nö harilikku JSON-i, mitte JSON-i põhiseid eriformaate nagu JSON-LD (vaata https://en.wikipedia.org/wiki/JSON-LD ja https://www.w3.org/TR/json-ld/ ja http://json-ld.org/ ).
+
 JSON-LD lisab „harilikule“ JSON-ile mõned eritähendusega võtmed nagu näiteks @context, @id ja @type, mis hõlbustab JSON-formaadis esitatud andmete konverteerimist RDF kujule. Näide Wikipediast:
 
 ```json
@@ -110,7 +104,7 @@ Negatiivse poole pealt lisaks JSON-LD nõue RIHA formaadi kasutajatele täiendav
 
 ## Tähenduste kodeerimine andmebaasi ja teenuste kommentaarides
 
-Tähenduste kodeerimise spetsifikatsioon ja näited on detailselt esitatud dokumendis “RIHA andmete masinloetavate vormingute spetsifikatsioon.docx”.
+Tähenduste kodeerimise spetsifikatsioon ja näited on detailselt esitatud dokumendis [RIHA andmete masinloetavate vormingute spetsifikatsioon](#SPETSIFIKATSIOON.md).
 
 Põhimõttena kodeeritakse nii  funktsioonid/eesmärgid, andmekoosseisu andmeobjektid, klassifikaatorid kui terminid sõnastikus tagidena andmetabeli, andmevälja või teenuse sisendi/väljundi vabatekstilistes kommentaarides vastavalt $, !, # või @-prefiksiga tekstina, näiteks “klientide tabel, sisaldab #isik !klient kasutab  classifiers:standardklassif”. 
 
@@ -149,3 +143,8 @@ API funktsioneerib REST põhimõtete alusel, kasutades andmeformaadiks JSON-it, 
 API kaudu esitatav andmete esitus kasutab samuti JSON-i ning neidsamu väljanimesid, mis on kasutuses eelkirjeldatud avalikes andmekirjeldustes ja on samased andmebaasis kasutatavate väljanimedega.
 
 API on kirjeldatud eraldi dokumendis „RIHA API spetsifikatsioon.docx“
+
+## Muutelugu
+| Versioon, kuupäev	| Muudatus | 
+|-------------------|----------|
+| 0.9, 26.09.2016   | Täitja üleantud dokument viidud Markdowni, omistatud versiooninumber 0.9 |
