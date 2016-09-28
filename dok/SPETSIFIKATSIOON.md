@@ -6,7 +6,7 @@ Tellija: Riigi Infosüsteemi Amet; Täitja: Girf OÜ, Degeetia OÜ, Mindstone O�
 
 ## Sisukord
 - [Ülevaade](SPETSIFIKATSIOON.md#ulevaade)
-- [Seotud dokumendid](SPETSIFIKATSIOON.md#seotud dokumendid)
+- [Seotud dokumendid](#seotud-dokumendid)
 - [Mõisted](SPETSIFIKATSIOON.md#moisted)
 - [Andmete automaatesitamine RIHA jaoks](SPETSIFIKATSIOON.md#andmete-automaatesitamine-riha-jaoks)
 - [Andmete tehnilise esituse saamine RIHA-st](SPETSIFIKATSIOON.md#andmete-tehnilise-esituse-saamine-riha-st)
