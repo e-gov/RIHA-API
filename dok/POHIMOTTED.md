@@ -27,7 +27,7 @@ Kuivõrd põhiobjekte kirjeldavate väljade hulk RIHA arenduse ja edasise kasutu
 
 Dokument on mõeldud RIA arhitektidele, RIHA töögrupi liikmetele ja uue RIHA arendajatele. Dokument ei ole mõeldud välistele osapooltele.
 
-Dokument võib harvadel juhtudel olla abiks andmekogu haldajale, kuid neile on käesoleva dokumendi asemel ette nähtud eraldi detaildokument [RIHA andmete masinloetavate vormingute spetsifikatsioon](#SPETSIFIKATSIOON.md). RIHA arendajatele on oluline veel täiendav dokument „RIHA API spetsifikatsioon.docx”
+Dokument võib harvadel juhtudel olla abiks andmekogu haldajale, kuid neile on käesoleva dokumendi asemel ette nähtud eraldi detaildokument [RIHA andmete masinloetavate vormingute spetsifikatsioon](SPETSIFIKATSIOON.md). RIHA arendajatele on oluline veel täiendav dokument „RIHA API spetsifikatsioon.docx”
 
 ## Seotud dokumendid
 
