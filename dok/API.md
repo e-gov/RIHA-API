@@ -85,28 +85,26 @@ Teel on reeglina kõigepealt `db`, siis baasitabeli nimi ja seejärel tabelis ol
 
 * Ligipääsutoken (kui on vajalik) esitatakse HTTP päises väljal `X-Auth-Token` näiteks nii:
 
-```
-X-Auth-Token: a8426a0-8eaf-4d22-8e13-7c1b16a9370c
-```
+    `X-Auth-Token: a8426a0-8eaf-4d22-8e13-7c1b16a9370c`
 
 ###Ühetaoline variant
 
-Kõik eelnimetatud parameetrid kodeeritakse kas cgi nimi=väärtus paaridena või JSONi objektis kujul `{"nimi": "väärtus", …}`, kasutades nimesid _op_, _path_, _token_ ning neid saadetakse API baas-urlile, milleks on näiteks `HTTP://localhost/api`.
+Kõik eelnimetatud parameetrid kodeeritakse kas CGI nimi=väärtus paaridena või JSONi objektis kujul `{"nimi": "väärtus", …}`, kasutades nimesid _op_, _path_, _token_ ning neid saadetakse API baas-urlile, milleks on näiteks `HTTP://localhost/api`.
 
-* _op_ väärtus võib olla `get`, `post`, `put`, `delete` või hoopis mõni erioperatsiooni-nimi (ei ole piiratud), näiteks op=get või {"op": "get", …}
+* _op_ väärtus võib olla `GET`, `POST`, `PUT`, `DELETE` või hoopis mõni erioperatsiooni-nimi (ei ole piiratud), näiteks `op=get` või `{"op": "get", …}`
 * _path_ on tabeli/objekti identifikaator, kasutades selleks variant 1 urli vastavat osa, näiteks
 
-`path=/db/mytablename/12` või `{"path":"/db/mytablename/12", …}`
+    `path=/db/mytablename/12` või `{"path":"/db/mytablename/12", …}`
 
 * _token_ ligipääsuks (kui on vajalik) antakse kaasa kui `token=aba...` või `{"token": "abab", …}`.
 
 Näide:
 
-`HTTP://localhost/api?op=get&amp;path=db/mytable/123&amp;token=abca`
+    `HTTP://localhost/api?op=get&amp;path=db/mytable/123&amp;token=abca`
 
-ehk samaväärselt
+ehk samaväärselt `HTTP://localhost/api` urlile HTTP POST meetodiga saadetud
 
-`HTTP://localhost/api` urlile HTTP POST meetodiga saadetud `{"op":"get","path":"db/mytable/123","token":"abca"}`.
+    `{"op":"get","path":"db/mytable/123","token":"abca"}`.
 
 Kui päringus on korraga nii klassikalisel moel esitatud parameetreid kui ka ühetaolisel moel esitatud parameetreid, siis kehtivad ühetaolisel moel esitatud.
 
@@ -116,15 +114,15 @@ Päringute puhul, mille ülesanne klassikalise REST põhimõtte järgi ei ole se
 
 `HTTP://localhost/api` urlile HTTP POST meetodiga saadetud
 
-`{ "op":"addnums", "token":"abca", "param1":12.3, "param2": [2, 5] }`
+    `{ "op":"addnums", "token":"abca", "param1":12.3, "param2": [2, 5] }`
 
 võib anda vastuse
 
-`{ "result": 19.3 }`
+    `{ "result": 19.3 }`
 
 või isegi lihtsalt
 
-`19.3`
+    `19.3`
 
 Seejuures tuleb arvestada, et parameetrinimed `token` ja `callback` on reserveeritud nende standardkasutuseks ning nende sisuline tähendus peab olema sama, mis harilikel ülalkirjeldatud REST päringutel.
 
@@ -138,17 +136,17 @@ või
 
 `{ "callback":"minufunktsioon", … }`
 
-mispeale pannakse tulemus-JSON (sh veateted) vastuses parameetriks funktsioonile minufunktsioon
+mispeale pannakse tulemus-JSON (sh veateated) vastuses parameetriks funktsioonile `minufunktsioon`.
 
 Näide:
 
-`HTTP://localhost/api/db/mytable/123?callback=foo`
+    `HTTP://localhost/api/db/mytable/123?callback=foo`
 
 annab vastuse kujul
 
-`foo({ "value": 58.3788, "name": "lat"});`
+    `foo({ "value": 58.3788, "name": "lat"});`
 
-Callback on vajalik selleks, et kasutaja brauser saaks teha Ajax päringuid domeenile, mis ei ole samas domeenis, kui veebileht. Eriti oluline on see arenduse ajal, kuid võib osutuda oluliseks ka lõppkasutuses.
+Callback on vajalik selleks, et kasutaja brauser saaks teha Ajax päringuid domeenile, mis ei ole samas domeenis kui veebileht. Eriti oluline on see arenduse ajal, kuid võib osutuda oluliseks ka lõppkasutuses.
 
 ##Edastatavad sõnumid
 
@@ -156,21 +154,21 @@ Callback on vajalik selleks, et kasutaja brauser saaks teha Ajax päringuid dome
 
 Ühe konkreetse kirje klassikalise päringu `HTTP://localhost/api/db/mytable/123`  vastus on JSON objekt kujul
 
-`{ "value": 58.3788, "name": "lat"}`
+    `{ "value": 58.3788, "name": "lat"}`
 
 Mitme kirje päringu `HTTPs://localhost/api/db/mytable` või otsingupäringu `HTTPs://localhost/api/db/mytable]?filter=...`
 
 vastus on JSON array kirjetest kujul
 
-`[{ "value": 58.3788, "name": "lat" }, { "value": 24.56, "name": "lng" }]`
+    `[{ "value": 58.3788, "name": "lat" }, { "value": 24.56, "name": "lng" }]`
 
 Kui vastuses olev väli on omakorda JSON-objekt või JSON-array, siis esitatakse ta JSON kujul, mitte aga stringina, näiteks:
 
-`{ "value": 58.3788, "name": "lat", "address": {"city": "Tallinn", "street": "Gonsiori"} }`
+    `{ "value": 58.3788, "name": "lat", "address": {"city": "Tallinn", "street": "Gonsiori"} }`
 
 Kirjete lisamise päringuvastus on array edukalt lisatud kirjete (uutest) identifikaatoritest, näiteks
 
-`1000`
+    `1000`
 
 või
 
