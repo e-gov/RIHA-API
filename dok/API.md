@@ -100,11 +100,11 @@ Kõik eelnimetatud parameetrid kodeeritakse kas CGI nimi=väärtus paaridena võ
 
 Näide:
 
-    `HTTP://localhost/api?op=get&amp;path=db/mytable/123&amp;token=abca`
+`HTTP://localhost/api?op=get&path=db/mytable/123&token=abca`
 
 ehk samaväärselt `HTTP://localhost/api` urlile HTTP POST meetodiga saadetud
 
-    `{"op":"get","path":"db/mytable/123","token":"abca"}`.
+`{"op":"get","path":"db/mytable/123","token":"abca"}`.
 
 Kui päringus on korraga nii klassikalisel moel esitatud parameetreid kui ka ühetaolisel moel esitatud parameetreid, siis kehtivad ühetaolisel moel esitatud.
 
@@ -118,11 +118,11 @@ Päringute puhul, mille ülesanne klassikalise REST põhimõtte järgi ei ole se
 
 võib anda vastuse
 
-    `{ "result": 19.3 }`
+`{ "result": 19.3 }`
 
 või isegi lihtsalt
 
-    `19.3`
+`19.3`
 
 Seejuures tuleb arvestada, et parameetrinimed `token` ja `callback` on reserveeritud nende standardkasutuseks ning nende sisuline tähendus peab olema sama, mis harilikel ülalkirjeldatud REST päringutel.
 
@@ -140,11 +140,11 @@ mispeale pannakse tulemus-JSON (sh veateated) vastuses parameetriks funktsioonil
 
 Näide:
 
-    `HTTP://localhost/api/db/mytable/123?callback=foo`
+`HTTP://localhost/api/db/mytable/123?callback=foo`
 
 annab vastuse kujul
 
-    `foo({ "value": 58.3788, "name": "lat"});`
+`foo({ "value": 58.3788, "name": "lat"});`
 
 Callback on vajalik selleks, et kasutaja brauser saaks teha Ajax päringuid domeenile, mis ei ole samas domeenis kui veebileht. Eriti oluline on see arenduse ajal, kuid võib osutuda oluliseks ka lõppkasutuses.
 
@@ -154,21 +154,21 @@ Callback on vajalik selleks, et kasutaja brauser saaks teha Ajax päringuid dome
 
 Ühe konkreetse kirje klassikalise päringu `HTTP://localhost/api/db/mytable/123`  vastus on JSON objekt kujul
 
-    `{ "value": 58.3788, "name": "lat"}`
+`{ "value": 58.3788, "name": "lat"}`
 
 Mitme kirje päringu `HTTPs://localhost/api/db/mytable` või otsingupäringu `HTTPs://localhost/api/db/mytable]?filter=...`
 
 vastus on JSON array kirjetest kujul
 
-    `[{ "value": 58.3788, "name": "lat" }, { "value": 24.56, "name": "lng" }]`
+`[{ "value": 58.3788, "name": "lat" }, { "value": 24.56, "name": "lng" }]`
 
 Kui vastuses olev väli on omakorda JSON-objekt või JSON-array, siis esitatakse ta JSON kujul, mitte aga stringina, näiteks:
 
-    `{ "value": 58.3788, "name": "lat", "address": {"city": "Tallinn", "street": "Gonsiori"} }`
+`{ "value": 58.3788, "name": "lat", "address": {"city": "Tallinn", "street": "Gonsiori"} }`
 
 Kirjete lisamise päringuvastus on array edukalt lisatud kirjete (uutest) identifikaatoritest, näiteks
 
-    `1000`
+`1000`
 
 või
 
@@ -178,7 +178,7 @@ Kirjete muutmise ja kustutamise päringuvastus on üldjuhul edukalt muudetud/kus
 
 `{"ok": N}`
 
-kus N on täisarv, mis võib olla ka 0.
+kus `N` on täisarv, mis võib olla ka 0.
 
 Kui mingil eripäringul on keeruline või ebasoovitav anda konkreetset vastuste arvu, on edukas vastus üldjuhul selline:
 
@@ -194,11 +194,11 @@ ja edutu (aga mitte veaga seotud) vastus selline:
 
 HTTP GET päringud ei tohi kunagi andmeid lisada ega muuta.
 
-Päringuid võib kodeerida nii CGI formaadis `nimi1=väärtus&amp;nimi2=väärtus…` paaridena (väärtused sel juhul urlencoded) kui JSON formaadis objektidena `{"nimi1":"väärtus", "nimi2":"väärtus", ...}`
+Päringuid võib kodeerida nii CGI formaadis `nimi1=väärtus&nimi2=väärtus…` paaridena (väärtused sel juhul urlencoded) kui JSON formaadis objektidena `{"nimi1":"väärtus", "nimi2":"väärtus", ...}`
 
 Päringul võivad olla lisaks käsule, objekti identifikaatorile ja tokenile ka muud parameetreid, näiteks väljastatavate kirjete maksimaalne arv, sorteering, filtrid, callback jms.
 
-h3. Eripäringud
+###Eripäringud
 
 Lisaks CRUD päringutele on oluline kategooria eripäringud, mis ei kujuta otseselt mingite baasiandmete pärimist, muutmist või lisamist, või teostavad hulga selliseid operatsioone korraga. Eripäringud võivad teha arvutusi, statistikat, käivitada käske või protsesse vms.
 
@@ -214,9 +214,9 @@ Eripäringute vastus peab jälgima siin dokumendis toodud veateadete põhimõtte
 
 ###Eripäringute loend
 
-*COUNT* – päring kirjete arvu lugemiseks. Vastus on kujul `{ "ok": &lt;kirjete arv&gt; }`
+*COUNT* – päring kirjete arvu lugemiseks. Vastus on kujul `{ "ok": <kirjete arv> }`
 
-Näiteks: `HTTP://192.168.50.106:8080/rest/api?op=count&amp;path=db/main_resource&amp;filter=name,=,prepareSignature&amp;token=testToken`
+Näiteks: `HTTP://192.168.50.106:8080/rest/api?op=count&path=db/main_resource&filter=name,=,prepareSignature&token=testToken`
 
 või POST päring `HTTP://192.168.50.106:8080/rest/api`
 
@@ -224,7 +224,7 @@ või POST päring `HTTP://192.168.50.106:8080/rest/api`
 
 *GETNAMES* – päring asutuste ja isikute nimede saamiseks vastavalt etteantud registri- või isikukoodile.
 
-Vastus on kujul `{ "organizations": {&lt;registrikood&gt;: &lt;nimi&gt;, &lt;registrikood2&gt;: &lt;nimi2&gt;},"persons": {&lt;isikukood&gt;: &lt;nimi&gt;}}`
+Vastus on kujul `{ "organizations": {<registrikood>: <nimi>, <registrikood2>: <nimi2>},"persons": {<isikukood>: <nimi>}}`
 
 Näiteks: POST päring `HTTP://192.168.50.106:8080/rest/api`
 
@@ -236,64 +236,60 @@ Näiteks: `HTTP://192.168.50.106:8080/rest/api/resource/180349`
 
 (HTTP päises peab olema `X-Auth-Token` määratud)
 
-*FILE* – päring failide(dokumentide) allalaadimiseks. Parameetrina tuleb ette anda dokumendi identifikaator - `/api/file/{document_id}?token={token}`
+*FILE* – päring failide (dokumentide) allalaadimiseks. Parameetrina tuleb ette anda dokumendi identifikaator - `/api/file/{document_id}?token={token}`
 
 Näiteks: `HTTP://192.168.50.106:8080/rest/api/file/99567?token=testToken`
 
 ###Andmete küsimine
 
-Võib kasutada nii HTTP GET kui POST käsku.
+Võib kasutada nii HTTP GET kui ka POST käsku.
 
-HTTP get käsu puhul kodeeritakse päring cgi formaadis nimi=väärtus paaridena.
+HTTP GET käsu puhul kodeeritakse päring CGI formaadis nimi=väärtus paaridena.
 
 Näited:
 
-[HTTPs://localhost/api/db/mytable/123]
+HTTPs://localhost/api/db/mytable/123
 
 või ühetaoliselt
 
-[HTTP://localhost/api?op=get&amp;path=db/mytable/123&amp;token=abca]
+HTTP://localhost/api?op=get&path=db/mytable/123&token=abca
 
-HTTP post käsu puhul eeldatakse parameetrite kodeeringut JSON formaadis kujul {"op":"get", "path":"….", …} juhul, kui päringu Content-type header sisaldab stringi "JSON". Vastasel korral eeldatakse parameetreid cgi formaadis nimi=väärtus paaridena. Näide eelmisega samaväärsest HTTP post käsust andmete küsimiseks:
+HTTP post käsu puhul eeldatakse parameetrite kodeeringut JSON formaadis kujul {"op":"get", "path":"….", …} juhul, kui päringu `Content-type` header sisaldab stringi `JSON`. Vastasel korral eeldatakse parameetreid CGI formaadis nimi=väärtus paaridena. Näide eelmisega samaväärsest HTTP POST käsust andmete küsimiseks:
 
-[HTTP://localhost/api]urlile HTTP postiga saadetud
+HTTP://localhost/api urlile HTTP postiga saadetud
 
-{"op":"get","path":"/db/mytable/123","token":"abca"}
+`{"op":"get","path":"/db/mytable/123","token":"abca"}`
 
 Lisaks pathile võib alati lisada järgmisi filter- ja sorteerimisparameetreid, kuid need ei ole kohustuslikud ja neil on vaikeväärtus:
 
-* fields: väljade array, mida väljastada. Vaikimisi väljastatakse kõik.
-* filter: array kolmik-arraydena [[field,op,value],...,[field,op,value]] mida interpreteeritakse kui and-iga seotud sql where lauset. Näide: [["lat","&gt;",53],["type","=","city"]]. Vaikimisi filtrit ei ole. Cgi formaadis antakse nii: filter=lat,&gt;,53,type,=,&#39;city&#39; kus kogu lat,&gt;,53,type,=,&#39;city&#39;  on urlencoded.
+* `fields`: väljade array, mida väljastada. Vaikimisi väljastatakse kõik.
+* `filter`: array kolmik-arraydena [[field, op, value], ... , [field, op, value]] mida interpreteeritakse kui and-iga seotud sql where lauset. Näide: `[[ "lat", ">", 53], ["type", "=", "city"]]`. Vaikimisi filtrit ei ole. CGI formaadis antakse nii: `filter=lat,>,53,type,=,&#39;city&#39;` kus kogu `lat,>,53,type,=,&#39;city&#39;` on urlencoded.
 
-SQL like näide: [["type","like","%aa%"]]
+SQL like näide: `[["type","like","%aa%"]]`
 
-* sort: väljanimi või väljanimi tema ees oleva -märgiga: {"sort":"lat", ...} või {"sort":"-lat", …}. Vaikimisi puudub. Cgi formaadis antakse nii: sort=lat või sort=-lat.
-* offset: mitmendast kirjest hakatakse väljastama (offset kirjeid jäetakse vahele), vaikimisi 0
-* limit:  maksimaalne arv väljastatavaid kirjeid. Kui puudub, eeldame, et on peal konfiguratsiooniga määratud vaikepiirang.
+* `sort`: väljanimi või väljanimi tema ees oleva -märgiga: `{"sort":"lat", ...}` või `{"sort": "-lat", …}`. Vaikimisi puudub. CGI formaadis antakse nii: `sort = lat` või `sort = -lat`.
+* `offset`: mitmendast kirjest hakatakse väljastama (offset kirjeid jäetakse vahele), vaikimisi 0.
+* `limit`:  maksimaalne arv väljastatavaid kirjeid. Kui puudub, eeldame, et on peal konfiguratsiooniga määratud vaikepiirang.
 
-Näide url-encodingus ühteaoliselt esitatud päringust, kus %3E on urlencoded &gt;
+Näide url-encodingus ühteaoliselt esitatud päringust, kus %3E on urlencoded >
 
-[HTTP://localhost/api?op=get&amp;path=db/mytable&amp;fields=id,value&amp;]
+`HTTP://localhost/api?op=get&path=db/mytable&fields=id,value&filter=id,%3E,1000&sort=value&offset=10&limit=100&token=test`
 
-filter=id,%3E,1000&amp;sort=value&amp;offset=10&amp;limit=100&amp;token=test
+Päringu vastus on klassikalise ühe objekti HTTP GET päringu puhul see objekt
 
-Päringu vastus on klassikalise ühe objekti HTTP get päringu puhul see objekt
+`{ "value": 58.3788, "name": "lat"}`
 
-{ "value": 58.3788, "name": "lat"}
+ja mitme kirje päringu `HTTPs://localhost/api/db/mytable` või otsingupäringu `HTTPs://localhost/api/db/mytable` vastus on array kirjetest kujul
 
-ja mitme kirje päringu [HTTPs://localhost/api/db/mytable] või otsingupäringu   [HTTPs://localhost/api/db/mytable]
-
-vastus on array kirjetest kujul
-
-[{ "value": 58.3788, "name": "lat"},{ "value": 24.56, "name": "lng"}]}
+`[{ "value": 58.3788, "name": "lat"},{ "value": 24.56, "name": "lng"}]}`
 
 ###Uute andmete lisamine
 
-Kasutada võib ainult post päringuid ja ainult JSON formaadis andme- ja lisaparameetreid.  Lisada võib ühe kirje JSON objektina või kirjete loendi JSON arrayna.
+Kasutada võib ainult POST päringuid ja ainult JSON formaadis andme- ja lisaparameetreid.  Lisada võib ühe kirje JSON objektina või kirjete loendi JSON arrayna.
 
 Näited:
 
-[HTTPs://localhost/api/db/mytable/123] pathile klassikalisel viisil HTTP post käsuga saadetud
+`HTTPs://localhost/api/db/mytable/123` pathile klassikalisel viisil HTTP POST käsuga saadetud
 
 { "value": 58.3788, "name": "lat"}
 
