@@ -51,18 +51,18 @@ Dokument ei vaja mõistmiseks täiendavaid dokumente.
 
 Dokumendis kasutatakse ainult tarkvara arenduses üldlevinud mõisteid, nagu:
 
-* REST vt [HTTP://en.wikipedia.org/wiki/Representational\_state\_transfer]
-* JSON vt [HTTP://en.wikipedia.org/wiki/JSON]
-* HTTP vt [HTTP://en.wikipedia.org/wiki/Hypertext\_Transfer\_Protocol]
+* REST vt HTTP://en.wikipedia.org/wiki/Representational_state_transfer
+* JSON vt HTTP://en.wikipedia.org/wiki/JSON
+* HTTP vt HTTP://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
 * HTTP käsud ja päis vt eelmist viidet
-* cgi vt [HTTP://en.wikipedia.org/wiki/Common\_Gateway\_Interface]
-* urlencoding vt [HTTP://en.wikipedia.org/wiki/Percent-encoding]
+* cgi vt HTTP://en.wikipedia.org/wiki/Common_Gateway_Interface
+* urlencoding vt HTTP://en.wikipedia.org/wiki/Percent-encoding.
 
 ##Protokolli üldistatud kirjeldus
 
 Protokoll on mõeldud RIHA komponentide omavaheliseks suhtluseks, eeskätt aga brauseris töötava veebirakenduse suhtluseks RIHA serverirakendusega.
 
-Kõik liidesed toimivad HTTP või HTTP kaudu REST põhimõtete alusel. Saadetud andmeid kodeeritakse reeglina JSON formaadis, erandina GET päringute puhul aga cgi nimi=urlencoded_väärtus paaridena. JSON formaat võib omakorda sisaldada stringe, mis kodeerivad mistahes formaadis faile või tekste (.zip, .docx, .sql jne).
+Kõik liidesed toimivad HTTP või HTTP kaudu REST põhimõtete alusel. Saadetud andmeid kodeeritakse reeglina JSON formaadis, erandina GET päringute puhul aga CGI nimi=urlencoded_väärtus paaridena. JSON formaat võib omakorda sisaldada stringe, mis kodeerivad mistahes formaadis faile või tekste (.zip, .docx, .sql jne).
 
 Ainult sisekomponentide vahel toimivad API-d piiratakse väliskeskkonnast üldjuhul IP aadressi põhiselt ning piiranguinfot päringus ei edastata.
 
@@ -70,16 +70,16 @@ Väliseks kasutuseks mõeldud päringud võivad olla kas piiramata või piiratud
 
 ##Arhitektuuriline ülevaade
 
-Päringute üldparameetreid võib esitada kahel alternatiivsel moel, kusjuures API peab ära tundma mõlemad ja kasutus on vaba:
+Päringute üldparameetreid võib esitada kahel alternatiivsel moel, kusjuures API peab ära tundma mõlemad ja kasutus on vaba.
 
 ###Klassikaline variant
 
-* Tegevus esitatakse HTTP käsuna `get` (päring), `post` (lisamine), `put` (muutmine) või `delete` (kustutamine)
-* Objekt, mida päritakse, millele lisatakse uus väärtus, tehakse muudatus või kustutatakse, on antud URL  teel peale API baas-urli. Näites on baas-url `HTTP://localhost/api/`
+* Tegevus esitatakse HTTP käsuna `GET` (päring), `POST` (lisamine), `PUT` (muutmine) või `DELETE` (kustutamine)
+* Objekt, mida päritakse, millele lisatakse uus väärtus, tehakse muudatus või kustutatakse, on antud URL  teel peale API baas-urli. Näites on baas-url `HTTP://localhost/api/`.
 
-`HTTP://localhost/api/db/mytable`
+    `HTTP://localhost/api/db/mytable`
 
-`HTTP://localhost/api/db/mytable/123`
+    `HTTP://localhost/api/db/mytable/123`
 
 Teel on reeglina kõigepealt `db`, siis baasitabeli nimi ja seejärel tabelis oleva kirje id. Mitte-andmebaasi väärtuste korral võib tee alata mingi muu identifikaatoriga kui `db`, näiteks `files`. Keeruka andmestruktuuri pärimise korral võib path olla ka pikem.
 
