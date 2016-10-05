@@ -91,14 +91,14 @@ X-Auth-Token: a8426a0-8eaf-4d22-8e13-7c1b16a9370c
 
 ###Ühetaoline variant
 
-Kõik eelnimetatud parameetrid kodeeritakse kas cgi nimi=väärtus paaridena või jsoni objektis kujul {&quot;nimi&quot;:&quot;väärtus&quot;,…}, kasutades nimesid op, path, token, ning neid saadetakse api baas-urlile, milleks on näiteks [http://localhost/api]
+Kõik eelnimetatud parameetrid kodeeritakse kas cgi nimi=väärtus paaridena või jsoni objektis kujul {"nimi":"väärtus",…}, kasutades nimesid op, path, token, ning neid saadetakse api baas-urlile, milleks on näiteks [http://localhost/api]
 
-* _op_ väärtus võib olla `get`, `post`, `put`, `delete` või hoopis mõni erioperatsiooni-nimi (ei ole piiratud), näiteks op=get või {&quot;op&quot;: &quot;get&quot;, …}
+* _op_ väärtus võib olla `get`, `post`, `put`, `delete` või hoopis mõni erioperatsiooni-nimi (ei ole piiratud), näiteks op=get või {"op": "get", …}
 * _path_ on tabeli/objekti identifikaator, kasutades selleks variant 1 urli vastavat osa, näiteks
 
-`path=/db/mytablename/12` või {&quot;path&quot;:&quot;/db/mytablename/12&quot;, …}
+`path=/db/mytablename/12` või {"path":"/db/mytablename/12", …}
 
-* * token* ligipääsuks (kui on vajalik) antakse kaasa kui token=aba... või {&quot;token&quot;: &quot;abab&quot;, …}
+* * token* ligipääsuks (kui on vajalik) antakse kaasa kui token=aba... või {"token": "abab", …}
 
 Näide:
 
@@ -106,21 +106,21 @@ Näide:
 
 ehk samaväärselt
 
-[http://localhost/api]urlile http postiga saadetud {&quot;op&quot;:&quot;get&quot;,&quot;path&quot;:&quot;db/mytable/123&quot;,&quot;token&quot;:&quot;abca&quot;}
+[http://localhost/api]urlile http postiga saadetud {"op":"get","path":"db/mytable/123","token":"abca"}
 
 Kui päringus on korraga nii klassikalisel moel esitatud parameetreid kui ühetaolisel moel esitatud parameetreid, siis kehtivad ühetaolisel moel esitatud.
 
 ##Eripäringud
 
-Päringute puhul, mille ülesanne klassikalise REST põhimõtte järgi ei ole selgelt määratud, tuleks anda POST meetodiga ja anda kaasa vastav &quot;op&quot;:väärtus, näiteks &quot;op&quot;:&quot;specialtask&quot;, millele võivad lisanduda mistahes muud, mistahes struktuuriga parameetrid, näiteks:
+Päringute puhul, mille ülesanne klassikalise REST põhimõtte järgi ei ole selgelt määratud, tuleks anda POST meetodiga ja anda kaasa vastav "op":väärtus, näiteks "op":"specialtask", millele võivad lisanduda mistahes muud, mistahes struktuuriga parameetrid, näiteks:
 
 [http://localhost/api]urlile http postiga saadetud
 
-{&quot;op&quot;:&quot;addnums&quot;, &quot;token&quot;:&quot;abca&quot;, &quot;param1&quot;:12.3, &quot;param2&quot;: [2, 5]}
+{"op":"addnums", "token":"abca", "param1":12.3, "param2": [2, 5]}
 
 võib anda vastuse
 
-{&quot;result&quot;:19.3}
+{"result":19.3}
 
 või isegi lihtsalt
 
@@ -136,7 +136,7 @@ callback=minufunktsioon
 
 või
 
-{&quot;callback&quot;:&quot;minufunktsioon&quot;,…}
+{"callback":"minufunktsioon",…}
 
 mispeale pannakse tulemus-json (sh veateted) vastuses parameetriks funktsioonile minufunktsioon
 
@@ -146,7 +146,7 @@ Näide:
 
 annab vastuse kujul
 
-foo({ &quot;value&quot;: 58.3788, &quot;name&quot;: &quot;lat&quot;});
+foo({ "value": 58.3788, "name": "lat"});
 
 Callback on vajalik selleks, et kasutaja brauser saaks teha ajax päringuid domeenile, mis ei ole samas domeenis, kui veebileht. Eriti oluline on see arenduse ajal, kuid võib osutuda oluliseks ka lõppkasutuses.
 
@@ -156,17 +156,17 @@ Callback on vajalik selleks, et kasutaja brauser saaks teha ajax päringuid dome
 
 Ühe konkreetse kirje klassikalise päringu [http://localhost/api/db/mytable/123]  vastus on json objekt kujul
 
-{ &quot;value&quot;: 58.3788, &quot;name&quot;: &quot;lat&quot;}
+{ "value": 58.3788, "name": "lat"}
 
 Mitme kirje päringu [https://localhost/api/db/mytable] või otsingupäringu   [https://localhost/api/db/mytable]?filter=...
 
 vastus on json array kirjetest kujul
 
-[{ &quot;value&quot;: 58.3788, &quot;name&quot;: &quot;lat&quot;},{ &quot;value&quot;: 24.56, &quot;name&quot;: &quot;lng&quot;}]}
+[{ "value": 58.3788, "name": "lat"},{ "value": 24.56, "name": "lng"}]}
 
 Kui vastuses olev väli on omakorda json-objekt või json-array, siis esitatakse ta json kujul, mitte aga stringina, näiteks:
 
-{ &quot;value&quot;: 58.3788, &quot;name&quot;: &quot;lat&quot;, &quot;address&quot;: {&quot;city&quot;: &quot;Tallinn&quot;, &quot;street&quot;: &quot;Gonsiori&quot;}}
+{ "value": 58.3788, "name": "lat", "address": {"city": "Tallinn", "street": "Gonsiori"}}
 
 Kirjete lisamise päringuvastus on array edukalt lisatud kirjete (uutest) identifikaatoritest, näiteks
 
@@ -178,17 +178,17 @@ või
 
 Kirjete muutmise ja kustutamise päringuvastus on üldjuhul edukalt muudetud/kustutatud kirjete arv kujul
 
-{&quot;ok&quot;: N}
+{"ok": N}
 
 kus N on täisarv, mis võib olla ka 0.
 
 Kui mingil eripäringul on keeruline või ebasoovitav anda konkreetset vastuste arvu, on edukas vastus üldjuhul selline:
 
-{&quot;ok&quot;: 1}
+{"ok": 1}
 
 ja edutu (aga mitte veaga seotud) vastus selline:
 
-{&quot;ok&quot;: 0}
+{"ok": 0}
 
 h3. Päringute tüübid, lubatud käsud ja lisaparameetrite kodeerimine
 
@@ -196,7 +196,7 @@ h3. Päringute tüübid, lubatud käsud ja lisaparameetrite kodeerimine
 
 Http get päringud ei tohi kunagi andmeid lisada ega muuta.
 
-Päringuid võib kodeerida nii cgi formaadis nimi1=väärtus&amp;nimi2=väärtus… paaridena (väärtused sel juhul urlencoded) kui json formaadis objektidena {&quot;nimi1&quot;:&quot;väärtus&quot;, &quot;nimi2&quot;:&quot;väärtus&quot;, ...}
+Päringuid võib kodeerida nii cgi formaadis nimi1=väärtus&amp;nimi2=väärtus… paaridena (väärtused sel juhul urlencoded) kui json formaadis objektidena {"nimi1":"väärtus", "nimi2":"väärtus", ...}
 
 Päringul võivad olla lisaks käsule, objekti identifikaatorile ja tokenile ka muud parameetreid, näiteks väljastatavate kirjete maksimaalne arv, sorteering, filtrid, callback jms.
 
@@ -210,27 +210,27 @@ Seejuures ei ole path ja token parameetrid üldjuhul kohustuslikud, kuigi neid v
 
 [http://localhost/api]urlile http postiga saadetud
 
-{&quot;op&quot;:&quot;specialop&quot;,&quot;param1&quot;: 23, &quot;foo&quot;: {&quot;lat&quot;: 12.4, &quot;lng&quot;: 15.7}}
+{"op":"specialop","param1": 23, "foo": {"lat": 12.4, "lng": 15.7}}
 
-Eripäringute vastus peab jälgima siin dokumendis toodud veateadete põhimõtteid. Kui vastuseks on andmehulk, on soovitav jälgida siin dokumendis toodud &quot;Edukad päringuvastused&quot; esitatud põhimõtteid.
+Eripäringute vastus peab jälgima siin dokumendis toodud veateadete põhimõtteid. Kui vastuseks on andmehulk, on soovitav jälgida siin dokumendis toodud "Edukad päringuvastused" esitatud põhimõtteid.
 
 ###Eripäringute loend
 
-*COUNT* – päring kirjete arvu lugemiseks. Vastus on kujul {&quot;ok&quot;:&lt;kirjete arv&gt;}
+*COUNT* – päring kirjete arvu lugemiseks. Vastus on kujul {"ok":&lt;kirjete arv&gt;}
 
 Näiteks: [http://192.168.50.106:8080/rest/api?op=count&amp;path=db/main_resource&amp;filter=name,=,prepareSignature&amp;token=testToken]
 
 või POST päring [http://192.168.50.106:8080/rest/api]
 
-{&quot;op&quot;:&quot;count&quot;,&quot;path&quot;:&quot;db/main_resource&quot;,&quot;filter&quot;:[[&quot;service_code&quot;,&quot;=&quot;,&quot;aar.valdkonnad&quot;]
+{"op":"count","path":"db/main_resource","filter":[["service_code","=","aar.valdkonnad"]
 
 *GETNAMES* – päring asutuste ja isikute nimede saamiseks vastavalt etteantud registri- või isikukoodile.
 
-Vastus on kujul { &quot;organizations&quot;: {&lt;registrikood&gt;: &lt;nimi&gt;, &lt;registrikood2&gt;: &lt;nimi2&gt;},&quot;persons&quot;: {&lt;isikukood&gt;: &lt;nimi&gt;}}
+Vastus on kujul { "organizations": {&lt;registrikood&gt;: &lt;nimi&gt;, &lt;registrikood2&gt;: &lt;nimi2&gt;},"persons": {&lt;isikukood&gt;: &lt;nimi&gt;}}
 
 Näiteks: POST päring [http://192.168.50.106:8080/rest/api]
 
-{&quot;op&quot;:&quot;getnames&quot;, &quot;organizations&quot;:[&quot;21345&quot;, &quot;1234123&quot;], &quot;persons&quot;:[&quot;372115555&quot;, &quot;3745555555&quot;], &quot;token&quot;:&quot;testToken&quot;}
+{"op":"getnames", "organizations":["21345", "1234123"], "persons":["372115555", "3745555555"], "token":"testToken"}
 
 *RESOURCE* – päring kõigi main_resource&#39;ga seotud kirjete saamiseks. Antud päring lisab vastusesse kõik Data_object&#39;id ja Document&#39;id, mille main_resource_Id võrdub päringus antud id-ga. Data_object&#39;id  lisatakse vastusesse välja, mille nimi võetakse Data_object&#39;i field_name väljast. Samamoodi toimitakse ka Document&#39;iga.
 
@@ -256,20 +256,20 @@ või ühetaoliselt
 
 [http://localhost/api?op=get&amp;path=db/mytable/123&amp;token=abca]
 
-Http post käsu puhul eeldatakse parameetrite kodeeringut json formaadis kujul {&quot;op&quot;:&quot;get&quot;, &quot;path&quot;:&quot;….&quot;, …} juhul, kui päringu Content-type header sisaldab stringi &quot;json&quot;. Vastasel korral eeldatakse parameetreid cgi formaadis nimi=väärtus paaridena. Näide eelmisega samaväärsest http post käsust andmete küsimiseks:
+Http post käsu puhul eeldatakse parameetrite kodeeringut json formaadis kujul {"op":"get", "path":"….", …} juhul, kui päringu Content-type header sisaldab stringi "json". Vastasel korral eeldatakse parameetreid cgi formaadis nimi=väärtus paaridena. Näide eelmisega samaväärsest http post käsust andmete küsimiseks:
 
 [http://localhost/api]urlile http postiga saadetud
 
-{&quot;op&quot;:&quot;get&quot;,&quot;path&quot;:&quot;/db/mytable/123&quot;,&quot;token&quot;:&quot;abca&quot;}
+{"op":"get","path":"/db/mytable/123","token":"abca"}
 
 Lisaks pathile võib alati lisada järgmisi filter- ja sorteerimisparameetreid, kuid need ei ole kohustuslikud ja neil on vaikeväärtus:
 
 * fields: väljade array, mida väljastada. Vaikimisi väljastatakse kõik.
-* filter: array kolmik-arraydena [[field,op,value],...,[field,op,value]] mida interpreteeritakse kui and-iga seotud sql where lauset. Näide: [[&quot;lat&quot;,&quot;&gt;&quot;,53],[&quot;type&quot;,&quot;=&quot;,&quot;city&quot;]]. Vaikimisi filtrit ei ole. Cgi formaadis antakse nii: filter=lat,&gt;,53,type,=,&#39;city&#39; kus kogu lat,&gt;,53,type,=,&#39;city&#39;  on urlencoded.
+* filter: array kolmik-arraydena [[field,op,value],...,[field,op,value]] mida interpreteeritakse kui and-iga seotud sql where lauset. Näide: [["lat","&gt;",53],["type","=","city"]]. Vaikimisi filtrit ei ole. Cgi formaadis antakse nii: filter=lat,&gt;,53,type,=,&#39;city&#39; kus kogu lat,&gt;,53,type,=,&#39;city&#39;  on urlencoded.
 
-SQL like näide: [[&quot;type&quot;,&quot;like&quot;,&quot;%aa%&quot;]]
+SQL like näide: [["type","like","%aa%"]]
 
-* sort: väljanimi või väljanimi tema ees oleva -märgiga: {&quot;sort&quot;:&quot;lat&quot;, ...} või {&quot;sort&quot;:&quot;-lat&quot;, …}. Vaikimisi puudub. Cgi formaadis antakse nii: sort=lat või sort=-lat.
+* sort: väljanimi või väljanimi tema ees oleva -märgiga: {"sort":"lat", ...} või {"sort":"-lat", …}. Vaikimisi puudub. Cgi formaadis antakse nii: sort=lat või sort=-lat.
 * offset: mitmendast kirjest hakatakse väljastama (offset kirjeid jäetakse vahele), vaikimisi 0
 * limit:  maksimaalne arv väljastatavaid kirjeid. Kui puudub, eeldame, et on peal konfiguratsiooniga määratud vaikepiirang.
 
@@ -281,13 +281,13 @@ filter=id,%3E,1000&amp;sort=value&amp;offset=10&amp;limit=100&amp;token=test
 
 Päringu vastus on klassikalise ühe objekti http get päringu puhul see objekt
 
-{ &quot;value&quot;: 58.3788, &quot;name&quot;: &quot;lat&quot;}
+{ "value": 58.3788, "name": "lat"}
 
 ja mitme kirje päringu [https://localhost/api/db/mytable] või otsingupäringu   [https://localhost/api/db/mytable]
 
 vastus on array kirjetest kujul
 
-[{ &quot;value&quot;: 58.3788, &quot;name&quot;: &quot;lat&quot;},{ &quot;value&quot;: 24.56, &quot;name&quot;: &quot;lng&quot;}]}
+[{ "value": 58.3788, "name": "lat"},{ "value": 24.56, "name": "lng"}]}
 
 ###Uute andmete lisamine
 
@@ -297,55 +297,55 @@ Näited:
 
 [https://localhost/api/db/mytable/123] pathile klassikalisel viisil http post käsuga saadetud
 
-{ &quot;value&quot;: 58.3788, &quot;name&quot;: &quot;lat&quot;}
+{ "value": 58.3788, "name": "lat"}
 
 või
 
-[{ &quot;value&quot;: 58.3788, &quot;name&quot;: &quot;lat&quot;},{ &quot;value&quot;: 24.56, &quot;name&quot;: &quot;lng&quot;}]
+[{ "value": 58.3788, "name": "lat"},{ "value": 24.56, "name": "lng"}]
 
 või ühetaolisel viisil selliselt:
 
-{&quot;op&quot;:&quot;post&quot;, &quot;path&quot;: &quot;/db/mytable&quot;, &quot;data&quot;:{ &quot;value&quot;: 58.3788, &quot;name&quot;: &quot;lat&quot;}}
+{"op":"post", "path": "/db/mytable", "data":{ "value": 58.3788, "name": "lat"}}
 
 või selliselt:
 
-{&quot;op&quot;:&quot;post&quot;, &quot;path&quot;: &quot;/db/mytable&quot;,  &quot;data&quot;: [{ &quot;value&quot;: 58.3788, &quot;name&quot;: &quot;lat&quot;},{ &quot;value&quot;: 24.56, &quot;name&quot;: &quot;lng&quot;}]}
+{"op":"post", "path": "/db/mytable",  "data": [{ "value": 58.3788, "name": "lat"},{ "value": 24.56, "name": "lng"}]}
 
 Kui lisatava välja väärtus on omakorda json array või json objekt, esitatakse ta json kujul, mitte stringina:
 
-{ &quot;value&quot;: 58.3788, &quot;name&quot;: &quot;lat&quot;, &quot;address&quot;: {&quot;city&quot;: &quot;Tallinn&quot;, &quot;street&quot;: &quot;Gonsiori&quot;}}
+{ "value": 58.3788, "name": "lat", "address": {"city": "Tallinn", "street": "Gonsiori"}}
 
 Päringu vastus on json array edukalt lisatud kirjete identifikaatoritest, näiteks [1000] või [1000,1002,1003]
 
 ###Andmete muutmine
 
-Võib kasutada nii http put kui http post päringuid (viimasel juhul peab olema kasutusel ühetaoline variant, sh {&quot;op&quot;:&quot;put&quot;, &quot;path&quot;:&quot;….&quot;, ...} parameeter-väärtused) ja ainult json formaadis parameetreid. Http post võimaldab muuta mitut kirjet korraga.
+Võib kasutada nii http put kui http post päringuid (viimasel juhul peab olema kasutusel ühetaoline variant, sh {"op":"put", "path":"….", ...} parameeter-väärtused) ja ainult json formaadis parameetreid. Http post võimaldab muuta mitut kirjet korraga.
 
 Näited:
 
 [https://localhost/api/db/mytable/123]/123 pathile klassikalisel viisil saadetud http put
 
-{ &quot;value&quot;: 58.3788, &quot;name&quot;: &quot;lat&quot;}
+{ "value": 58.3788, "name": "lat"}
 
 või ühetaolisel viisil selliselt:
 
 [https://localhost/api] urlile saadetud http post
 
-{&quot;op&quot;:&quot;put&quot;, &quot;path&quot;: &quot;/db/mytable/123&quot;, &quot;data&quot;:{ &quot;value&quot;: 58.3788, &quot;name&quot;: &quot;lat&quot;}}
+{"op":"put", "path": "/db/mytable/123", "data":{ "value": 58.3788, "name": "lat"}}
 
 Mitme kirje korraga muutmine toimub selliselt:
 
 [https://localhost/api] urlile saadetud http post
 
-{&quot;op&quot;:&quot;put&quot;, &quot;path&quot;: &quot;/db/mytable&quot;, &quot;key&quot;:&quot;id&quot;, &quot;data&quot;:[{&quot;id&quot;:123, &quot;value&quot;: 58.3788, &quot;name&quot;: &quot;lat&quot;},{&quot;id&quot;:456, &quot;value&quot;: 58.3788, &quot;name&quot;: &quot;lat&quot;}]
+{"op":"put", "path": "/db/mytable", "key":"id", "data":[{"id":123, "value": 58.3788, "name": "lat"},{"id":456, "value": 58.3788, "name": "lat"}]
 
-Viimasel juhul esitab &quot;key&quot;:&quot;id&quot; väljanime (näites id), mille järgi kirjeid muutmise jaoks identifitseeritakse. See väljanimi peab olema toodud järgnevates data kirjetes.
+Viimasel juhul esitab "key":"id" väljanime (näites id), mille järgi kirjeid muutmise jaoks identifitseeritakse. See väljanimi peab olema toodud järgnevates data kirjetes.
 
 NB! Key väärtus ei pea olema  unikaalne identifikaator, seega võib üks kirje sisendis muuta mitut kirjet  baasis.
 
 Oluline: andmetes esitatud väljad muudetakse, esitamata välju ei muudeta.
 
-Päringu vastus on edukalt muudetud kirjete arv, näiteks {&quot;ok&quot;: 2}. Kui kirjeid ei õnnestunud muuta, vastatakse lihtsalt {&quot;ok&quot;: 0}
+Päringu vastus on edukalt muudetud kirjete arv, näiteks {"ok": 2}. Kui kirjeid ei õnnestunud muuta, vastatakse lihtsalt {"ok": 0}
 
 ###Andmete kustutamine
 
@@ -359,19 +359,19 @@ ning ühetaolisel viisil toimub ühe kirje kustutamine selliselt:
 
 [https://localhost/api] urlile saadetud http post
 
-{&quot;op&quot;:&quot;delete&quot;, &quot;path&quot;: &quot;/db/mytable/123&quot;}
+{"op":"delete", "path": "/db/mytable/123"}
 
 ja mitme kirje kustutamine selliselt:
 
 [https://localhost/api] urlile saadetud http post
 
-{&quot;op&quot;:&quot;delete&quot;, &quot;path&quot;: &quot;/db/mytable&quot;, &quot;id&quot;:[123,456,777]}
+{"op":"delete", "path": "/db/mytable", "id":[123,456,777]}
 
-kus &quot;id&quot; asemel kasutatakse konkreetset väljanime, millega antud tabeli kirjeid identifitseeritakse, ning selle väärtuseks on alati kustutatavate kirjete identifikaatorite array.
+kus "id" asemel kasutatakse konkreetset väljanime, millega antud tabeli kirjeid identifitseeritakse, ning selle väärtuseks on alati kustutatavate kirjete identifikaatorite array.
 
 NB! Key väärtus ei pea olema  unikaalne identifikaator, seega võib üks kirje sisendis kustutada mitu kirjet  baasis.
 
-Päringu vastus on edukalt kustutatud kirjete arv, näiteks {&quot;ok&quot;: 2}. Kui kirjeid ei õnnestunud kustutada, vastatakse lihtsalt {&quot;ok&quot;: 0}
+Päringu vastus on edukalt kustutatud kirjete arv, näiteks {"ok": 2}. Kui kirjeid ei õnnestunud kustutada, vastatakse lihtsalt {"ok": 0}
 
 ##Sõnumite töötlemise reeglid
 
@@ -393,7 +393,7 @@ ning lisaks võib soovi korral kasutada kolmandat:
 
 Näide:
 
-{&quot;errcode&quot;: 2, &quot;errmsg&quot;: &quot;arusaamatu parameeter foo&quot;}
+{"errcode": 2, "errmsg": "arusaamatu parameeter foo"}
 
 Seejuures errcode tähendus on järgmine:
 
@@ -467,10 +467,7 @@ Rakendus peab protokolliga kooskõlas olemiseks täitma kõiki ülaltoodud nõud
 Spetsiaalsed profiilid puuduvad.
 
 ##Muutelugu
-|Versioon|Kuupäev|Autor|Märkused|
-|--------|-------|-----|
-|1.3|18.04.2016|T. Tammet|Esimene versioon|
-|1.4|24.08.2016|M. Maarand, Marko Aid|Lisatud eripäringud COUNT, GETNAMES, RESOURCE, FILE. Täiendatud &quot;like&quot; tüüpi päringusüntaksit. Väiksemad veaparandused|
-
-
-
+| Versioon | Kuupäev | Autor | Märkused |
+|----------|---------|-------|----------|
+| 1.3      | 18.04.2016 | T. Tammet | Esimene versioon |
+| 1.4 | 24.08.2016 | M. Maarand, Marko Aid | Lisatud eripäringud COUNT, GETNAMES, RESOURCE, FILE. Täiendatud "like" tüüpi päringusüntaksit. Väiksemad veaparandused |
