@@ -2,4 +2,4 @@
 
 - [RIHA andmete masinloetavate vormingute põhimõtted](dok/POHIMOTTED.md)
 - [RIHA andmete masinloetavate vormingute spetsifikatsioon](dok/SPETSIFIKATSIOON.md)
-- [RIHA API](API.md)
+- [RIHA API](dok/API.md)
