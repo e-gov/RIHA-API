@@ -114,7 +114,7 @@ Päringute puhul, mille ülesanne klassikalise REST põhimõtte järgi ei ole se
 
 `HTTP://localhost/api` urlile HTTP POST meetodiga saadetud
 
-    `{ "op":"addnums", "token":"abca", "param1":12.3, "param2": [2, 5] }`
+`{ "op":"addnums", "token":"abca", "param1":12.3, "param2": [2, 5] }`
 
 võib anda vastuse
 
