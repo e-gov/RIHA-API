@@ -1,4 +1,4 @@
-# RIHA kirjeldusstandard
+# RIHA kirjeldusstandard ja API
 
 ![](img/EL_struktuuri-_ja_investeerimisfondid_horisontaalne.jpg)
 
