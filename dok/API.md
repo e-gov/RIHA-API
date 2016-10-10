@@ -104,7 +104,9 @@ Näide:
 
 ehk samaväärselt `HTTP://localhost/api` urlile HTTP POST meetodiga saadetud
 
-`{"op":"get","path":"db/mytable/123","token":"abca"}`.
+```json
+{"op":"get","path":"db/mytable/123","token":"abca"}
+```
 
 Kui päringus on korraga nii klassikalisel moel esitatud parameetreid kui ka ühetaolisel moel esitatud parameetreid, siis kehtivad ühetaolisel moel esitatud.
 
@@ -114,15 +116,21 @@ Päringute puhul, mille ülesanne klassikalise REST põhimõtte järgi ei ole se
 
 `HTTP://localhost/api` urlile HTTP POST meetodiga saadetud
 
-`{ "op":"addnums", "token":"abca", "param1":12.3, "param2": [2, 5] }`
+```json
+{ "op":"addnums", "token":"abca", "param1":12.3, "param2": [2, 5] }
+```
 
 võib anda vastuse
 
-`{ "result": 19.3 }`
+```json
+{ "result": 19.3 }
+```
 
 või isegi lihtsalt
 
-`19.3`
+```json
+19.3
+```
 
 Seejuures tuleb arvestada, et parameetrinimed `token` ja `callback` on reserveeritud nende standardkasutuseks ning nende sisuline tähendus peab olema sama, mis harilikel ülalkirjeldatud REST päringutel.
 
@@ -134,7 +142,9 @@ Igale päringule võib lisada callback parameetri kujul
 
 või
 
-`{ "callback":"minufunktsioon", … }`
+```json
+{ "callback":"minufunktsioon", … }
+```
 
 mispeale pannakse tulemus-JSON (sh veateated) vastuses parameetriks funktsioonile `minufunktsioon`.
 
@@ -144,7 +154,9 @@ Näide:
 
 annab vastuse kujul
 
-`foo({ "value": 58.3788, "name": "lat"});`
+```javascript
+foo({ "value": 58.3788, "name": "lat"});
+```
 
 Callback on vajalik selleks, et kasutaja brauser saaks teha Ajax päringuid domeenile, mis ei ole samas domeenis kui veebileht. Eriti oluline on see arenduse ajal, kuid võib osutuda oluliseks ka lõppkasutuses.
 
@@ -154,17 +166,23 @@ Callback on vajalik selleks, et kasutaja brauser saaks teha Ajax päringuid dome
 
 Ühe konkreetse kirje klassikalise päringu `HTTP://localhost/api/db/mytable/123`  vastus on JSON objekt kujul
 
-`{ "value": 58.3788, "name": "lat"}`
+```json
+{ "value": 58.3788, "name": "lat"}
+```
 
 Mitme kirje päringu `HTTPs://localhost/api/db/mytable` või otsingupäringu `HTTPs://localhost/api/db/mytable]?filter=...`
 
 vastus on JSON array kirjetest kujul
 
-`[{ "value": 58.3788, "name": "lat" }, { "value": 24.56, "name": "lng" }]`
+```json
+[{ "value": 58.3788, "name": "lat" }, { "value": 24.56, "name": "lng" }]
+```
 
 Kui vastuses olev väli on omakorda JSON-objekt või JSON-array, siis esitatakse ta JSON kujul, mitte aga stringina, näiteks:
 
-`{ "value": 58.3788, "name": "lat", "address": {"city": "Tallinn", "street": "Gonsiori"} }`
+```json
+{ "value": 58.3788, "name": "lat", "address": {"city": "Tallinn", "street": "Gonsiori"} }
+```
 
 Kirjete lisamise päringuvastus on array edukalt lisatud kirjete (uutest) identifikaatoritest, näiteks
 
@@ -176,17 +194,23 @@ või
 
 Kirjete muutmise ja kustutamise päringuvastus on üldjuhul edukalt muudetud/kustutatud kirjete arv kujul
 
-`{"ok": N}`
+```json
+{"ok": N}
+```
 
 kus `N` on täisarv, mis võib olla ka 0.
 
 Kui mingil eripäringul on keeruline või ebasoovitav anda konkreetset vastuste arvu, on edukas vastus üldjuhul selline:
 
-`{"ok": 1}`
+```json
+{"ok": 1}
+```
 
 ja edutu (aga mitte veaga seotud) vastus selline:
 
-`{"ok": 0}`
+```json
+{"ok": 0}
+```
 
 ###Päringute tüübid, lubatud käsud ja lisaparameetrite kodeerimine
 
@@ -208,7 +232,9 @@ Seejuures ei ole path ja token parameetrid üldjuhul kohustuslikud, kuigi neid v
 
 `HTTP://localhost/api` urlile HTTP POST meetodiga saadetud
 
-`{ "op":"specialop", "param1": 23, "foo": {"lat": 12.4, "lng": 15.7} }`
+```json
+{ "op":"specialop", "param1": 23, "foo": {"lat": 12.4, "lng": 15.7} }
+```
 
 Eripäringute vastus peab jälgima siin dokumendis toodud veateadete põhimõtteid. Kui vastuseks on andmehulk, on soovitav jälgida siin dokumendis toodud "Edukad päringuvastused" esitatud põhimõtteid.
 
@@ -220,7 +246,9 @@ Näiteks: `HTTP://192.168.50.106:8080/rest/api?op=count&path=db/main_resource&fi
 
 või POST päring `HTTP://192.168.50.106:8080/rest/api`
 
-`{ "op": "count", "path": "db/main_resource", "filter": [ "service_code", "=", "aar.valdkonnad" ] }`
+```json
+{ "op": "count", "path": "db/main_resource", "filter": [ "service_code", "=", "aar.valdkonnad" ] }
+```
 
 *GETNAMES* – päring asutuste ja isikute nimede saamiseks vastavalt etteantud registri- või isikukoodile.
 
@@ -228,7 +256,9 @@ Vastus on kujul `{ "organizations": {<registrikood>: <nimi>, <registrikood2>: <n
 
 Näiteks: POST päring `HTTP://192.168.50.106:8080/rest/api`
 
-`{"op":"getnames", "organizations":["21345", "1234123"], "persons":["372115555", "3745555555"], "token":"testToken"}`
+```json
+{"op":"getnames", "organizations":["21345", "1234123"], "persons":["372115555", "3745555555"], "token":"testToken"}
+```
 
 *RESOURCE* – päring kõigi `main_resource`-ga seotud kirjete saamiseks. Antud päring lisab vastusesse kõik `Data_object`-id ja `Document`-id, mille main_resource_Id võrdub päringus antud id-ga. `Data_object`-id  lisatakse vastusesse välja, mille nimi võetakse `Data_object`-i field_name väljast. Samamoodi toimitakse ka `Document`-iga.
 
@@ -258,7 +288,9 @@ HTTP POST käsu puhul eeldatakse parameetrite kodeeringut JSON formaadis kujul `
 
 `HTTP://localhost/api` urlile HTTP POST operatsiooniga saadetud
 
-`{"op":"get","path":"/db/mytable/123","token":"abca"}`
+```json
+{"op":"get","path":"/db/mytable/123","token":"abca"}
+```
 
 Lisaks pathile võib alati lisada järgmisi filter- ja sorteerimisparameetreid, kuid need ei ole kohustuslikud ja neil on vaikeväärtus:
 
@@ -277,11 +309,15 @@ Näide url-encodingus ühteaoliselt esitatud päringust, kus `%3E` on urlencoded
 
 Päringu vastus on klassikalise ühe objekti HTTP GET päringu puhul see objekt
 
-`{ "value": 58.3788, "name": "lat"}`
+```json
+{ "value": 58.3788, "name": "lat"}
+```
 
 ja mitme kirje päringu `HTTPs://localhost/api/db/mytable` või otsingupäringu `HTTPs://localhost/api/db/mytable` vastus on array kirjetest kujul
 
-`[{ "value": 58.3788, "name": "lat"},{ "value": 24.56, "name": "lng"}]}`
+```json
+[{ "value": 58.3788, "name": "lat"},{ "value": 24.56, "name": "lng"}]}
+```
 
 ###Uute andmete lisamine
 
@@ -291,23 +327,33 @@ Näited:
 
 `HTTPs://localhost/api/db/mytable/123` pathile klassikalisel viisil HTTP POST käsuga saadetud
 
-`{ "value": 58.3788, "name": "lat"}`
+```json
+{ "value": 58.3788, "name": "lat"}
+```
 
 või
 
-`[{ "value": 58.3788, "name": "lat"},{ "value": 24.56, "name": "lng"}]`
+```json
+[{ "value": 58.3788, "name": "lat"},{ "value": 24.56, "name": "lng"}]
+```
 
 või ühetaolisel viisil selliselt:
 
-`{"op":"post", "path": "/db/mytable", "data":{ "value": 58.3788, "name": "lat"}}`
+```json
+{"op":"post", "path": "/db/mytable", "data":{ "value": 58.3788, "name": "lat"}}
+```
 
 või selliselt:
 
-`{"op":"post", "path": "/db/mytable",  "data": [{ "value": 58.3788, "name": "lat"},{ "value": 24.56, "name": "lng"}]}`
+```json
+{"op":"post", "path": "/db/mytable",  "data": [{ "value": 58.3788, "name": "lat"},{ "value": 24.56, "name": "lng"}]}
+```
 
 Kui lisatava välja väärtus on omakorda JSON array või JSON objekt, esitatakse ta JSON kujul, mitte stringina:
 
-`{ "value": 58.3788, "name": "lat", "address": {"city": "Tallinn", "street": "Gonsiori"}}`
+```json
+{ "value": 58.3788, "name": "lat", "address": {"city": "Tallinn", "street": "Gonsiori"}}
+```
 
 Päringu vastus on JSON array edukalt lisatud kirjete identifikaatoritest, näiteks `[1000]` või `[1000,1002,1003]`
 
@@ -319,19 +365,25 @@ Näited:
 
 `[HTTPs://localhost/api/db/mytable/123]/123` pathile klassikalisel viisil saadetud HTTP PUT
 
-`{ "value": 58.3788, "name": "lat"}`
+```json
+{ "value": 58.3788, "name": "lat"}
+```
 
 või ühetaolisel viisil selliselt:
 
 `[HTTPs://localhost/api]` urlile saadetud HTTP POST
 
-`{"op":"put", "path": "/db/mytable/123", "data":{ "value": 58.3788, "name": "lat"}}`
+```json
+{"op":"put", "path": "/db/mytable/123", "data":{ "value": 58.3788, "name": "lat"}}
+```
 
 Mitme kirje korraga muutmine toimub selliselt:
 
 `[HTTPs://localhost/api]` urlile saadetud HTTP POST
 
-`{"op":"put", "path": "/db/mytable", "key":"id", "data":[{"id":123, "value": 58.3788, "name": "lat"},{"id":456, "value": 58.3788, "name": "lat"}]`
+```json
+{"op":"put", "path": "/db/mytable", "key":"id", "data":[{"id":123, "value": 58.3788, "name": "lat"},{"id":456, "value": 58.3788, "name": "lat"}]
+```
 
 Viimasel juhul esitab `"key":"id"` väljanime (näites `id`), mille järgi kirjeid muutmise jaoks identifitseeritakse. See väljanimi peab olema toodud järgnevates `data` kirjetes.
 
@@ -353,13 +405,17 @@ ning ühetaolisel viisil toimub ühe kirje kustutamine selliselt:
 
 `[HTTPs://localhost/api]` urlile saadetud HTTP post
 
-`{"op":"delete", "path": "/db/mytable/123"}`
+```json
+{"op":"delete", "path": "/db/mytable/123"}
+```
 
 ja mitme kirje kustutamine selliselt:
 
 `[HTTPs://localhost/api]` urlile saadetud HTTP POST
 
-`{"op":"delete", "path": "/db/mytable", "id":[123,456,777]}`
+```json
+{"op":"delete", "path": "/db/mytable", "id":[123,456,777]}
+```
 
 kus `"id"` asemel kasutatakse konkreetset väljanime, millega antud tabeli kirjeid identifitseeritakse, ning selle väärtuseks on alati kustutatavate kirjete identifikaatorite array.
 
@@ -387,7 +443,9 @@ ning lisaks võib soovi korral kasutada kolmandat:
 
 Näide:
 
-`{"errcode": 2, "errmsg": "arusaamatu parameeter foo"}`
+```json
+{"errcode": 2, "errmsg": "arusaamatu parameeter foo"}
+```
 
 Seejuures `errcode` tähendus on järgmine:
 
