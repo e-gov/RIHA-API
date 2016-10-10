@@ -244,26 +244,26 @@ Näiteks: `HTTP://192.168.50.106:8080/rest/api/file/99567?token=testToken`
 
 Võib kasutada nii HTTP GET kui ka POST käsku.
 
-HTTP GET käsu puhul kodeeritakse päring CGI formaadis nimi=väärtus paaridena.
+HTTP GET käsu puhul kodeeritakse päring CGI formaadis `nimi=väärtus` paaridena.
 
 Näited:
 
-HTTPs://localhost/api/db/mytable/123
+`HTTPs://localhost/api/db/mytable/123`
 
 või ühetaoliselt
 
-HTTP://localhost/api?op=get&path=db/mytable/123&token=abca
+`HTTP://localhost/api?op=get&path=db/mytable/123&token=abca`
 
-HTTP post käsu puhul eeldatakse parameetrite kodeeringut JSON formaadis kujul {"op":"get", "path":"….", …} juhul, kui päringu `Content-type` header sisaldab stringi `JSON`. Vastasel korral eeldatakse parameetreid CGI formaadis nimi=väärtus paaridena. Näide eelmisega samaväärsest HTTP POST käsust andmete küsimiseks:
+HTTP POST käsu puhul eeldatakse parameetrite kodeeringut JSON formaadis kujul `{"op":"get", "path":"….", …}` juhul, kui päringu `Content-type` header sisaldab stringi `JSON`. Vastasel korral eeldatakse parameetreid CGI formaadis nimi=väärtus paaridena. Näide eelmisega samaväärsest HTTP POST käsust andmete küsimiseks:
 
-HTTP://localhost/api urlile HTTP postiga saadetud
+`HTTP://localhost/api` urlile HTTP POST operatsiooniga saadetud
 
 `{"op":"get","path":"/db/mytable/123","token":"abca"}`
 
 Lisaks pathile võib alati lisada järgmisi filter- ja sorteerimisparameetreid, kuid need ei ole kohustuslikud ja neil on vaikeväärtus:
 
 * `fields`: väljade array, mida väljastada. Vaikimisi väljastatakse kõik.
-* `filter`: array kolmik-arraydena [[field, op, value], ... , [field, op, value]] mida interpreteeritakse kui and-iga seotud sql where lauset. Näide: `[[ "lat", ">", 53], ["type", "=", "city"]]`. Vaikimisi filtrit ei ole. CGI formaadis antakse nii: `filter=lat,>,53,type,=,&#39;city&#39;` kus kogu `lat,>,53,type,=,&#39;city&#39;` on urlencoded.
+* `filter`: array kolmik-arraydena `[[field, op, value], ... , [field, op, value]]`, mida interpreteeritakse kui and-iga seotud SQL WHERE lauset. Näide: `[[ "lat", ">", 53], ["type", "=", "city"]]`. Vaikimisi filtrit ei ole. CGI formaadis antakse nii: `filter=lat,>,53,type,=,&#39;city&#39;` kus kogu `lat,>,53,type,=,&#39;city&#39;` on urlencoded.
 
 SQL like näide: `[["type","like","%aa%"]]`
 
@@ -271,7 +271,7 @@ SQL like näide: `[["type","like","%aa%"]]`
 * `offset`: mitmendast kirjest hakatakse väljastama (offset kirjeid jäetakse vahele), vaikimisi 0.
 * `limit`:  maksimaalne arv väljastatavaid kirjeid. Kui puudub, eeldame, et on peal konfiguratsiooniga määratud vaikepiirang.
 
-Näide url-encodingus ühteaoliselt esitatud päringust, kus %3E on urlencoded >
+Näide url-encodingus ühteaoliselt esitatud päringust, kus `%3E` on urlencoded:
 
 `HTTP://localhost/api?op=get&path=db/mytable&fields=id,value&filter=id,%3E,1000&sort=value&offset=10&limit=100&token=test`
 
@@ -291,149 +291,149 @@ Näited:
 
 `HTTPs://localhost/api/db/mytable/123` pathile klassikalisel viisil HTTP POST käsuga saadetud
 
-{ "value": 58.3788, "name": "lat"}
+`{ "value": 58.3788, "name": "lat"}`
 
 või
 
-[{ "value": 58.3788, "name": "lat"},{ "value": 24.56, "name": "lng"}]
+`[{ "value": 58.3788, "name": "lat"},{ "value": 24.56, "name": "lng"}]`
 
 või ühetaolisel viisil selliselt:
 
-{"op":"post", "path": "/db/mytable", "data":{ "value": 58.3788, "name": "lat"}}
+`{"op":"post", "path": "/db/mytable", "data":{ "value": 58.3788, "name": "lat"}}`
 
 või selliselt:
 
-{"op":"post", "path": "/db/mytable",  "data": [{ "value": 58.3788, "name": "lat"},{ "value": 24.56, "name": "lng"}]}
+`{"op":"post", "path": "/db/mytable",  "data": [{ "value": 58.3788, "name": "lat"},{ "value": 24.56, "name": "lng"}]}`
 
 Kui lisatava välja väärtus on omakorda JSON array või JSON objekt, esitatakse ta JSON kujul, mitte stringina:
 
-{ "value": 58.3788, "name": "lat", "address": {"city": "Tallinn", "street": "Gonsiori"}}
+`{ "value": 58.3788, "name": "lat", "address": {"city": "Tallinn", "street": "Gonsiori"}}`
 
-Päringu vastus on JSON array edukalt lisatud kirjete identifikaatoritest, näiteks [1000] või [1000,1002,1003]
+Päringu vastus on JSON array edukalt lisatud kirjete identifikaatoritest, näiteks `[1000]` või `[1000,1002,1003]`
 
 ###Andmete muutmine
 
-Võib kasutada nii HTTP put kui HTTP post päringuid (viimasel juhul peab olema kasutusel ühetaoline variant, sh {"op":"put", "path":"….", ...} parameeter-väärtused) ja ainult JSON formaadis parameetreid. HTTP post võimaldab muuta mitut kirjet korraga.
+Võib kasutada nii HTTP PUT kui HTTP POST päringuid (viimasel juhul peab olema kasutusel ühetaoline variant, sh `{"op":"put", "path":"….", ...}` parameeter-väärtused) ja ainult JSON formaadis parameetreid. HTTP POST võimaldab muuta mitut kirjet korraga.
 
 Näited:
 
-[HTTPs://localhost/api/db/mytable/123]/123 pathile klassikalisel viisil saadetud HTTP put
+`[HTTPs://localhost/api/db/mytable/123]/123` pathile klassikalisel viisil saadetud HTTP PUT
 
-{ "value": 58.3788, "name": "lat"}
+`{ "value": 58.3788, "name": "lat"}`
 
 või ühetaolisel viisil selliselt:
 
-[HTTPs://localhost/api] urlile saadetud HTTP post
+`[HTTPs://localhost/api]` urlile saadetud HTTP POST
 
-{"op":"put", "path": "/db/mytable/123", "data":{ "value": 58.3788, "name": "lat"}}
+`{"op":"put", "path": "/db/mytable/123", "data":{ "value": 58.3788, "name": "lat"}}`
 
 Mitme kirje korraga muutmine toimub selliselt:
 
-[HTTPs://localhost/api] urlile saadetud HTTP post
+`[HTTPs://localhost/api]` urlile saadetud HTTP POST
 
-{"op":"put", "path": "/db/mytable", "key":"id", "data":[{"id":123, "value": 58.3788, "name": "lat"},{"id":456, "value": 58.3788, "name": "lat"}]
+`{"op":"put", "path": "/db/mytable", "key":"id", "data":[{"id":123, "value": 58.3788, "name": "lat"},{"id":456, "value": 58.3788, "name": "lat"}]`
 
-Viimasel juhul esitab "key":"id" väljanime (näites id), mille järgi kirjeid muutmise jaoks identifitseeritakse. See väljanimi peab olema toodud järgnevates data kirjetes.
+Viimasel juhul esitab `"key":"id"` väljanime (näites `id`), mille järgi kirjeid muutmise jaoks identifitseeritakse. See väljanimi peab olema toodud järgnevates `data` kirjetes.
 
-NB! Key väärtus ei pea olema  unikaalne identifikaator, seega võib üks kirje sisendis muuta mitut kirjet  baasis.
+NB! `Key` väärtus ei pea olema  unikaalne identifikaator, seega võib üks kirje sisendis muuta mitut kirjet  baasis.
 
 Oluline: andmetes esitatud väljad muudetakse, esitamata välju ei muudeta.
 
-Päringu vastus on edukalt muudetud kirjete arv, näiteks {"ok": 2}. Kui kirjeid ei õnnestunud muuta, vastatakse lihtsalt {"ok": 0}
+Päringu vastus on edukalt muudetud kirjete arv, näiteks `{"ok": 2}`. Kui kirjeid ei õnnestunud muuta, vastatakse lihtsalt `{"ok": 0}`.
 
 ###Andmete kustutamine
 
-Võib kasutada nii HTTP delete kui HTTP post päringuid (viimasel juhul peab olema antud op=delete parameeter-väärtus) ja ainult JSON formaadis lisaparameetreid. HTTP post võimaldab kustutada korra mitu kirjet.
+Võib kasutada nii HTTP DELETE kui HTTP POST päringuid (viimasel juhul peab olema antud `op=delete` parameeter-väärtus) ja ainult JSON formaadis lisaparameetreid. HTTP POST võimaldab kustutada korra mitu kirjet.
 
 Näited:
 
-[HTTPs://localhost/api/db/mytable/123]/123 pathile klassikalisel viisil saadetud HTTP delete kustutab antud kirje,
+`[HTTPs://localhost/api/db/mytable/123]/123` pathile klassikalisel viisil saadetud HTTP DELETE kustutab antud kirje,
 
 ning ühetaolisel viisil toimub ühe kirje kustutamine selliselt:
 
-[HTTPs://localhost/api] urlile saadetud HTTP post
+`[HTTPs://localhost/api]` urlile saadetud HTTP post
 
-{"op":"delete", "path": "/db/mytable/123"}
+`{"op":"delete", "path": "/db/mytable/123"}`
 
 ja mitme kirje kustutamine selliselt:
 
-[HTTPs://localhost/api] urlile saadetud HTTP post
+`[HTTPs://localhost/api]` urlile saadetud HTTP POST
 
-{"op":"delete", "path": "/db/mytable", "id":[123,456,777]}
+`{"op":"delete", "path": "/db/mytable", "id":[123,456,777]}`
 
-kus "id" asemel kasutatakse konkreetset väljanime, millega antud tabeli kirjeid identifitseeritakse, ning selle väärtuseks on alati kustutatavate kirjete identifikaatorite array.
+kus `"id"` asemel kasutatakse konkreetset väljanime, millega antud tabeli kirjeid identifitseeritakse, ning selle väärtuseks on alati kustutatavate kirjete identifikaatorite array.
 
-NB! Key väärtus ei pea olema  unikaalne identifikaator, seega võib üks kirje sisendis kustutada mitu kirjet  baasis.
+NB! `Key` väärtus ei pea olema  unikaalne identifikaator, seega võib üks kirje sisendis kustutada mitu kirjet  baasis.
 
-Päringu vastus on edukalt kustutatud kirjete arv, näiteks {"ok": 2}. Kui kirjeid ei õnnestunud kustutada, vastatakse lihtsalt {"ok": 0}
+Päringu vastus on edukalt kustutatud kirjete arv, näiteks `{"ok": 2}`. Kui kirjeid ei õnnestunud kustutada, vastatakse lihtsalt `{"ok": 0}`.
 
 ##Sõnumite töötlemise reeglid
 
 Sõnumite töötlemise üldised reeglid:
 
-* HTTP get käsuga saadetud sõnum ei tohi andmeid lisada, muuta ega kustutada, välja arvatud – potentsiaalselt – logikirjete lisamine.
-* Iga sõnum moodustab ühe terviku, ning – kui välja arvata tema võimalik otsene efekt andmete muutmiseks, logi kirjutamiseks jms – ei tohi tekitada kõrvalefekte, mis võivad mõjutada järgmiste sõnumite tähendust ja nende töötlemist.
+* HTTP GET käsuga saadetud sõnum ei tohi andmeid lisada, muuta ega kustutada, välja arvatud – potentsiaalselt – logikirjete lisamine.
+* Iga sõnum moodustab ühe terviku ning – kui välja arvata tema võimalik otsene efekt andmete muutmiseks, logi kirjutamiseks jms – ei tohi tekitada kõrvalefekte, mis võivad mõjutada järgmiste sõnumite tähendust ja nende töötlemist.
 
 ##Veateadete kirjeldused
 
 Veateade esitatakse alati JSON objekti kujul vastusena, kus on alati vähemalt kaks välja:
 
-* errcode, mis on üldistav vea iseloomustaja ning mida saab kasutata näiteks kasutajaliideses sobiva veateksti näitamiseks, ning
-* errmsg, mis on üldjuhul arendajale arusaadav veateade ilma stack traceta
+* `errcode`, mis on üldistav vea iseloomustaja ning mida saab kasutata näiteks kasutajaliideses sobiva veateksti näitamiseks, ning
+* `errmsg`, mis on üldjuhul arendajale arusaadav veateade ilma stack traceta
 
 ning lisaks võib soovi korral kasutada kolmandat:
 
-* errtrace, mis on tehniline stack trace debugimiseks
+* `errtrace`, mis on tehniline stack trace debugimiseks
 
 Näide:
 
-{"errcode": 2, "errmsg": "arusaamatu parameeter foo"}
+`{"errcode": 2, "errmsg": "arusaamatu parameeter foo"}`
 
-Seejuures errcode tähendus on järgmine:
+Seejuures `errcode` tähendus on järgmine:
 
 Puhttehnilised vead, mis üldjuhul ei ole sisendiga seotud:
 
-1: arusaamatu/klassifitseerimata viga
+`1`: arusaamatu/klassifitseerimata viga
 
-2: konfiguratsiooniviga
+`2`: konfiguratsiooniviga
 
-3: timeout
+`3`: timeout
 
-4: andmebaasi ühenduse loomise viga
+`4`: andmebaasi ühenduse loomise viga
 
 …. varuks ….
 
 Sisendi esitusega seotud vead:
 
-10: tundmatu/vale HTTP content-type
+`10`: tundmatu/vale HTTP content-type
 
-11: arusaamatu HTTP käsk või op parameetri väärtus
+`11`: arusaamatu HTTP käsk või op parameetri väärtus
 
-12: süntaktiliselt vigane sisend
+`12`: süntaktiliselt vigane sisend
 
-13: puuduvad vajalikud sisendparameetrid
+`13`: puuduvad vajalikud sisendparameetrid
 
-14: tundmatud sisendparameetrid
+`14`: tundmatud sisendparameetrid
 
-15: sisendparameetril vale väärtustüüp
+`15`: sisendparameetril vale väärtustüüp
 
-16: sisendparameetri pathi ei leitud
+`16`: sisendparameetri pathi ei leitud
 
-17: ligipääsuõigus puudub
+`17`: ligipääsuõigus puudub
 
-18: andmebaasi päringu formaadi viga
+`18`: andmebaasi päringu formaadi viga
 
 … varuks muud universaalsed tehnilised vead ….
 
-100: ja edasi:  spetsiifilised vead, mida rakendus võib kodeerida vabalt
+`100`: ja edasi:  spetsiifilised vead, mida rakendus võib kodeerida vabalt
 
 Veateate puhul võib HTTP vastuskood olla seejuures kas
 
-* 200 – OK - mida võib kasutada ka mittetehniliste vigade korral, kus ei ole päris sobivat järgnevat HTTP vastuskoodi, või mõni neist klassikalistest HTTP vastuskoodidest:
-* 400 - Bad Request – mingi sisendiprobleem,
-* 403 – Forbidden – ei ole õigust antud toimingut teha,
-* 404 - Not Found – api pathi ei leitud,
-* 500 - Internal Server Error – tehniline viga serveri pool
+* `200` – OK - mida võib kasutada ka mittetehniliste vigade korral, kus ei ole päris sobivat järgnevat HTTP vastuskoodi, või mõni neist klassikalistest HTTP vastuskoodidest:
+* `400` - Bad Request – mingi sisendiprobleem,
+* `403` – Forbidden – ei ole õigust antud toimingut teha,
+* `404` - Not Found – api pathi ei leitud,
+* `500` - Internal Server Error – tehniline viga serveri pool
 
 NB! JSON veateade tuleb esitada vastuskoodist sõltumatult.
 
