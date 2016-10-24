@@ -3,7 +3,7 @@ RIHA OUTLINE
 EESMÄRK
 	- Eesmärgiks on hajusarhitektuur,kus:
 		- 1) RIHA andmete loomine ja publitseerimine on laiali löödud asutustesse;
-		- 2) legacy RIHAon likvideeritud;
+		- 2) legacy RIHA on likvideeritud;
 		- 3) asendatud minimaalse kesksüsteemiga (kooskõlastamiseks hädavajalik funktsionaalsus +  kataloogiteenus (otsing ja kuvamine))
 
 HANKED
