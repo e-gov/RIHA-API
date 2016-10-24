@@ -1,4 +1,6 @@
-RIHA OUTLINE
+RIHA OUTLINE (väljavõte)
+
+seis 24.10.2016
 
 EESMÄRK
 	- Eesmärgiks on hajusarhitektuur,kus:
