@@ -26,6 +26,10 @@ HANKED
 				nr 4 Automaatkontrolli- ja teavitusmooduli projekteerimine ja teostus
 			- APP-XXX
 		- iteratsioon II (SF-II)
+			- APP-XXX
+				nr x XML varade moodul
+				nr x Sõnastike moodul
+				nr x X-tee toimingute moodul
 		- iteratsioon III
 	- Pisiarendustööd (Heisi OÜ)
 
