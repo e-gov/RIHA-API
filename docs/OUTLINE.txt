@@ -1,0 +1,80 @@
+RIHA OUTLINE
+
+EESMÄRK
+	- Eesmärgiks on hajusarhitektuur,kus:
+		- 1) RIHA andmete loomine ja publitseerimine on laiali löödud asutustesse;
+		- 2) legacy RIHAon likvideeritud;
+		- 3) asendatud minimaalse kesksüsteemiga (kooskõlastamiseks hädavajalik funktsionaalsus +  kataloogiteenus (otsing ja kuvamine))
+
+HANKED
+	- Raamhange (Girf OÜ):
+		- ärianalüüs
+		- iteratsioon I (SF):
+			- APP-100
+				nr 1 RIHA andmemudeli ajakohastamine
+				nr 2 RIHA andmete masinloetavate vormingute projekteerimine
+				nr 3 Pääsuhalduse lahenduse vahetamine ajakohasega
+				nr 4 Andmete kirjeldamise (haldamise) mooduli loomine
+				nr 5 RIHA andmebaasi täiendamine REST liidesega
+				nr 6 RIHA kujunduse uuendamine
+			- APP-101
+				nr 1 Kooskõlastusmooduli projekteerimine ja teostus
+				nr 2 Koguja projekteerimine ja teostus
+				nr 3 Andmemigratsiooni tugitegevused
+				nr 4 Automaatkontrolli- ja teavitusmooduli projekteerimine ja teostus
+			- APP-XXX
+		- iteratsioon II (SF-II)
+		- iteratsioon III
+	- Pisiarendustööd (Heisi OÜ)
+
+Absoluutne miinimum (MUST HAVE)
+	Infosüsteemi haldaja:
+	1  kirjeldab ise oma infosüsteemi ➔ RIHA kirjeldusstandard APP-100
+		- teeb seda oma asutuses
+		- on ise oma kirjelduse omanik
+	2  kasutades lihtsat kirjelduskeelt
+		- kirjeldus on masintöödeldav (JSON)
+		- samas ka inimloetav ja vajadusel -töödeldav
+		- kirjelduse võib malli alusel koostada tavalise tekstiredaktoriga
+	3  publitseerib ise oma kirjelduse(d)
+		- asutuse veebilehel
+		- vm asutuse kontrolli all olevas, internetile avatud keskkonnas
+	4  teatab RIHA kesksüsteemile oma kirjelduse asukoha
+	5  samamoodi kirjeldatakse klassifikaatoreid, e-teenuseid, XML-skeeme jm riigi infosüsteemi varasid
+
+	RIHA kesksüsteem:
+	1  peab nimekirja kirjelduste asukohtadest ➔ Lihtne kataloog APP-100
+	2  kogub kirjeldused regulaarselt kesksüsteemi kokku ➔ Koguja APP-101
+	3  ja teeb kõigile kättesaadavaks
+		- nii inim- ➔ Lihtne kuvamisvõimalus APP-100
+		- kui ka masinloetaval kujul ➔ REST API APP-100    
+
+	Kooskõlastaja:
+	annab hinnanguid ja kooskõlastusi RIHA kesksüsteemi kokkukogutud kirjeldustele ➔ Kooskõlastusmoodul APP-101
+
+Abivahendid (NICE TO HAVE)
+
+	Infosüsteemi haldaja:
+		- võib kirjeldamiseks kasutada tööriista ➔ Kirjeldusmoodul APP-100
+			- kas oma asutusse paigaldatult
+			- või RIHA kesksüsteemis 
+
+		- saab senised kirjeldused uude vormingusse teisendatult ➔ Andmemigratsioon APP-101
+
+		- saab ise publitseerimise asemel kirjeldusi hoida RIHA kesksüsteemis ➔
+
+		- võib oma töötajatele õiguste andmiseks kasutada RIHA kesksüsteemi pääsuhalduslahendust ➔ RIHA pääsuhalduslahendus APP-100   
+
+		- võib tööriista abil kontrollida kirjelduste kvaliteeti ➔ Automaatkontrollide moodul APP-101 
+
+	Kogutud teabe kasutaja:
+		- saab teavet visualiseeritult ➔ Visualiseerimismoodul XXX 
+
+		- saab koondandmeid, statistikat, aruandeid ➔ Avaandmete moodul XXX
+
+	RIHA kirjeldusstandardi semantika on selge ➔ Riigi infosüsteemi mõistete süsteem; Sõnastike moodul SF-II 
+
+	RIHA toimib platvormina mitmesugustele võimalikele riigi infosüsteemi haldusprotsessidele, nt X-teega liitumine ➔ X-tee liitumismoodul  SF-II
+
+	Eraldi on XML jms varade moodul (kas on ikka vaja?) ➔ XML-varade moodul SF-II
+
