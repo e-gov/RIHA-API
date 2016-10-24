@@ -2,6 +2,7 @@
 
 ![](img/EL_struktuuri-_ja_investeerimisfondid_horisontaalne.jpg)
 
-- [RIHA andmete masinloetavate vormingute põhimõtted](dok/POHIMOTTED.md)
-- [RIHA andmete masinloetavate vormingute spetsifikatsioon](dok/SPETSIFIKATSIOON.md)
-- [RIHA API](dok/API.md)
+- [RIHA ülevaade](https://e-gov.github.io/RIHA-API/Ylevaade.html)
+- [RIHA andmete masinloetavate vormingute põhimõtted](docs/POHIMOTTED.md)
+- [RIHA andmete masinloetavate vormingute spetsifikatsioon](docs/SPETSIFIKATSIOON.md)
+- [RIHA API](docs/API.md)
