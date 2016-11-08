@@ -16,7 +16,7 @@ RIHA funktsionaalsuste liigitus absoluutselt vajalikeks (MUST HAVE) ja abivahend
 | 2.3  | kirjeldused on ülesleitavad | M | RIHA kesksüsteem peab nimekirja kirjelduste asukohtadest ➔ Lihtne kataloog |
 | 3.1  | kirjeldused on kogumina kiiresti töödeldavad | M | RIHA kesksüsteem kogub kirjeldused regulaarselt kesksüsteemi kokku ➔ Koguja ("Andmekrabaja", "Reha") |
 | 4.1  | ... ja teeb kõigile kättesaadavaks nii masinloetaval | M | ➔ RIHA kesksüsteemi REST API |
-| 4.2  | kui ka inimloetaval kujul | M | ➔ Lihtne kuvamisvõimalus |
+| 4.2  | ... kui ka inimloetaval kujul | M | ➔ Lihtne kuvamisvõimalus |
 | 5.1  | kirjeldusi saab hinnata ja kooskõlastada | M | Kooskõlastaja annab hinnanguid ja kooskõlastusi RIHA kesksüsteemi kokkukogutud kirjeldustele ➔ Kooskõlastusmoodul |
 | 6.1  | Infosüsteemi haldaja võib kirjeldamiseks kasutada tööriista | N | ➔ Kirjeldusmoodul |
 | 6.2  | - kirjeldustööriista saab paigaldada oma asutusse | N | ➔ Kirjeldusmoodul |
