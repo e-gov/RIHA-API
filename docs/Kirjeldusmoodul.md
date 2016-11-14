@@ -1,4 +1,6 @@
-# Kirjeldusmoodul. Ülevaade
+# Kirjeldusmoodul. Ülevaade ja tööde plaan
+
+## Ülevaade
 
 - Kirjeldusmoodul on RIHA üks nähtavamaid komponente. Mooduli võimalused:
   - inimkasutaja saab leida, vaadata, lisada, muuta ja hallata (ümber nimetada, kustutada) RIHA andmekirjeldusi
@@ -9,9 +11,9 @@
   
   - soovitavaks omaduseks on ka RIHA kesksüsteemist eraldi paigaldatavus.
  
- ## Hinnang tehtule
+## Hinnang tehtule
  
- - Tehnoloogia
+- Tehnoloogia
    - valitud on aktuaalne, üheks parimaks peetav tehnoloogiapinu (_stack_)
      - React, _Javascripti-põhine UI raamistik_
      - Gulp, _ehitamise automatiseerimisvahend_
@@ -21,7 +23,7 @@
      - mallid osutusid mahukaks (5000+ JSON rida); soovi korral saaks JSON malle otse redigeerida, jättes Exceli järgu ära
      - mallide muutmist (versioneerimist) ei ole katsetatud; mallidesse puutuv on ka ebapiisavalt dokumenteeritud
  
- ## Tööde plaan
+## Tööde plaan
 
 Märkus. Tööde plaanis on ka töid (nt URL-de teema), mida võib liigitada ka teiste moodulite alla.
 
