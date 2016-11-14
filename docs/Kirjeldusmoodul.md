@@ -25,21 +25,22 @@
  
 ## Tööde plaan
 
-Märkus. Tööde plaanis on ka töid (nt URL-de teema), mida võib liigitada ka teiste moodulite alla.
+Märkus. Sisaldab töid (nt URL-de teema), mida võib liigitada ka teiste moodulite alla.
 
 |     | Täitja  | Eeldused  |
 |-----|---------|-----------|
-| Dokumentatsiooni täiendamine         |    |   |
+| __Dokumentatsiooni täiendamine__         |    |   |
 | - malli (JSON, ja Excel) struktuur vajab selget dokumenteerimist |  |  |
-| Mallikäsitluse analüüs, projekteerimine, dokumenteerimine ja testimine - _Kuidas malli muutmise protsess käib? Mida see tähendab? Mida arvestada, et asjad ei läheks katki?_ |  |  |
-| URL-de süsteemi väljatöötamine - _Vaja on süsteemi RIHA objektidele identifikaatorite omistamiseks. Kokku lepitud on, et identifikaatorid võiksid olla URL-id; millised, seda tuleb analüüsida ja leida lihtne süsteem_ | | |
-| Avaldamine                             |    |   |
+| __Mallikäsitluse analüüs, projekteerimine, dokumenteerimine ja testimine__ - _Kuidas malli muutmise protsess käib? Mida see tähendab? Mida arvestada, et asjad ei läheks katki?_ |  |  |
+| __Faili salvestamise ja failist lugemise__ saavutamine - _Analüüsida, kas see on praktiliselt teostatav, projekteerida ja teostada_ | | |
+| __URL-de süsteemi väljatöötamine__ - _Vaja on süsteemi RIHA objektidele identifikaatorite omistamiseks. Kokku lepitud on, et identifikaatorid võiksid olla URL-id; millised, seda tuleb analüüsida ja leida lihtne süsteem_ | | |
+| __Avaldamine__                             |    |   |
 | - dokumentatsiooni avaldamine (GitHub) |    |   |
 | - koodi avaldamine (GitHub)            |    |   |
-| Eraldipaigaldatavuse saavutamine     |    |   |
+| __Eraldipaigaldatavuse saavutamine__     |    |   |
 | - analüüs ja projekteerimine          |    |   |
 | - teostus                            |    |   |
-| Kujunduse vahetamine                 |    | Uus kujunduslahendus |
+| __Kujunduse vahetamine__                 |    | Uus kujunduslahendus |
  
  ## Arhitektuurijoonis
  
