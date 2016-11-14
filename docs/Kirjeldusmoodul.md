@@ -24,14 +24,15 @@
  ## Tööde plaan
  
 |     | Täitja  | Eeldused  |
-|-----|-----|--|
+|-----|---------|-----------|
 | Dokumentatsiooni täiendamine         |    |   |
+| Mallikäsitluse analüüs, projekteerimine, dokumenteerimine ja testimine |  |  |
 | Dokumentatsiooni avaldamine (GitHub) |    |   |
 | Koodi avaldamine (GitHub)            |    |   |
 | Eraldipaigaldatavuse saavutamine     |    |   |
-| - analüüs & projekteerimine          |    |   |
+| - analüüs ja projekteerimine          |    |   |
 | - teostus                            |    |   |
-| Kujunduse vahetamine |  | Uus kujunduslahendus |
+| Kujunduse vahetamine                 |    | Uus kujunduslahendus |
  
  ## Arhitektuurijoonis
  
