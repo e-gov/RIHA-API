@@ -22,11 +22,15 @@
      - mallide muutmist (versioneerimist) ei ole katsetatud; mallidesse puutuv on ka ebapiisavalt dokumenteeritud
  
  ## Tööde plaan
- 
+
+Märkus. Tööde plaanis on ka töid (nt URL-de teema), mida võib liigitada ka teiste moodulite alla.
+
 |     | Täitja  | Eeldused  |
 |-----|---------|-----------|
 | Dokumentatsiooni täiendamine         |    |   |
-| Mallikäsitluse analüüs, projekteerimine, dokumenteerimine ja testimine |  |  |
+| - malli (JSON, ja Excel) struktuur vajab selget dokumenteerimist |  |  |
+| Mallikäsitluse analüüs, projekteerimine, dokumenteerimine ja testimine - _Kuidas malli muutmise protsess käib? Mida see tähendab? Mida arvestada, et asjad ei läheks katki?_ |  |  |
+| URL-de süsteemi väljatöötamine - _Vaja on süsteemi RIHA objektidele identifikaatorite omistamiseks. Kokku lepitud on, et identifikaatorid võiksid olla URL-id; millised, seda tuleb analüüsida ja leida lihtne süsteem_ | | |
 | Dokumentatsiooni avaldamine (GitHub) |    |   |
 | Koodi avaldamine (GitHub)            |    |   |
 | Eraldipaigaldatavuse saavutamine     |    |   |
