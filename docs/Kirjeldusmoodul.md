@@ -6,6 +6,8 @@
   - kirjelduste lugemine ja kirjutamine ka failist (faili)
   - kirjeldamise tüürimine mallide abil
   -	andmete vaatamine külalise režiimis; muud tegevused vastava õiguse olemasolul.
+  
+  - soovitavaks omaduseks on ka RIHA kesksüsteemist eraldi paigaldatavus.
  
  ## Hinnang tehtule
  
@@ -21,8 +23,15 @@
  
  ## Tööde plaan
  
- - Dokumentatsiooni kordategemine
- - Kujunduse vahetamine - EELDUS: Uus kujunduslahendus
+|     | Täitja  | Eeldused  |
+|-----|-----|--|
+| Dokumentatsiooni täiendamine         |    |   |
+| Dokumentatsiooni avaldamine (GitHub) |    |   |
+| Koodi avaldamine (GitHub)            |    |   |
+| Eraldipaigaldatavuse saavutamine     |    |   |
+| - analüüs & projekteerimine          |    |   |
+| - teostus                            |    |   |
+| Kujunduse vahetamine |  | Uus kujunduslahendus |
  
  ## Arhitektuurijoonis
  
