@@ -1,2 +1,2 @@
 
-<img src='RIHA-YLDVAADE-02.PNG' width='100%'>
+<img src='RIHA-YLDVAADE-02.PNG' width='140%'>
