@@ -31,8 +31,9 @@ Märkus. Tööde plaanis on ka töid (nt URL-de teema), mida võib liigitada ka 
 | - malli (JSON, ja Excel) struktuur vajab selget dokumenteerimist |  |  |
 | Mallikäsitluse analüüs, projekteerimine, dokumenteerimine ja testimine - _Kuidas malli muutmise protsess käib? Mida see tähendab? Mida arvestada, et asjad ei läheks katki?_ |  |  |
 | URL-de süsteemi väljatöötamine - _Vaja on süsteemi RIHA objektidele identifikaatorite omistamiseks. Kokku lepitud on, et identifikaatorid võiksid olla URL-id; millised, seda tuleb analüüsida ja leida lihtne süsteem_ | | |
-| Dokumentatsiooni avaldamine (GitHub) |    |   |
-| Koodi avaldamine (GitHub)            |    |   |
+| Avaldamine                             |    |   |
+| - dokumentatsiooni avaldamine (GitHub) |    |   |
+| - koodi avaldamine (GitHub)            |    |   |
 | Eraldipaigaldatavuse saavutamine     |    |   |
 | - analüüs ja projekteerimine          |    |   |
 | - teostus                            |    |   |
