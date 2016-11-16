@@ -31,7 +31,7 @@
   - optimeeriva analüüsi võime - analüüs, mis ei piirdu teabe kogumise ja süstematiseerimisega, vaid teeb veel sammu edasi, tehes ettepanekuid analüüsitava paremaks tegemiseks
   - kontseptsiooni loova analüüsi võime - analüüs, mis ei piirdu teabe kogumise ja süstematiseerimisega -"maailma kirjeldamisega" - kui kasutada K. Marxi terminoloogiat, vaid asub ka seda muutma - pakub välja lahenduse (tegevuskava vms) v alternatiivid
   - probleemi analüüsi võime - konkreetse probleemi selgitamisele ja lahendamisele suunatud analüüs; nõuab probleemi sõnastamise oskust, probleemitaluvust jm (osalt psühholoogilisi) oskusi
-    - võime läbi viia probleemi analüüs (uurimine), piiritleda käsitlusala, võtta arvesse kontekst, leida küsimuse tuum või võtmestruktuur, võtta küsimus kokku, teha üldistus, jõuda tulemuseni, mis kas lahendab (sulgeb) probleemi või loob aluse, kust on hea edasi minna
+    - võime läbi viia probleemi analüüs (uurimine), piiritleda käsitlusala, võtta arvesse kontekst, leida küsimuse tuum või võtmestruktuur, võtta küsimus kokku, õigel ajal puutuda, teha üldistus, jõuda tulemuseni, mis kas lahendab (sulgeb) probleemi või loob aluse, kust on hea edasi minna
       - ekspressanalüüsi võime
       - süvaanalüüsi võime  
   
