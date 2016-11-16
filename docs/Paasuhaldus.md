@@ -60,17 +60,15 @@ Joonis 1
 
 ![](RIHA-SSO.png)
 
-|    |    |
+| komponent | detailiseering |
 |----|----|
 | eesti.ee autentimisteenus [1] | pakub ka SSO-d; rahuldab RIHA kesksüsteemi vajadust korraldada kasutaja liikumine erinevate komponentide kasutajaliideste vahel ilma uuesti autentimise vajaduseta; valmimisajaks on kavandatud "kevad 2017" |
 | Esindusõiguse tuvastaja | lihtne, ühtainust funktsiooni täitev komponent, mis on vajalik asutuse pääsuõiguste "puu" tekitamiseks [_terminoloogia täpsustada_]. Pöördub üle X-tee Äriregistri (kuhu viiakse ka RKOARR) poole ja pärib teabe asutus(t)e kohta, keda isik esindab |
 | Rollihaldur | Komponent, mille funktsiooniks on RIHA kasutajate rollihaldus. Sisaldab andmebaasi ja kasutajaliidest. Tugineb RIHA rollide ja õiguste mudelile [2]. Rolle annavad ja võtavad ära _asutuse esindusõigusega isik_ ja _asutuse RIHA haldur_.Tehnoloogiaks kaaluda OpenLDAP http://www.openldap.org/ või oma lahendust. Rollihaldus p.o lihtne, soovitavalt tuginema RBAC http://csrc.nist.gov/groups/SNS/rbac/ käsitlusele. Soovitatav on päring Rahvastikuregistrisse isikukoodi kontrolliseks. | 
 
-## 6 Lahendamist vajavad küsimused
+## 6 Vajalikud tööd
 
-## 7 Vajalikud tööd
-
-|   |   |
+|  töö | detailiseering  |
 |---|---|
 | Esindusõiguse tuvastaja teostamine | _sisaldab ka analüüsi ja projekteerimist_ |
 | Rollihalduri teostus | _sisaldab ka tehnoloogia valikut, analüüsi ja projekteerimist. Eelduseks on "RIHA rollide ja õiguste mudel"_ |
