@@ -60,7 +60,7 @@ Järgnevalt on esitatud RIHA pääsuhalduse lahendus, mis tugineb eesti.ee auten
 
 Joonis 1 
 
-![](RIHA-Paasuhaldus-02.png)
+![](RIHA-Paasuhaldus-02.PNG)
 
 | komponent | detailiseering |
 |----|----|
