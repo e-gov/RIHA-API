@@ -54,11 +54,13 @@ Pääsuhalduse korraldamine RIHA kesksüsteemis. Ei käsitleta pääsuhalduse ko
 
 Pääsuhalduslahendust üritati lahendada Eesti Tervise Sihtasutuse (ETSA) autentimis- ja autoriseerimislahenduse (AAM) kasutuselevõtmisega. Selgus, et AAMi kohandamine RIHA-s kasutatavaks on komplitseeritud. Üritus ei andnud loodetud tulemust.
 
+5.3 __Lahendus eesti.ee autentimisteenuse kasutamisega__
+
 Järgnevalt on esitatud RIHA pääsuhalduse lahendus, mis tugineb eesti.ee autentimisteenusele ja omaarendatud komponentidele (joonis 1).
 
 Joonis 1 
 
-![](RIHA-SSO.png)
+![](RIHA-Paasuhaldus-02.png)
 
 | komponent | detailiseering |
 |----|----|
