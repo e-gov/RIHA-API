@@ -16,6 +16,7 @@
   - analüüsi raport
   - protokoll
   - memo
+  - _weekly progress report_ jms
 
 ## Arendustööde liigid, väljendatud võimetena
 
