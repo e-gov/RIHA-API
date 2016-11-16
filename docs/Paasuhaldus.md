@@ -1,3 +1,12 @@
+MÄRKUSED
+
+16.11.2016 tutvustus H-le:
+- LDAP tundub hea; OpenLDAP pole kõrgkäideldavuse seisukohalt parim;
+- selgitada, kas eesti.ee autentimisteenuse lubadusele saab tugineda 
+- Esindusõiguse kontrollija p.o Rollihalduri küljes
+
+---
+
 # RIHA pääsuhaldus
 
 spetsifikatsioon
