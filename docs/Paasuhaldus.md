@@ -10,7 +10,7 @@ Sisukord
 - [2 Mõisted ja lühendid](#2-mõisted-ja-lühendid)
 - [3 Olulised viited](#3-olulised-viited)
 - [4 Vajadus](#4-vajadus)
-- [5 Lahendus]
+- [5 Lahendus](#5-lahendus)
 
 ## 1 Käsitlusala
 
@@ -26,7 +26,7 @@ Pääsuhalduse korraldamine RIHA kesksüsteemis. Ei käsitleta pääsuhalduse ko
 
 ## 3 Olulised viited
 
-[RIHA üldvaade](https://raw.githubusercontent.com/e-gov/RIHA-API/master/docs/YLDVAADE.md)
+[RIHA üldvaade](https://github.com/e-gov/RIHA-API/blob/master/docs/YLDVAADE.md#riha-%C3%BCldvaade)
 
 ## 4 Vajadus
 
@@ -35,8 +35,19 @@ Pääsuhalduse korraldamine RIHA kesksüsteemis. Ei käsitleta pääsuhalduse ko
   2. _kooskõlastuse_ andmine
   3. piiratud juurdepääsuga teabe vaatamisel
   4. teiste kasutajate pääsuõiguste haldamisel (andmisel ja äravõtmisel)
-  
+
 ## 5 Lahendus
+
+5.1 __Piiratud juurdepääsuga teave__.
+  - Vanas RIHAs on kesksüsteemi kogutud teabele juurdepääsu võimalik piirata. Mehhanism on keeruline ja halvasti läbipaistev. Juurdepääsu piiramist kasutatakse eelkõige kooskõlastajatele vajaliku, kuid väidetavalt avalikkuse eest kaitset vajavad teabe edastamiseks.
+  - Eraldi vajadus on RIA soov koguda RIHAsse turvaauditite raporteid. See teave vajab kindlasti juurdepääsu piiramist.
+  - Kaalutlused:
+    - juurdepääsupiiranguga teabe töötlus läheb vastuollu RIHA teabe avalikkuse üldpõhimõttega ja lisaks keerukust, sh kõrgemast turvaklassist tulenevat.
+    - samas RIHA kontseptsioon platvormteenusena peaks võimaldama täita ka olulisi vajadusi, mis nõuavad juurdepääsupiiranguga teabe töötlemist.
+
+Lahendus: Piiratud juurdepääsuga teabe töötlemine lahendada eraldi moodulina (esialgne nimetus "Turvateave").
+  - moodul teostada teises järjekorras
+
 
 Joonis 1 
 
