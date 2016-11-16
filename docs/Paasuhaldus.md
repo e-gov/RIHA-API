@@ -38,12 +38,14 @@ Pääsuhalduse korraldamine RIHA kesksüsteemis. Ei käsitleta pääsuhalduse ko
   2. _kooskõlastuse_ andmine
   3. piiratud juurdepääsuga teabe vaatamisel
   4. teiste kasutajate pääsuõiguste haldamisel (andmisel ja äravõtmisel)
+  5. X-tee toimingutes (nt alamsüsteemide registreerimine) 
 
 ## 5 Lahendus
 
 5.1 __Piiratud juurdepääsuga teave__
 - __Vanas RIHAs__ on kesksüsteemi kogutud teabele juurdepääsu võimalik piirata. Mehhanism on keeruline ja halvasti läbipaistev. Juurdepääsu piiramist kasutatakse eelkõige kooskõlastajatele vajaliku, kuid väidetavalt avalikkuse eest kaitset vajavad teabe edastamiseks.
 - __Turvaauditite raportid__ Eraldi vajadus on RIA soov koguda RIHAsse turvaauditite raporteid. See teave vajab kindlasti juurdepääsu piiramist.
+- __Kontaktisikute andmed__
 - __Kaalutlused:__
   - juurdepääsupiiranguga teabe töötlus läheb vastuollu RIHA teabe avalikkuse üldpõhimõttega ja lisaks keerukust, sh kõrgemast turvaklassist tulenevat.
   - samas RIHA kontseptsioon platvormteenusena peaks võimaldama täita ka olulisi vajadusi, mis nõuavad juurdepääsupiiranguga teabe töötlemist.
