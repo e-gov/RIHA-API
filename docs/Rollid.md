@@ -6,16 +6,17 @@ v0.1, 18.11.2016
 
 Sisukord
 
-- [1 Käsitlusala]()
-- [2 Mõisted ja lühendid]()
-- [3 Olulised viited]()
-- [4 Rollihalduse põhimõtted ja disaini eesmärgid]()
-- [5 Rollid]()
-- [6 Protsessid (e kasutuslood)]()
-- [6.1 Kasutaja autoriseerimine]()
-- [6.2 Rollihalduri määramine]()
-- [6.3 Rolli määramine]()
-- [7 Rollide ülekandmine vanast RIHAst]()
+- [1 Käsitlusala](https://github.com/e-gov/RIHA-API/blob/master/docs/Rollid.md#1-k%C3%A4sitlusala)
+- [2 Mõisted ja lühendid](https://github.com/e-gov/RIHA-API/blob/master/docs/Rollid.md#2-m%C3%B5isted-ja-l%C3%BChendid)
+- [3 Olulised viited](https://github.com/e-gov/RIHA-API/blob/master/docs/Rollid.md#3-olulised-viited)
+- [4 Rollihalduse põhimõtted ja disaini eesmärgid](https://github.com/e-gov/RIHA-API/blob/master/docs/Rollid.md#4-rollihalduse-p%C3%B5him%C3%B5tted-ja-disaini-eesm%C3%A4rgid)
+- [5 Rollid](https://github.com/e-gov/RIHA-API/blob/master/docs/Rollid.md#5-rollid)
+- [6 Protsessid (e kasutuslood)](https://github.com/e-gov/RIHA-API/blob/master/docs/Rollid.md#6-protsessid-e-kasutuslood)
+- [6.1 Kasutaja autoriseerimine](https://github.com/e-gov/RIHA-API/blob/master/docs/Rollid.md#61-kasutaja-autoriseerimine)
+- [6.2 Rollihalduri määramine](https://github.com/e-gov/RIHA-API/blob/master/docs/Rollid.md#62-rollihalduri-m%C3%A4%C3%A4ramine)
+- [6.3 Rolli määramine](https://github.com/e-gov/RIHA-API/blob/master/docs/Rollid.md#63-rolli-m%C3%A4%C3%A4ramine)
+- [7 Õigused]()
+- [8 Rollide ülekandmine vanast RIHAst]()
 
 ## 1 Käsitlusala
 
@@ -115,10 +116,10 @@ Märkus. Rolli `ROLLIHALDUR` määramine vt "Rollihalduri määramine".
 
 1. Rolli `KOOSKÕLASTAJA` saab määrata ainult kooskõlastavate asutuste nimekirja kuuluvas asutuses. 
 
-## Õigused
+## 7 Õigused
 Rollidega seotud õiguste haldus on iga RIHA komponendi enda siseasi; õiguste teavet ei tsentraliseerita.
 
-## 7 Rollide ülekandmine vanast RIHAst
+## 8 Rollide ülekandmine vanast RIHAst
 
 1. Tehakse analüüs (väikesemahuline) ja hinnatakse ülekandmise keerukust.
 2. Hinnangu alusel otsustatakse, kas projekteeritakse ja teostatakse rolliteabe ülekandmine (skriptide abil) või korraldatakse uues RIHAs rollide moodustamine "nullist peale".
