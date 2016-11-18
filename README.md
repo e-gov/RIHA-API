@@ -1,3 +1,11 @@
+# Agiil-RIHA
+
+- [RIHA üldvaade](YLDVAADE.md)
+- [RIHA rollid ja õigused](docs/Rollid.md)
+- [RIHA pääsuhaldus](Paasuhaldus.md)
+ 
+ - - -
+
 # RIHA kirjeldusstandard ja API
 
 ![](img/EL_struktuuri-_ja_investeerimisfondid_horisontaalne.jpg)
