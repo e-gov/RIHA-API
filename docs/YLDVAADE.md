@@ -1,3 +1,3 @@
 # RIHA üldvaade
 
-<img src='RIHA-YLDVAADE-02.PNG' width='1000'>
+<img src='RIHA-YLDVAADE-03.PNG' width='1000'>
