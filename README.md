@@ -1,5 +1,7 @@
 # Agiil-RIHA
 
+_ajakohastena hoitavad, pikaajaliseks ja sagedaseks kasutamiseks mõeldud dokumendid
+
 - [RIHA üldvaade](docs/YLDVAADE.md) _arhitektuuri peadokument_
 
 - [RIHA rollid ja õigused](docs/Rollid.md) _spetsifikatsioon_
