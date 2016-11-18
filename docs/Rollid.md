@@ -6,17 +6,17 @@ v0.1, 18.11.2016
 
 Sisukord
 
-- [1 Käsitlusala](https://github.com/e-gov/RIHA-API/blob/master/docs/Rollid.md#1-k%C3%A4sitlusala)
-- [2 Mõisted ja lühendid](https://github.com/e-gov/RIHA-API/blob/master/docs/Rollid.md#2-m%C3%B5isted-ja-l%C3%BChendid)
-- [3 Olulised viited](https://github.com/e-gov/RIHA-API/blob/master/docs/Rollid.md#3-olulised-viited)
-- [4 Rollihalduse põhimõtted ja disaini eesmärgid](https://github.com/e-gov/RIHA-API/blob/master/docs/Rollid.md#4-rollihalduse-p%C3%B5him%C3%B5tted-ja-disaini-eesm%C3%A4rgid)
-- [5 Rollid](https://github.com/e-gov/RIHA-API/blob/master/docs/Rollid.md#5-rollid)
-- [6 Protsessid (e kasutuslood)](https://github.com/e-gov/RIHA-API/blob/master/docs/Rollid.md#6-protsessid-e-kasutuslood)
-- [6.1 Kasutaja autoriseerimine](https://github.com/e-gov/RIHA-API/blob/master/docs/Rollid.md#61-kasutaja-autoriseerimine)
-- [6.2 Rollihalduri määramine](https://github.com/e-gov/RIHA-API/blob/master/docs/Rollid.md#62-rollihalduri-m%C3%A4%C3%A4ramine)
-- [6.3 Rolli määramine](https://github.com/e-gov/RIHA-API/blob/master/docs/Rollid.md#63-rolli-m%C3%A4%C3%A4ramine)
-- [7 Õigused]()
-- [8 Rollide ülekandmine vanast RIHAst]()
+- [1 Käsitlusala](#1-k%C3%A4sitlusala)
+- [2 Mõisted ja lühendid](#2-m%C3%B5isted-ja-l%C3%BChendid)
+- [3 Olulised viited](#3-olulised-viited)
+- [4 Rollihalduse põhimõtted ja disaini eesmärgid](#4-rollihalduse-p%C3%B5him%C3%B5tted-ja-disaini-eesm%C3%A4rgid)
+- [5 Rollid](#5-rollid)
+- [6 Protsessid (e kasutuslood)](#6-protsessid-e-kasutuslood)
+- [6.1 Kasutaja autoriseerimine](#61-kasutaja-autoriseerimine)
+- [6.2 Rollihalduri määramine](#62-rollihalduri-m%C3%A4%C3%A4ramine)
+- [6.3 Rolli määramine](#63-rolli-m%C3%A4%C3%A4ramine)
+- [7 Õigused](#7-%C3%95igused)
+- [8 Rollide ülekandmine vanast RIHAst](#8-rollide-%C3%BClekandmine-vanast-rihast)
 
 ## 1 Käsitlusala
 
