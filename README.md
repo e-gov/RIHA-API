@@ -1,6 +1,6 @@
 # Agiil-RIHA
 
-- [RIHA üldvaade](YLDVAADE.md)
+- [RIHA üldvaade](YLDVAADE.md) _arhitektuuri peadokument_
 
 - [RIHA rollid ja õigused](docs/Rollid.md) _spetsifikatsioon_
 
