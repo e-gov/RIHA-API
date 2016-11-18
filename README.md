@@ -2,9 +2,9 @@
 
 - [RIHA üldvaade](YLDVAADE.md)
 
-- [RIHA rollid ja õigused](docs/Rollid.md)
+- [RIHA rollid ja õigused](docs/Rollid.md) _spetsifikatsioon_
 
-- [RIHA pääsuhaldus](Paasuhaldus.md)
+- [RIHA pääsuhaldus](Paasuhaldus.md) _spetsifikatsioon_
  
  - - -
 
