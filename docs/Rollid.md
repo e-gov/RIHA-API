@@ -4,6 +4,19 @@ spetsifikatsioon
 
 v0.1, 18.11.2016
 
+Sisukord
+
+- [1 Käsitlusala]()
+- [2 Mõisted ja lühendid]()
+- [3 Olulised viited]()
+- [4 Rollihalduse põhimõtted ja disaini eesmärgid]()
+- [5 Rollid]()
+- [6 Protsessid (e kasutuslood)]()
+- [6.1 Kasutaja autoriseerimine]()
+- [6.2 Rollihalduri määramine]()
+- [6.3 Rolli määramine]()
+- [7 Rollide ülekandmine vanast RIHAst]()
+
 ## 1 Käsitlusala
 
 Dokument spetsifitseerib RIHAs kasutajatele antavad rollid ja õigused, rollide ja õiguste haldusprotsessid (kasutaja lisamine, rolli andmine jms) ja sisulised üldnõuded rolli- ja õiguste halduse tehnilisele teostusele.
@@ -12,7 +25,7 @@ Dokument spetsifitseerib RIHAs kasutajatele antavad rollid ja õigused, rollide 
 
 | mõiste | seletus |
 |--------|---------|
-| _RIHA kasutaja_  | inimene, kes kasutab RIHA kesksüsteemi (RIHA kesksüsteemi avalehe, kirjeldusmooduli või muu kasutajaliidest omava komponendi kaudu); samuti RIHA Rollihalduri (tarkvarakomponendi) inimkasutaja | 
+| _RIHA kasutaja_, ka lihtsalt _kasutaja_  | inimene, kes kasutab RIHA kesksüsteemi (RIHA kesksüsteemi avalehe, kirjeldusmooduli või muu kasutajaliidest omava komponendi kaudu); samuti RIHA Rollihalduri (tarkvarakomponendi) inimkasutaja. Kasutaja ei tarvitse olla autenditud ega omada RIHAs rolle | 
 | _Esindusõigusega isik_ | asutuse vm juriidilise isiku esindamise õigust omav inimene; esindusõigus tehakse kindlaks päringuga Äriregistrisse |
 | _roll_ | RIHA kasutajale omistatud roll |
 | _õigus_ | RIHA kasutaja õigus teha RIHA mõnes komponendis mõnda toimingut; õigus on seotud ühelt poolt rolliga ja teiselt poolt toimingu objekti tüübiga, mõnel juhul ka konkreetse objektiga |
@@ -20,6 +33,7 @@ Dokument spetsifitseerib RIHAs kasutajatele antavad rollid ja õigused, rollide 
 | _rollihaldur_, ka _asutuse rollihaldur_ | RIHA kasutava asutuse töötaja, kes haldab (annab ja võtab ära) asutuse töötajate rolle. Mõiste on sarnane vana RIHA mõistega "asutuse RIHA haldur" |
 | _asutus_ | käesolevas dokumendis: asutus, ettevõte vm juriidiline isik, kellel on vajadus või kes soovib RIHA kasutada viisil, mis nõuab rollide ja õiguste omamist RIHA kesksüsteemis |
 | _kooskõlastavate asutuste nimekiri_ | nimekiri asutustest (nt AKI, Statistikaamet jt), kelle rollihalduril on õigus määrata inimesele rolli `KOOSKÕLASTAJA`; nimekiri teostatakse konfiguratsioonifailina |
+| _autoriseerimine_ | käesolevas dokumendis kasutatakse tähenduses: kasutajale antud rollide edastamine rakendusele, tehakse pärast kasutaja autentimist |
 
 ## 3 Olulised viited
 
@@ -27,14 +41,14 @@ Dokument spetsifitseerib RIHAs kasutajatele antavad rollid ja õigused, rollide 
 - [2] [RIHA pääsuhaldus](https://github.com/e-gov/RIHA-API/blob/master/docs/Paasuhaldus.md). Spetsifikatsioon. 
 - [3] Eesti.ee autentimisteenus v 0.9 (8.06.2016)
 
-## Disaini eesmärgid
+## 4 Rollihalduse põhimõtted ja disaini eesmärgid
 
 - Ainult minimaalselt vajalik keerukus
   - keerukas rollihaldus on koormav ja kasutajad tegelikult ei vaja seda
   - vana RIHA rollihaldus on liiga keerukas
 - Teha kõigepealt lihtsalt; tulevikus, kui tõesti vaja, alles siis täiendada
 
-## 4 Rollid
+## 5 Rollid
 
 | roll        | seletus |
 |-------------|------------|
@@ -42,17 +56,18 @@ Dokument spetsifitseerib RIHAs kasutajatele antavad rollid ja õigused, rollide 
 | `KIRJELDAJA`  | asutuse töötaja, kellel on õigus kirjeldus RIHA kesksüsteemi lisada, muuta ja eemaldada |
 | `KOOSKÕLASTAJA` | isik, kes saab RIHAs anda kooskõlastusi |
 
-## 5 Protsessid (e kasutuslood)
+## 6 Protsessid (e kasutuslood)
 
-## 5.1 Autoriseerimine
-1. RIHA kasutaja siseneb RIHAsse - avalehele.
-2. Suunatakse autentimisele - eesti.ee autentimisteenusesse.
+## 6.1 Kasutaja autoriseerimine
+1. Kasutaja siseneb RIHAsse - avalehele.
+2. Kasutaja autenditakse (eesti.ee autentimisteenuses).
 3. Avaleht pärib Rollihaldurist autenditud kasutaja rollid.
   1. Rollihaldus tagastab isiku kõik rollid.
-  2. Kui isikul on rolle mitmes asutuses, siis tagastatakse kõik rollid asutuste kaupa.
+  2. Kui isikul on rolle mitmes asutuses, siis tagastatakse kõigi asutustega seotud rollid, asutuste kaupa.
 
-## 5.2 Rollihalduri määramine
+## 6.2 Rollihalduri määramine
 (põhivoog)
+
 1. Esindusõigusega isik siseneb RIHAsse - avalehele.
 2. Autendib end - eesti.ee autentimisteenuses.
 3. Valib avalehel toimingu "RIHAga liitumine".
@@ -62,16 +77,19 @@ Dokument spetsifitseerib RIHAs kasutajatele antavad rollid ja õigused, rollide 
 7. Esindusõigusega isik määrab ühe isiku asutuse rollihalduriks.
 
 (abivoog: rollihalduri vahetamine)
+
 1. Esindusõigusega isik määrab asutuse rollihalduriks teise inimese.
 
 (abivoog: rollihalduri eemaldamine)
+
 1. Esindusõigusega isik eemaldab rollihalduri.
 
-## 5.3 Rolli andmine
+## 6.3 Rolli määramine
 
-Märkus. Ei hõlma rolli `ROLLIHALDUR`.
+Märkus. Rolli `ROLLIHALDUR` määramine vt "Rollihalduri määramine".
 
 (põhivoog)
+
 1. Rollihaldur siseneb RIHAsse - avalehele
 2. Autendib end - eesti.ee autentimisteenuses.
 3. Valib avalehel toimingu "Rollide haldamine".
@@ -82,21 +100,25 @@ Märkus. Ei hõlma rolli `ROLLIHALDUR`.
 8. Rollihaldur määrab inimesele rolli.
 
 (abivoog)
+
 1. Rollihaldur eemaldab inimeselt rolli
 
 (abivoog)
+
 1. Rollihaldur eemaldab inimese koos kõigi tema rollidega
 
 (abivoog)
+
 1. Rollihaldur annab inimesele teise rolli
 
 Ärireeglid:
+
 1. Rolli `KOOSKÕLASTAJA` saab määrata ainult kooskõlastavate asutuste nimekirja kuuluvas asutuses. 
 
 ## Õigused
 Rollidega seotud õiguste haldus on iga RIHA komponendi enda siseasi; õiguste teavet ei tsentraliseerita.
 
-## 5 Rollide ülekandmine vanast RIHAst
+## 7 Rollide ülekandmine vanast RIHAst
 
 1. Tehakse analüüs (väikesemahuline) ja hinnatakse ülekandmise keerukust.
 2. Hinnangu alusel otsustatakse, kas projekteeritakse ja teostatakse rolliteabe ülekandmine (skriptide abil) või korraldatakse uues RIHAs rollide moodustamine "nullist peale".
