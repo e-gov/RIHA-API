@@ -36,7 +36,7 @@ Pääsuhalduse korraldamine RIHA kesksüsteemis. Ei käsitleta pääsuhalduse ko
 ## 3 Olulised viited
 
 - [1] [RIHA üldvaade](https://github.com/e-gov/RIHA-API/blob/master/docs/YLDVAADE.md#riha-%C3%BCldvaade)
-- [2] Rollide ja õiguste mudel _praegu koostamata_
+- [2] [RIHA rollid ja õigused](Rollid.md)
 - [3] Eesti.ee autentimisteenus v 0.9 (8.06.2016)
 
 ## 4 Vajadus
@@ -75,12 +75,13 @@ Joonis 1
 | komponent | detailiseering |
 |----|----|
 | eesti.ee autentimisteenus [1] | pakub ka SSO-d; rahuldab RIHA kesksüsteemi vajadust korraldada kasutaja liikumine erinevate komponentide kasutajaliideste vahel ilma uuesti autentimise vajaduseta; valmimisajaks on kavandatud "kevad 2017" |
-| Esindusõiguse tuvastaja | lihtne, ühtainust funktsiooni täitev komponent, mis on vajalik asutuse pääsuõiguste "puu" tekitamiseks [_terminoloogia täpsustada_]. Pöördub üle X-tee Äriregistri (kuhu viiakse ka RKOARR) poole ja pärib teabe asutus(t)e kohta, keda isik esindab |
-| Rollihaldur | Komponent, mille funktsiooniks on RIHA kasutajate rollihaldus. Sisaldab andmebaasi ja kasutajaliidest. Tugineb RIHA rollide ja õiguste mudelile [2]. Rolle annavad ja võtavad ära _asutuse esindusõigusega isik_ ja _asutuse RIHA haldur_.Tehnoloogiaks kaaluda OpenLDAP http://www.openldap.org/ või oma lahendust. Rollihaldus p.o lihtne, soovitavalt tuginema RBAC http://csrc.nist.gov/groups/SNS/rbac/ käsitlusele. Soovitatav on päring Rahvastikuregistrisse isikukoodi kontrolliseks. | 
+| Esindusõiguse tuvastaja | lihtne, ühtainust funktsiooni täitev komponent, mis on vajalik asutuse pääsuõiguste "puu" tekitamiseks. Pöördub üle X-tee Äriregistri (kuhu viiakse ka RKOARR) poole ja pärib teabe asutus(t)e kohta, keda isik esindab |
+| Rollihaldur | komponent, mille funktsiooniks on RIHA kasutajate rollihaldus. Sisaldab andmebaasi ja kasutajaliidest. Tugineb RIHA rollide ja õiguste mudelile [2]. Rolle annavad ja võtavad ära _asutuse esindusõigusega isik_ ja _asutuse RIHA haldur_.Tehnoloogiaks kaaluda OpenLDAP http://www.openldap.org/ või oma lahendust. Rollihaldus p.o lihtne, soovitavalt tuginema RBAC http://csrc.nist.gov/groups/SNS/rbac/ käsitlusele. Soovitatav on päring Rahvastikuregistrisse isikukoodi kontrolliseks. |
+| "RIHA rollid ja õigused" | spetsifikatsioon |
 
 ## 6 Vajalikud tööd
 
 |  töö | detailiseering  |
 |---|---|
-| Esindusõiguse tuvastaja teostamine | _sisaldab ka analüüsi ja projekteerimist_ |
+| Esindusõiguse tuvastaja teostamine | _sisaldab ka projekteerimist_ |
 | Rollihalduri teostus | _sisaldab ka tehnoloogia valikut, analüüsi ja projekteerimist. Eelduseks on "RIHA rollide ja õiguste mudel"_ |
