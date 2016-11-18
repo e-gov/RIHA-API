@@ -1,7 +1,9 @@
 # Agiil-RIHA
 
 - [RIHA üldvaade](YLDVAADE.md)
+
 - [RIHA rollid ja õigused](docs/Rollid.md)
+
 - [RIHA pääsuhaldus](Paasuhaldus.md)
  
  - - -
