@@ -35,9 +35,11 @@ Pääsuhalduse korraldamine RIHA kesksüsteemis. Ei käsitleta pääsuhalduse ko
 
 ## 3 Olulised viited
 
-- [1] [RIHA üldvaade](https://github.com/e-gov/RIHA-API/blob/master/docs/YLDVAADE.md#riha-%C3%BCldvaade)
-- [2] [RIHA rollid ja õigused](Rollid.md)
-- [3] Eesti.ee autentimisteenus v 0.9 (8.06.2016)
+[1] [RIHA üldvaade](https://github.com/e-gov/RIHA-API/blob/master/docs/YLDVAADE.md#riha-%C3%BCldvaade)
+
+[2] [RIHA rollid ja õigused](Rollid.md)
+
+[3] Eesti.ee autentimisteenus v 0.9 (8.06.2016)
 
 ## 4 Vajadus
 
