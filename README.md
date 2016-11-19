@@ -7,5 +7,8 @@ _ajakohastena hoitavad, pikaajaliseks ja sagedaseks kasutamiseks mõeldud dokume
 - [RIHA rollid ja õigused](docs/Rollid.md) _spetsifikatsioon_
 
 - [RIHA pääsuhaldus](docs/Paasuhaldus.md) _spetsifikatsioon_
+
+- [RIHA Kirjeldusmoodul](docs/Kirjeldusmoodul.md)
+
  
 
