@@ -1,0 +1,69 @@
+
+swagger: '2.0'
+
+info:
+  version: "0.0.1"
+  title: RIHA-API
+  description: Liides andmete avaldamiseks Riigi Infosüsteemi osiste kohta. Iga Riigi Infosüsteemi mõnd osa haldav asutus publitseerib info tema valduses olevate süsteemide ning registrite kohta vähemalt ühes RIHA-API instantsis. Liidese võtmesõnad on rahvusvahelise koosvõime huvides ingliskeelsed. 
+  license:
+    name: MIT
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /systems:
+    get:
+      description: Tagastab nimekirja käesoleva instantsile teada olevatest infosüsteemidest
+      responses:
+        '200':
+          description: Kõik läks hästi
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/system'
+
+  /systems/{shortname}:
+    get:
+      description: Tagastab info konkreetse infosüsteemi kohta. Tegu on ühtlasi süsteemi unikaalse identifikaatoriga
+      parameters:
+        - name: shortname
+          in: path
+          description: Viidatava infosüsteemi lühinimi
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Süsteem leidus, info tagastatakse
+          schema:
+            $ref: '#/definitions/system'
+        '404':
+          description: Sellenimelist süsteemi ei leidu
+  
+definitions:
+  system:
+    type: object
+    properties:
+      shortname:
+        type: string
+        description: Süsteemi lühinimi
+      URI:
+        type: string
+        description: Süsteemi unikaalne URI. Konventsiooni järgi saadakse liites API endpoint'i URI ja lühinimi. GET päring sellele URLile *peab* tagastama süsteemidefinitsiooni objekti.
+      owner:
+        type: string
+        description: Süsteemi vastutava töötleja registrikood
+      status:
+        type: string
+        description: Süsteemi staatus
+      documentation:
+        type: string
+        description: URL, mis viitab süsteemi dokumentatsiooni avalikule asukohale
+      
+
+
+          
+    
+    
