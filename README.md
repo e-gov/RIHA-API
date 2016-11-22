@@ -1,6 +1,6 @@
 # Agiil-RIHA
 
-- [RIHA MVP](https://github.com/e-gov/RIHA-API/blob/master/docs/MVP.html) - _ajakohasena hoitud ülevaade minimaalse keerukusega täistsüklilahendusest_
+- [RIHA MVP](https://e-gov.github.io/RIHA-API/MVP) - _ajakohasena hoitud ülevaade minimaalse keerukusega täistsüklilahendusest_
 
 - [RIHA-API. Liides andmete avaldamiseks Riigi Infosüsteemi osiste kohta](https://github.com/e-gov/RIHA-API/blob/master/RIHA-API.yaml) - Swagger-is (Open API) kirjutatud spetsifikatsioon
 
