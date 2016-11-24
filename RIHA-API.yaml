@@ -2,7 +2,7 @@
 swagger: '2.0'
 
 info:
-  version: "0.0.1"
+  version: "0.0.2"
   title: RIHA-API
   description: Liides andmete avaldamiseks Riigi Infosüsteemi osiste kohta. Iga Riigi Infosüsteemi mõnd osa haldav asutus publitseerib info tema valduses olevate süsteemide ning registrite kohta vähemalt ühes RIHA-API instantsis. Liidese võtmesõnad on rahvusvahelise koosvõime huvides ingliskeelsed. 
   license:
@@ -16,7 +16,7 @@ produces:
 paths:
   /systems:
     get:
-      description: Tagastab nimekirja käesoleva instantsile teada olevatest infosüsteemidest
+      description: Tagastab nimekirja käesoleva instantsile teadaolevatest infosüsteemidest
       responses:
         '200':
           description: Kõik läks hästi
@@ -46,23 +46,41 @@ definitions:
   system:
     type: object
     properties:
+
+      name:
+        type: string
+        description: Süsteemi täispikk, ametlik, nimi
       shortname:
         type: string
         description: Süsteemi lühinimi
-      URI:
-        type: string
-        description: Süsteemi unikaalne URI. Konventsiooni järgi saadakse liites API endpoint'i URI ja lühinimi. GET päring sellele URLile *peab* tagastama süsteemidefinitsiooni objekti.
+
       owner:
         type: string
         description: Süsteemi vastutava töötleja registrikood
-      status:
-        type: string
-        description: Süsteemi staatus
       documentation:
         type: string
         description: URL, mis viitab süsteemi dokumentatsiooni avalikule asukohale
-      
-
+      status:
+        type: object
+        description: Süsteemi deklareeritud või ametlik staatus
+        properties:
+          staatus:
+            type: string
+            description: Süsteemi staatus
+          timestamp:
+            type: string
+            format: date-time
+            description: Staatuse saamise aeg
+      meta:
+        type: object
+        properties:
+          URI:
+            type: string
+            description: Süsteemi unikaalne URI. Konventsiooni järgi saadakse liites API endpoint'i URI ja lühinimi. GET päring sellele URLile *peab* tagastama süsteemidefinitsiooni objekti.
+          timestamp:
+            type: string
+            format: date-time
+            description: Kirjelduse viimase muutmise aeg
 
           
     
