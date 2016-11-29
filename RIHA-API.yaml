@@ -2,7 +2,7 @@
 swagger: '2.0'
 
 info:
-  version: "0.0.2"
+  version: "0.0.4"
   title: RIHA-API
   description: Liides andmete avaldamiseks Riigi Infosüsteemi osiste kohta. Iga Riigi Infosüsteemi mõnd osa haldav asutus publitseerib info tema valduses olevate süsteemide ning registrite kohta vähemalt ühes RIHA-API instantsis. Liidese võtmesõnad on rahvusvahelise koosvõime huvides ingliskeelsed. 
   license:
@@ -14,7 +14,7 @@ consumes:
 produces:
   - application/json
 paths:
-  /systems:
+  /:
     get:
       description: Tagastab nimekirja käesoleva instantsile teadaolevatest infosüsteemidest
       responses:
@@ -25,13 +25,35 @@ paths:
             items:
               $ref: '#/definitions/system'
 
-  /systems/{shortname}:
+  /{owner}:
+    get:
+      description: Tagastab info konkreetse omaniku infosüsteemide kohta
+      parameters:
+        - name: owner
+          in: path
+          description: Süsteemi omanik
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Süsteem leidus, info tagastatakse
+          schema:
+            $ref: '#/definitions/system'
+        '404':
+          description: Sellenimelist asutust ei leidu
+        
+  /{owner}/{shortname}:
     get:
       description: Tagastab info konkreetse infosüsteemi kohta. Tegu on ühtlasi süsteemi unikaalse identifikaatoriga
       parameters:
         - name: shortname
           in: path
           description: Viidatava infosüsteemi lühinimi
+          required: true
+          type: string
+        - name: owner
+          in: path
+          description: Süsteemi omanik
           required: true
           type: string
       responses:
@@ -60,13 +82,24 @@ definitions:
       documentation:
         type: string
         description: URL, mis viitab süsteemi dokumentatsiooni avalikule asukohale
-      status:
+      system_status:
         type: object
-        description: Süsteemi deklareeritud või ametlik staatus
+        description: Süsteemi olek
         properties:
-          staatus:
+          status: 
             type: string
-            description: Süsteemi staatus
+            description: Staatuse tekstiline kirjeldus
+          timestamp:
+            type: string
+            format: date-time
+            description: Staatuse saamise aeg
+      approval_status:
+        type: object
+        description: Süsteemi kooskõlastuse olek
+        properties:
+          status: 
+            type: string
+            description: Staatuse tekstiline kirjeldus
           timestamp:
             type: string
             format: date-time
@@ -81,7 +114,3 @@ definitions:
             type: string
             format: date-time
             description: Kirjelduse viimase muutmise aeg
-
-          
-    
-    
