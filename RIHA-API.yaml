@@ -68,7 +68,6 @@ definitions:
   system:
     type: object
     properties:
-
       name:
         type: string
         description: Süsteemi täispikk, ametlik, nimi
@@ -77,8 +76,14 @@ definitions:
         description: Süsteemi lühinimi
 
       owner:
-        type: string
-        description: Süsteemi vastutava töötleja registrikood
+        type: object
+        properties:
+          code:
+            type: string
+            description: Süsteemi vastutava töötleja registrikood
+          name:
+            type: string
+            description: Süsteemi vastutava töötleja nimi
       documentation:
         type: string
         description: URL, mis viitab süsteemi dokumentatsiooni avalikule asukohale
