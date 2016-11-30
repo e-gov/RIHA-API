@@ -2,7 +2,7 @@
 swagger: '2.0'
 
 info:
-  version: "0.0.5"
+  version: "0.0.6"
   title: RIHA-API
   description: Liides andmete avaldamiseks Riigi Infosüsteemi osiste kohta. Iga Riigi Infosüsteemi mõnd osa haldav asutus publitseerib info tema valduses olevate süsteemide ning registrite kohta vähemalt ühes RIHA-API instantsis. Liidese võtmesõnad on rahvusvahelise koosvõime huvides ingliskeelsed. 
   license:
@@ -27,7 +27,7 @@ paths:
 
   /{shortname}:
     get:
-      description: Tagastab info konkreetse infosüsteemi kohta. Tegu on ühtlasi süsteemi unikaalse identifikaatoriga
+      description: Tagastab info konkreetse infosüsteemi kohta. Koos API URLiga on ühtlasi tegu süsteemi unikaalse identifikaatoriga
       parameters:
         - name: shortname
           in: path
@@ -38,12 +38,13 @@ paths:
         '200':
           description: Süsteem leidus, info tagastatakse
           schema:
-            $ref: '#/definitions/system'
+            $ref: '#/definitions/detailed_system'
         '404':
           description: Sellenimelist süsteemi ei leidu
   
 definitions:
   system:
+    description: Süsteemi lühiandmestik. Andmed, mis on peamiselt olulised süsteemi elutsükli mõttes
     type: object
     properties:
       name:
@@ -52,7 +53,6 @@ definitions:
       shortname:
         type: string
         description: Süsteemi lühinimi
-
       owner:
         type: object
         properties:
@@ -65,35 +65,47 @@ definitions:
       documentation:
         type: string
         description: URL, mis viitab süsteemi dokumentatsiooni avalikule asukohale
-      system_status:
-        type: object
-        description: Süsteemi olek
-        properties:
-          status: 
-            type: string
-            description: Staatuse tekstiline kirjeldus
-          timestamp:
-            type: string
-            format: date-time
-            description: Staatuse saamise aeg
-      approval_status:
-        type: object
-        description: Süsteemi kooskõlastuse olek
-        properties:
-          status: 
-            type: string
-            description: Staatuse tekstiline kirjeldus
-          timestamp:
-            type: string
-            format: date-time
-            description: Staatuse saamise aeg
       meta:
         type: object
         properties:
-          URI:
-            type: string
-            description: Süsteemi unikaalne URI. Konventsiooni järgi saadakse liites API endpoint'i URI ja lühinimi. GET päring sellele URLile *peab* tagastama süsteemidefinitsiooni objekti.
-          timestamp:
+          system_status:
+            type: object
+            description: Süsteemi olek
+            properties:
+              status: 
+                type: string
+                description: Staatuse tekstiline kirjeldus
+              timestamp:
+                type: string
+                format: date-time
+                description: Staatuse saamise aeg
+          approval_status:
+            type: object
+            description: Süsteemi kooskõlastuse olek
+            properties:
+              status: 
+                type: string
+                description: Staatuse tekstiline kirjeldus
+              timestamp:
+                type: string
+                format: date-time
+                description: Staatuse saamise aeg
+          description_timestamp:
             type: string
             format: date-time
-            description: Kirjelduse viimase muutmise aeg
+            description: Süsteemi kohta väljastatava info viimase muutmise aeg
+  detailed_system:
+    type: object
+    description: Süsteemi detailsed andmed. Andmed, mis on peamiselt olulised süsteemi kooskõlastusprotsessis
+    properties:
+      shortname:
+        type: string
+        description: Süsteemi lühinimi
+      description_timestamp:
+        type: string
+        format: date-time
+        description: Kirje viimase muutmise aeg
+      payload:
+        type: object
+        description: Spetsifitseerimata struktuuriga masinloetav informatsioon süsteemi kohta
+
