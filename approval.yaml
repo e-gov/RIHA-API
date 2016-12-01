@@ -1,0 +1,56 @@
+
+swagger: '2.0'
+
+info:
+  version: "0.0.1"
+  title: RIHA Approval API
+  description: Liides kooskõlastusandmete saamiseks RIHA Kooskõlastaja komponendilt
+  license:
+    name: MIT
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /approvals:
+    get:
+      description: Tagastab nimekirja teadaolevalt kinnitatud infosüsteemidest
+      responses:
+        '200':
+          description: Kõik läks hästi
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/approval'
+
+  /{shortname}:
+    get:
+      description: Tagastab kooskõlastusinfo konkreetse infosüsteemi kohta
+      parameters:
+        - name: shortname
+          in: path
+          description: Viidatava infosüsteemi lühinimi
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Kooskõlastus on olemas
+          schema:
+            $ref: '#/definitions/approval'
+        '404':
+          description: Sellenimelise süsteemi kohta ei ole kooskõlastusinfot
+  
+definitions:
+  approval:
+    type: object
+    description: Süsteemi kinnituse olek
+    properties:
+      status: 
+        type: string
+        description: Staatuse tekstiline kirjeldus
+      timestamp:
+        type: string
+        format: date-time
+        description: Staatuse saamise aeg
