@@ -10,7 +10,7 @@
 
 ## _Seonduvates koodihoidlates:_ / _In related repositories:_
 
-### [RIHA-Access](https://github.com/e-gov/RIHA-Access) - autentimise ja autoriseerimise komponendid / _components for authentication and authorisation
+### [RIHA-Access](https://github.com/e-gov/RIHA-Access) - autentimise ja autoriseerimise komponendid / _components for authentication and authorisation_
 
 - [Autentija](https://github.com/e-gov/RIHA-Access/blob/master/Autentija.md) - _lihtne ID-kaardiga autentimise teenust osutav komponent, hiljem tõenäoliselt asendatakse eesti.ee loodava autentimisteenusega_
 
