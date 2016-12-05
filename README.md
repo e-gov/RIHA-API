@@ -14,9 +14,9 @@
 
 - [Autentija](https://github.com/e-gov/RIHA-Access/blob/master/Autentija.md) - _lihtne ID-kaardiga autentimise teenust osutav komponent, hiljem tõenäoliselt asendatakse eesti.ee loodava autentimisteenusega_
 
-- [RIHA rollihaldus](https://github.com/e-gov/RIHA-Access/blob/master/Roles.md) - _spetsifikatsioon_
+- [RIHA rollihaldus. Äriprotsess](https://github.com/e-gov/RIHA-Access/blob/master/Roles.md) - _spetsifikatsioon_
 
-- [RIHA pääsuhaldus](https://github.com/e-gov/RIHA-Access/blob/master/Specification.md) - _spetsifikatsioon_
+- [RIHA pääsuhaldus. Tehniline lahendus](https://github.com/e-gov/RIHA-Access/blob/master/Specification.md) - _spetsifikatsioon_
 
 
  
