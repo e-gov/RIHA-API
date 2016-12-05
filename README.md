@@ -6,17 +6,17 @@
 
 - [RIHA MVP](https://e-gov.github.io/RIHA-API/MVP) - _ajakohasena hoitud ülevaade minimaalse keerukusega täistsüklilahendusest_
 
-- [RIHA üldvaade](docs/YLDVAADE.md) _arhitektuuri peadokument_
+- [RIHA üldvaade](docs/YLDVAADE.md) - _arhitektuuri peadokument_
 
 ## _Seonduvates koodihoidlates:_ / _In related repositories:_
 
 ### [RIHA-Access](https://github.com/e-gov/RIHA-Access) - autentimise ja autoriseerimise komponendid / _components for authentication and authorisation
 
-- [Autentija](https://github.com/e-gov/RIHA-Access/blob/master/Autentija.md) _lihtne ID-kaardiga autentimise teenust osutav komponent, hiljem tõenäoliselt asendatakse eesti.ee loodava autentimisteenusega_
+- [Autentija](https://github.com/e-gov/RIHA-Access/blob/master/Autentija.md) - _lihtne ID-kaardiga autentimise teenust osutav komponent, hiljem tõenäoliselt asendatakse eesti.ee loodava autentimisteenusega_
 
-- [RIHA rollid ja õigused](docs/Roles.md) _spetsifikatsioon_
+- [RIHA rollid ja õigused](docs/Roles.md) - _spetsifikatsioon_
 
-- [RIHA pääsuhaldus](docs/Specification.md) _spetsifikatsioon_
+- [RIHA pääsuhaldus](docs/Specification.md) - _spetsifikatsioon_
 
 
  
