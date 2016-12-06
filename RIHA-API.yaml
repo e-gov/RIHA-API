@@ -5,6 +5,9 @@ info:
   version: "0.0.6"
   title: RIHA-API
   description: Liides andmete avaldamiseks Riigi Infosüsteemi osiste kohta. Iga Riigi Infosüsteemi mõnd osa haldav asutus publitseerib info tema valduses olevate süsteemide ning registrite kohta vähemalt ühes RIHA-API instantsis. Liidese võtmesõnad on rahvusvahelise koosvõime huvides ingliskeelsed. 
+  
+  
+    Kõik ajamärgendid on UTC ajavööndis.
   license:
     name: MIT
 schemes:
