@@ -16,12 +16,12 @@ type System struct {
 	Shortname     string  `json:"shortname"`
 	Owner         Company `json:"owner"`
 	Documentation string  `json:"documentation"`
+	Meta          Meta    `json:"meta"`
 }
 
 type Company struct {
 	Code string `json:"code"`
 	Name string `json:"name"`
-	Meta Meta   `json:"meta"`
 }
 
 type Meta struct {
@@ -72,8 +72,26 @@ func InitStorage(fname string) {
 
 	for i := range rMap {
 		c := rMap[i].(map[string]interface{})
+
 		s := System{
-			Name: c["nimi"].(string),
+			Name:      c["nimi"].(string),
+			Shortname: c["lyhinimi"].(string),
+			Owner: Company{
+				Code: c["omanik"].(string),
+				Name: c["omanik_nimi"].(string),
+			},
+			// This should be fixed by adding an appropriate baseurl
+			Documentation: c["objekti_url"].(string),
+			Meta: Meta{
+				System: Status{
+					Status:    c["staatus_kood"].(string),
+					Timestamp: c["last_modified"].(string),
+				},
+				Approval: Status{
+					Status:    c["staatus_kood"].(string),
+					Timestamp: c["last_modified"].(string),
+				},
+			},
 		}
 		systems = append(systems, s)
 	}

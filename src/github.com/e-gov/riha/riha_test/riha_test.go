@@ -40,17 +40,31 @@ var _ = Describe("RIHA", func() {
 
 		Context("Happy day", func() {
 			It("Should return 200 and valid systems", func() {
-				var s []System
+				_ = getSystems(router, recorder, request)
+			})
 
-				router.ServeHTTP(recorder, request)
-				Expect(recorder.Code).To(Equal(200))
-
-				body, err := ioutil.ReadAll(io.LimitReader(recorder.Body, bufferLength))
-				Expect(err).To(BeNil())
-
-				err = json.Unmarshal(body, &s)
-				Expect(err).To(BeNil())
+			It("Should return meaningful systems", func() {
+				s := getSystems(router, recorder, request)
+				Expect(len(s) > 0).To(BeTrue())
+				Expect(s[0].Name == "").NotTo(BeTrue())
+				Expect(s[0].Shortname == "").NotTo(BeTrue())
+				Expect(s[0].Owner).NotTo(BeNil())
 			})
 		})
 	})
 })
+
+func getSystems(router *mux.Router, recorder *httptest.ResponseRecorder, request *http.Request) []System {
+	var s []System
+
+	router.ServeHTTP(recorder, request)
+	Expect(recorder.Code).To(Equal(200))
+
+	body, err := ioutil.ReadAll(io.LimitReader(recorder.Body, bufferLength))
+	Expect(err).To(BeNil())
+
+	err = json.Unmarshal(body, &s)
+	Expect(err).To(BeNil())
+
+	return s
+}
