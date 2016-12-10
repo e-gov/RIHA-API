@@ -33,6 +33,12 @@ type statResponseWriter interface {
 	Size() int
 }
 
+type AppError struct {
+	Error   error
+	Message string
+	Code    int
+}
+
 func MakeLogger(w http.ResponseWriter) statResponseWriter {
 	var l statResponseWriter = &statLogger{w: w}
 	return l

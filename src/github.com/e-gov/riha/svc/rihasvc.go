@@ -17,6 +17,7 @@ func main() {
 	flag.Parse()
 
 	util.SetupSvcLogging()
+	riha.InitStorage("RIHA_dump.json")
 
 	router := riha.NewRouter()
 	log.Infof("Starting a server on localhost:%d", *port)

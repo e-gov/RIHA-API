@@ -9,6 +9,7 @@ import (
 
 	"net/http"
 	"net/http/httptest"
+	"net/url"
 
 	util "github.com/e-gov/riha/util"
 
@@ -17,7 +18,7 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-var bufferLength int64 = 1048576
+var bufferLength int64 = 10485760
 
 var _ = Describe("RIHA", func() {
 	var router *mux.Router
@@ -32,12 +33,10 @@ var _ = Describe("RIHA", func() {
 
 		InitStorage("RIHA_dump.json")
 
+		request, _ = http.NewRequest("GET", "/systems.json", nil)
+
 	})
 	Describe("List all the systems", func() {
-		BeforeEach(func() {
-			request, _ = http.NewRequest("GET", "/systems.json", nil)
-		})
-
 		Context("Happy day", func() {
 			It("Should return 200 and valid systems", func() {
 				_ = getSystems(router, recorder, request)
@@ -49,6 +48,30 @@ var _ = Describe("RIHA", func() {
 				Expect(s[0].Name == "").NotTo(BeTrue())
 				Expect(s[0].Shortname == "").NotTo(BeTrue())
 				Expect(s[0].Owner).NotTo(BeNil())
+			})
+		})
+	})
+	Describe("Get one system", func() {
+		Context("Basic retrieval", func() {
+			It("Should return 200 and valid json", func() {
+				var d SystemDetails
+
+				s := getSystems(router, recorder, request)
+
+				// Pick the first element of whatever was returned
+				// Could be a random one
+				u, _ := url.Parse("/" + s[0].Shortname)
+				request, _ = http.NewRequest("GET", u.RequestURI(), nil)
+
+				router.ServeHTTP(recorder, request)
+				Expect(recorder.Code).To(Equal(200))
+
+				body, err := ioutil.ReadAll(io.LimitReader(recorder.Body, bufferLength))
+				Expect(err).To(BeNil())
+
+				err = json.Unmarshal(body, &d)
+				Expect(err).To(BeNil())
+
 			})
 		})
 	})

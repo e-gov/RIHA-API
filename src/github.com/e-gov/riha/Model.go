@@ -6,10 +6,14 @@ import (
 
 	"os"
 
+	. "github.com/e-gov/riha/util"
+
 	log "github.com/Sirupsen/logrus"
 )
 
 var systems []System
+
+var RIHA_BASE = ""
 
 type System struct {
 	Name          string  `json:"name"`
@@ -17,6 +21,7 @@ type System struct {
 	Owner         Company `json:"owner"`
 	Documentation string  `json:"documentation"`
 	Meta          Meta    `json:"meta"`
+	payload       map[string]interface{}
 }
 
 type Company struct {
@@ -40,12 +45,22 @@ type SystemDetails struct {
 	Payload              interface{} `json:"payload"`
 }
 
-func GetList() (*[]System, error) {
+func GetList() (*[]System, *AppError) {
 	return &systems, nil
 }
 
-func GetDetails(shortname string) (*SystemDetails, error) {
-	return nil, nil
+func GetDetails(shortname string) (*SystemDetails, *AppError) {
+	for i := range systems {
+		if systems[i].Shortname == shortname {
+			return &SystemDetails{
+				DescriptionTimestamp: systems[i].Meta.System.Timestamp,
+				Shortname:            systems[i].Shortname,
+				Payload:              systems[i].payload,
+			}, nil
+		}
+	}
+
+	return nil, &AppError{Error: nil, Message: "System not found", Code: 404}
 }
 
 func InitStorage(fname string) {
@@ -80,8 +95,7 @@ func InitStorage(fname string) {
 				Code: c["omanik"].(string),
 				Name: c["omanik_nimi"].(string),
 			},
-			// This should be fixed by adding an appropriate baseurl
-			Documentation: c["objekti_url"].(string),
+			Documentation: RIHA_BASE + c["objekti_url"].(string),
 			Meta: Meta{
 				System: Status{
 					Status:    c["staatus_kood"].(string),
@@ -92,6 +106,7 @@ func InitStorage(fname string) {
 					Timestamp: c["last_modified"].(string),
 				},
 			},
+			payload: c,
 		}
 		systems = append(systems, s)
 	}
