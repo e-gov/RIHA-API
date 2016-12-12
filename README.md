@@ -19,5 +19,17 @@
 - [RIHA pääsuhaldus. Tehniline lahendus](https://github.com/e-gov/RIHA-Access/blob/master/Specification.md) - _spetsifikatsioon_
 
 
- 
+##### [RIHA-Producer](https://github.com/e-gov/RIHA-Producer) - _Kirjeldusmoodul_
+- Võimaldab inimkasutajal koostada ja avaldada RIHA kirjeldusstandardile vastavaid kirjeldusi. Kirjeldusmoodul on eraldiseisev ja asutustesse eraldi paigaldatav moodul. / Software application that helps a human user produce and publish descriptions in conformance with the RIHA standard. Metadata Producer can be installed and run in multiple instances, independently, at agencies - owners of state information system components.
 
+##### [RIHA-Publisher](https://github.com/e-gov/RIHA-Publisher) - _Avaldaja_
+- Kogub kokku RIHA kirjeldusi ning avaldab need läbi API. / Software application that gathers decriptions into a central datastore and publishes them through an API
+
+##### [RIHA-Browser](https://github.com/e-gov/RIHA-Browser) - _Sirvija_
+- Võimaldab inimkasutajal vaadelda RIHA kirjeldusi ning kooskõlastusi. Sirvija võtab kirjeldusi Avaldajast. / Software application that allows a human user to browse descriptions and approval decisions. Browser takes descriptions from the Publisher
+
+##### [RIHA-Approver](https://github.com/e-gov/RIHA-Approver) - _Kooskõlastusmoodul_
+- Võimaldab kooskõlastajal vaadata üle kirjeldusi ning anda kooskõlastusotsuseid. Otsused avaldatakase läbi kooskõlastusmooduli API. / Software application that allows a human user (person from dedicated agencies) to review descriptions and make approval decisions. Approval decisions are published through the Approver's API.
+
+
+    
