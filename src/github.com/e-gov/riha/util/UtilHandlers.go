@@ -4,7 +4,6 @@ import (
 	"net"
 	"net/http"
 	"net/url"
-	"os"
 	"time"
 
 	log "github.com/Sirupsen/logrus"
@@ -123,11 +122,4 @@ func StatsHandler(w http.ResponseWriter, r *http.Request) {
 
 func SendHeaders(w http.ResponseWriter) {
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
-}
-
-func SetupSvcLogging() {
-	log.SetFormatter(&log.TextFormatter{})
-	log.SetOutput(os.Stdout)
-	log.SetLevel(log.DebugLevel)
-	log.Info("Launching service")
 }

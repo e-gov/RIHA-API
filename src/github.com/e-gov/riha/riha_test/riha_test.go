@@ -28,7 +28,7 @@ var _ = Describe("RIHA", func() {
 	BeforeEach(func() {
 		util.SetupSvcLogging()
 
-		router = NewRouter()
+		router = NewRouter(8090)
 		recorder = httptest.NewRecorder()
 
 		InitStorage("RIHA_dump.json")

@@ -8,7 +8,10 @@ import (
 	"github.com/gorilla/mux"
 )
 
-func NewRouter() *mux.Router {
+var Port int
+
+func NewRouter(port int) *mux.Router {
+	Port = port
 	router := mux.NewRouter().StrictSlash(true)
 	for _, route := range routes {
 		var handler http.Handler

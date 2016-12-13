@@ -19,7 +19,7 @@ func main() {
 	util.SetupSvcLogging()
 	riha.InitStorage("RIHA_dump.json")
 
-	router := riha.NewRouter()
+	router := riha.NewRouter(*port)
 	log.Infof("Starting a server on localhost:%d", *port)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", *port), router))
 }

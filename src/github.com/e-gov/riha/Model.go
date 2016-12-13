@@ -21,6 +21,7 @@ type System struct {
 	Owner         Company `json:"owner"`
 	Documentation string  `json:"documentation"`
 	Meta          Meta    `json:"meta"`
+	URI           string  `json:"uri"`
 	payload       map[string]interface{}
 }
 

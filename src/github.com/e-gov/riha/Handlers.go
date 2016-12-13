@@ -3,15 +3,21 @@ package riha
 import (
 	"encoding/json"
 	"net/http"
+	"net/url"
 
 	log "github.com/Sirupsen/logrus"
+	"github.com/e-gov/riha/util"
 	"github.com/gorilla/mux"
 )
 
-// Login returns a token
 func List(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	l, err := GetList()
+
+	for i := range *l {
+		u, _ := url.Parse((*l)[i].Shortname)
+		(*l)[i].URI = util.GetAPIBase(Port) + "/" + u.String()
+	}
 
 	if err != nil {
 		w.WriteHeader(http.StatusNotFound)
@@ -25,7 +31,6 @@ func List(w http.ResponseWriter, r *http.Request) {
 			"error":   err,
 		})
 		log.Error("Error encoding system list")
-		panic(err)
 	}
 
 }
