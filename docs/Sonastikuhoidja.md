@@ -1,5 +1,18 @@
 # "Sõnastikuhoidja"
 
+Kontrollnimistu
+
+[x] Kas rakendusel on üks selge funktsioon?
+[x] Kas rakendus pakub kõiki oma andmeid REST API kaudu?
+  [x] Kas REST API on formaalselt kirjeldatud (Swagger/Open API YAML)
+[x] Kas rakenduse lähtekood on avalik?
+[x] Kas lähtekoodile rakendatakse versioonihaldust?
+[x] Kas pääsuhalduseks kasutatakse mõnd taristut v välist süsteemi
+[x] Kas kasutajad saavad teatada vigu ja teha ettepanekuid?
+  [x] Kas vigade ja ettepanekute teave on avalik?
+  [x] Kas ettepanekuid saab kommenteerida?
+[x] Kas rakenduse ja selle andmete varundamine on lahendatud?  
+
 ## Põhifunktsionaalsus
 
 1 Sõnastiku täiendamine
