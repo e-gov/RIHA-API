@@ -1,17 +1,19 @@
 # "Sõnastikuhoidja"
 
-Kontrollnimistu
+Arhitektuuri kontrollnimistu
 
-[x] Kas rakendusel on üks selge funktsioon?
-[x] Kas rakendus pakub kõiki oma andmeid REST API kaudu?
-  [x] Kas REST API on formaalselt kirjeldatud (Swagger/Open API YAML)
-[x] Kas rakenduse lähtekood on avalik?
-[x] Kas lähtekoodile rakendatakse versioonihaldust?
-[x] Kas pääsuhalduseks kasutatakse mõnd taristut v välist süsteemi
-[x] Kas kasutajad saavad teatada vigu ja teha ettepanekuid?
-  [x] Kas vigade ja ettepanekute teave on avalik?
-  [x] Kas ettepanekuid saab kommenteerida?
-[x] Kas rakenduse ja selle andmete varundamine on lahendatud?  
+- [x] 1. Kas rakendusel on üks, selge funktsioon?
+- [x] 2. Kas rakendus pakub kõiki oma andmeid REST API kaudu?
+  - [x] 3. Kas REST API on formaalselt kirjeldatud (Swagger/Open API YAML)
+- [x] 4. Kas rakenduse lähtekood on avalik?
+- [x] 5. Kas rakenduse dokumentatsioon on avalik?
+- [x] 6. Kas lähtekoodile rakendatakse versioonihaldust?
+- [x] 7. Kas pääsuhalduseks kasutatakse taristulist identiteedi- ja pääsulahendust v välist autentimis- ja autoriseerimissüsteemi?
+- [x] 8. Kas kasutajad saavad teatada vigu ja teha ettepanekuid?
+  - [x] 9. Kas vigade ja ettepanekute teave on avalik?
+  - [x] 10. Kas ettepanekuid saab kommenteerida?
+- [x] 11. Kas rakenduse ja selle andmete varundamine on lahendatud?
+- [x] 12. Kas rakendus on nii väike, selle saab vajadusel mõistliku kuluga asendada funktsionaalselt samaväärse, teisel tehnoloogial teostatud rakendusega (_Throwaway_ põhimõte)?
 
 ## Põhifunktsionaalsus
 
