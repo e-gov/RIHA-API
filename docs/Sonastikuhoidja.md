@@ -35,8 +35,12 @@
 5 Pääsuhaldus
   - GitHubi pääsuhaldus
 
-6 Kommenteerimine
+6 Vearaporteerimine ja ettepanekute haldus
   - GitHub issues
 
 7 Versioneerimine
   - Git (GitHub)
+  
+8 Arendusdokumentatsioon
+  - GitHubi repo
+
