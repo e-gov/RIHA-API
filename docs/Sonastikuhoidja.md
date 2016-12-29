@@ -25,7 +25,6 @@ PÕHIFUNKTSIONAALSUS
     - vajadusel muid Javascripti teeke
 
 4 Sõnastiku esitamine APi kaudu
-  - 
   - GET sõnade loetelu
   - GET üksiku sõna kirjeldus*
     *pole selge, kas ja kuidas on teostatav
