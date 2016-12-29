@@ -1,16 +1,15 @@
-"Sõnastikuhoidja"
+# "Sõnastikuhoidja"
 
-PÕHIFUNKTSIONAALSUS
+## Põhifunktsionaalsus
 
 1 Sõnastiku täiendamine
-  GitHub
+  - GitHub
     - GitHub-i redigeerimis-UI (inimkasutaja liides)
       - CRUD (sõnade lisamine, muutmine, eemaldamine)
 
 2 Sõnastiku hoidmine
   - GitHub
-    - sõnad hoitakse YAML, JSON v Markdown failidena,
-      kaustadesse jagatult
+    - sõnad hoitakse YAML, JSON v Markdown failidena, kaustadesse jagatult
 
 3  Sõnastiku esitamine inimloetaval kujul
   - GitHub Pages, kasutades:
@@ -26,13 +25,12 @@ PÕHIFUNKTSIONAALSUS
 
 4 Sõnastiku esitamine APi kaudu
   - GET sõnade loetelu
-  - GET üksiku sõna kirjeldus*
-    *pole selge, kas ja kuidas on teostatav
+  - GET üksiku sõna kirjeldus *pole selge, kas ja kuidas on teostatav
   - API formaalne kirjeldus
     - Swagger 2.0 (Open API Initiative)
-      (YAML süntaks)
+      - YAML süntaks
 
-TÄIENDAV FUNKTSIONAALSUS
+## Täiendav funktsionaalsus
 
 5 Pääsuhaldus
   - GitHubi pääsuhaldus
